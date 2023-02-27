@@ -68,3 +68,13 @@ class CustomDataset(Dataset):
         if self.target_transform:
             feature = self.target_transform(label)
         return feature, label
+
+
+def create_customdataset(frame: pd.DataFrame) -> CustomDataset:
+    """
+    Creates a CustomDataset object from a given Pandas DataFrame of training data.
+    :param frame:
+    :return:
+    """
+
+    return CustomDataset(frame)

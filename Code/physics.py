@@ -1,5 +1,8 @@
 import random
 import csv
+import data
+import pandas as pd
+from data import CustomDataset
 # Define ranges of parameters to be sampled (see paper Section 2.1)
 RHO_MIN = 0
 RHO_MAX = 10.1
@@ -55,13 +58,13 @@ def tau(rho: float, eps: float, v: float) -> float:
     return rho*(h(rho, eps, v))*((W(rho, eps, v))**2) - eos(rho, eps) - D(rho, eps, v)
 
 
-def generate_data(number_of_points: int = 10000, save: bool = True, name: str = "C2P_data") -> list:
+def generate_data(number_of_points: int = 10000, save: bool = False, name: str = "C2P_data") -> list:
     """
     Generates training data of specified size by sampling by performing the P2C transformation.
     :param number_of_points: The number of data points to be generated.
     :param save: Decides whether the data, after generation, gets saved or not.
-    :param name: In case of saving, the name of the .csv file to which the data is saved.
-    :return: Rows of sampled data of conserved and primitive variables.
+    :param name: In case we save the data, the name of the .csv file to which the data is saved.
+    :return: list of which rows of sampled data of conserved and primitive variables.
     """
 
     # Initialize empty data
@@ -106,3 +109,17 @@ def generate_data(number_of_points: int = 10000, save: bool = True, name: str = 
 
     # Also return the data to the user
     return data
+
+
+def generate_data_as_df(number_of_points: int = 1000, save: bool = False, name: str = "C2P_data") -> pd.DataFrame:
+    """
+    Same as above function, but creates Pandas DataFrame out of generated data before returning.
+    :param number_of_points: The number of data points to be generated.
+    :param save: Decides whether the data, after generation, gets saved or not.
+    :param name: In case we save the data, the name of the .csv file to which the data is saved.
+    :return: Pandas DataFrame of sampled data of conserved and primitive variables.
+    """
+    # Generate the data using function above
+    test_data_csv = generate_data(number_of_points, save=save, name=name)
+    # Return after making correct Pandas DataFrame
+    return pd.DataFrame(test_data_csv, columns=['rho', 'eps', 'v', 'p', 'D', 'S', 'tau'])
