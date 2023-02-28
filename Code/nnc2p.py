@@ -3,18 +3,75 @@
 from typing import Callable
 import numpy as np
 import pandas as pd
+import os
+import csv
 import torch.optim
 from torch import nn
 from torch.utils.data import DataLoader
 import data
 import physics
 from data import CustomDataset
+from datetime import datetime
 
-#################
-# LOAD DATASETS #
-#################
+#####################
+# AUXILIARY METHODS #
+#####################
+
+
+def generate_time_identifier() -> str:
+    """
+    Generates a unique identifier on a specific timestamp, up to the minute
+    :return: String displaying time in format YYYY-MM-DD-HH-MM
+    """
+
+    # Get a datetime
+    dt = datetime.now()
+
+    # Get the string: format is: year_month_day_h_min_sec
+    y      = str(dt.year)
+    m      = str(dt.month)
+    d      = str(dt.day)
+    h      = str(dt.hour)
+    minute = str(dt.minute)
+
+    return y + "_" + m + "_" + d + "_" + h + "_" + minute
+
+
+def write_to_txt(filename, text, verbose=True):
+    """
+    Small auxiliary file that writes a line to a txt file, used for logging progress in training or pruning.
+    :param filename: Txt file to which we will write txt.
+    :param text: Text that has to be written to the file.
+    :param verbose: Boolean indicating whether we also should print the text to the screen.
+    :return: Nothing.
+    """
+    if verbose:
+        print(text)
+    f = open(filename, "a")
+    f.write(text + "\n")
+    f.close()
+
+
+def write_to_csv(csv_file, row):
+    """
+    Small auxiliary file that writes a line to a csv file, used for logging progress in training or pruning.
+    :param csv_file: csv file to which we will write csv.
+    :param row: Data that has to be written to the file.
+    :return: Nothing.
+    """
+    with open(csv_file, 'a', newline='') as file:
+        writer = csv.writer(file)
+        # Write header
+        writer.writerow(row)
+
+
+##########################
+# LOAD STANDARD DATASETS #
+##########################
 
 # Specify the desired CSV file locations of the "standard" train and test data already saved
+TRAIN_SIZE = 80000
+TEST_SIZE = 10000
 TRAINING_DATA_CSV = data.read_training_data("D:/Coding/master-thesis-AI/data/NNC2P_data_train.csv")
 TEST_DATA_CSV     = data.read_training_data("D:/Coding/master-thesis-AI/data/NNC2P_data_test.csv")
 # Load them as CustomDatasets
@@ -113,6 +170,33 @@ class NeuralNetwork(nn.Module):
         self.linear3.bias = nn.parameter.Parameter(stack_4_bias)
 
 
+def get_hidden_sizes_from_state_dict(state_dict):
+    """
+    Finds the sizes of the two hidden layers of our 2-layer architecture given a state dict.
+    :param state_dict: State dict of saved parameters
+    :return: h1, size of first hidden layer, and h2, size of second hidden layer
+    """
+    h1 = np.shape(state_dict['linear1.bias'])[0]
+    h2 = np.shape(state_dict['linear2.bias'])[0]
+
+    return h1, h2
+
+def get_number_of_parameters(h1, h2):
+
+    return 3*h1 + h2*h1 + h2 + 1 + h1 + h2
+
+def create_nn(state_dict):
+    """
+    Create a NeuralNetwork object if given a dictionary of the weights, with correct sizes for hidden layers.
+    :param state_dict: State dictionary containing the weights of the neural network
+    :return:
+    """
+    h1, h2 = get_hidden_sizes_from_state_dict(state_dict)
+    model = NeuralNetwork(h1=h1, h2=h2)
+    model.load_state_dict(state_dict)
+
+    return model
+
 ############################
 # GENERAL TRAINING ASPECTS #
 ############################
@@ -206,9 +290,9 @@ def test_loop(dataloader: DataLoader, model: NeuralNetwork, loss_fn: Callable) -
 
 class Trainer:
 
-    def __init__(self, train_dataloader: DataLoader, test_dataloader: DataLoader, model: NeuralNetwork, learning_rate: float,
-                 loss_fn: Callable = nn.MSELoss(), train_losses=None, test_losses: list = None,
-                 adaptation_indices: list = None) -> None:
+    def __init__(self, model: NeuralNetwork, learning_rate: float, train_dataloader: DataLoader = TRAIN_DATALOADER,
+                 test_dataloader: DataLoader = TEST_DATALOADER, loss_fn: Callable = nn.MSELoss(), train_losses=None,
+                 test_losses: list = None, adaptation_indices: list = None) -> None:
         """
         Initializes a Trainer object. This object brings together the neural network architecture defined above,
         the optimizer used, the dataloaders used while training, and simplifies the training process for the
@@ -219,6 +303,14 @@ class Trainer:
         :param test_losses: List that contains the test losses during training, for plotting purposes.
         :param adaptation_indices: Indices at which the learning rate gets adapted, for plotting purposes.
         """
+
+        # If None as argument given for train dataloader and test dataloader, make new sample
+        if train_dataloader is None:
+            train_dataloader = data.generate_dataloader(TRAIN_SIZE)
+
+        if test_dataloader is None:
+            test_dataloader = data.generate_dataloader(TEST_SIZE)
+
         # Save the model and optimizer as fields
         self.train_dataloader = train_dataloader
         self.test_dataloader = test_dataloader
@@ -251,16 +343,12 @@ class Trainer:
     #     self.adaptation_indices = trainer.daptation_indices
     #     self.trained = trainer.trained
 
-    def train(self, adaptation_threshold=0.9995, adaptation_multiplier=0.5, number_of_epochs: int = 500):
-        """
+    def train(self, adaptation_threshold=0.9995, adaptation_multiplier=0.5, number_of_epochs: int = 500,
+              log_file: str = "log.txt"):
 
-        :param adaptation_threshold:
-        :param adaptation_multiplier:
-        :param number_of_epochs:
-        :return:
-        """
+        # TODO - write doc
 
-        print("Training the model . . .")
+        write_to_txt(log_file, f"Training the model for {number_of_epochs} epochs.")
 
         # Initialize a few auxiliary variables
         epoch_counter = 0  # epoch counter for this training session
@@ -275,7 +363,7 @@ class Trainer:
 
         # Keep on continuing the training until we hit max number of epochs
         while epoch_counter < number_of_epochs:
-            print(f"\n Epoch {epoch_counter} \n --------------")
+            write_to_txt(log_file, f"\n Epoch {epoch_counter} \n --------------")
             train_loop(self.train_dataloader, self.model, self.loss_fn, self.optimizer)
             # Test on the training data
             average_train_loss = test_loop(self.train_dataloader, self.model, self.loss_fn)
@@ -296,15 +384,15 @@ class Trainer:
                     counter = -1
                     old_learning_rate = self.optimizer.param_groups[-1]['lr']
                     learning_rate = adaptation_multiplier * old_learning_rate
-                    print(f"Adapting learning rate to {learning_rate}")
+                    write_to_txt(log_file, f"Adapting learning rate to {learning_rate}")
                     # Change optimizer
                     optimizer = torch.optim.Adam(self.model.parameters(), lr=learning_rate)
                     # Add the epoch time for plotting later on
                     self.adaptation_indices.append(epoch_counter)
 
             # Report progress:
-            # print(f"Average loss of: {average_test_loss} for test data")
-            print(f"Average loss of: {average_train_loss} for train data")
+            write_to_txt(log_file, f"Train loss: {average_train_loss}")
+            write_to_txt(log_file, f"Test  loss: {average_test_loss}")
 
             # Another epoch passed - increment counter
             counter += 1
@@ -355,7 +443,7 @@ def l2_norm(predictions, y):
     return sum(abs(predictions - y)**2)/len(predictions)
 
 
-def measure_performance(model: NeuralNetwork, test_data: CustomDataset, verbose=False):
+def measure_performance(model: NeuralNetwork, test_data: CustomDataset = TEST_DATA, verbose=False):
     """
     Measures the performance similar to how the Dieslhorst et al. paper does it. Computes the L1-norm and Linfty-norm
     errors (difference between the predictions and true values) on the provided test set.
@@ -394,7 +482,7 @@ def measure_performance(model: NeuralNetwork, test_data: CustomDataset, verbose=
 
 def measure_performance_size(model: NeuralNetwork, size_test_data: int = 1000, verbose=False):
     """
-    Measures the performance similar to how the Dieslhorst et al. paper does it. Computes the L1-norm and Linfty-norm
+    Measures the performance similar to how the Dieselhorst et al. paper does it. Computes the L1-norm and Linfty-norm
     errors (difference between the predictions and true values) on the provided test set.
 
     :param model: Neural network.
@@ -520,13 +608,14 @@ def prune(old_model: NeuralNetwork, layer_index: int, neuron_index: int) -> Neur
     return new_model
 
 
-def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int = 1000) -> tuple[int, int, float, dict]:
+def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int = 1000, verbose=True) -> tuple[int, int, float, dict]:
     """
     Finds the optimal neuron to prune, that is, the neuron which after pruning this neuron from the current model,
     gives the model which has the best performance over all pruned models.
 
     :param model: Current model which we wish to prune
     :param validation_data_size: Number of data points to be used in the validation set.
+    :param verbose: Boolean indicating whether or not we wish to print the progress.
     :return: best_layer_index, best_neuron_index: The layer and neuron index of the neuron that gives best model
     after pruning.
     """
@@ -554,10 +643,12 @@ def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int
     # Loop over all layers:
     for i, layer_index in enumerate([1, 2]):
         # Loop over all neurons of a layer
-        print('\nLayer index: ' + str(layer_index) + "\n")
+        if verbose:
+            print('\nLayer index: ' + str(layer_index) + "\n")
         for neuron_index in range(hidden_layer_sizes[i]):
             # Show progress
-            print(f"Neuron index: {neuron_index} out of {hidden_layer_sizes[i]}", end="\r")
+            if verbose:
+                print(f"Neuron index: {neuron_index} out of {hidden_layer_sizes[i]}", end="\r")
             # Prune the model with that layer index and neuron index
             new_model = prune(current_model, layer_index, neuron_index)
             # Get the performance of that model
@@ -580,22 +671,66 @@ def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int
     return best_layer_index, best_neuron_index, best_performance, values_dict
 
 
-def hill_climbing_pruning(model, max_pruning_number, validation_data_size: int = 1000, l2_threshold: float = 10e-6, nb_of_train_epochs: int = 100):
+def hill_climbing_pruning(model, max_pruning_number, validation_data_size: int = 1000, train_data_size: int = 40000,
+                          test_data_size: int = 10000, l2_threshold: float = 1e-6, nb_of_train_epochs: int = 100):
 
-    counter = 0
+    # Prepare everything for saving progress: make directory, create empty txt file for logging
+    identifier = generate_time_identifier()
+    print(f"Saving pruning progress with ID: {identifier}")
+
+    # Make new directory to save files:
+    current_dir = os.getcwd()
+    save_dir = os.path.join(current_dir, "Pruning_" + identifier)
+    os.mkdir(save_dir)
+
+    # Create empty log files
+    txt_file = os.path.join(save_dir, "log.txt")
+    csv_file = os.path.join(save_dir, "log.csv")
+
+    # Already write header to the csv
+    header = ['counter', 'layer_index', 'neuron_index', 'performance']
+    # Open the filename and write the data to it
+    with open(csv_file, 'a', newline='') as file:
+        writer = csv.writer(file)
+        # Write header
+        writer.writerow(header)
+
+    # Initialize a counter
+    counter = 1
+
     while counter < max_pruning_number:
+        # Next iteration of pruning to do
+        write_to_txt(txt_file, f"======== Pruning iteration {counter}/{max_pruning_number} ========")
         # Find best neuron to prune
         best_layer_index, best_neuron_index, best_performance, values_dict = find_optimal_neuron_to_prune(model, validation_data_size=validation_data_size)
         # Prune that neuron
         model = prune(model, best_layer_index, best_neuron_index)
-        counter += 1
-        print(f"Pruned {counter}/{max_pruning_number}. Performance is {best_performance}")
+
+        # Show progress and save to the txt log file
+        write_to_txt(txt_file, f"Pruned {counter}/{max_pruning_number}. Performance is {best_performance}")
+        write_to_csv(csv_file, [counter, best_layer_index, best_neuron_index, best_performance])
         # If the model is too bad after pruning, retrain it
         if best_performance > l2_threshold:
-            print(f"Performance drop. Retraining.")
-            # Create new Trainer object
-            trainer = Trainer(TRAIN_DATALOADER, TEST_DATALOADER, model, 1e-4)
-            trainer.train(number_of_epochs=nb_of_train_epochs)
+            write_to_txt(txt_file, "Performance dropped too much, retraining the model.")
+            # Generate training data
+            train_dataloader = data.generate_dataloader(train_data_size)
+            test_dataloader = data.generate_dataloader(test_data_size)
+            # Create trainer object and train it
+            trainer = Trainer(train_dataloader, test_dataloader, model, learning_rate=5e-6)
+            trainer.train(number_of_epochs=nb_of_train_epochs, log_file=txt_file)
+            # After retraining, get the performance again (the L2 norm, so second return argument)
+            _, best_performance, _ = measure_performance_size(model)
+            write_to_txt(txt_file, f"Retrained {counter}/{max_pruning_number}. Performance is {best_performance}")
+            write_to_csv(csv_file, [counter, best_layer_index, best_neuron_index, best_performance])
+
+        # After pruning and possibly training, save the new model's parameters:
+        torch.save(model.state_dict(), os.path.join(save_dir, str(counter) + ".pth"))
+
+        # Increment counter
+        counter += 1
+
+    # Save the final model separately as well
+    torch.save(model.state_dict(), os.path.join(save_dir, "pruned.pth"))
 
     return model
 

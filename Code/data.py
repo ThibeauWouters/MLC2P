@@ -1,8 +1,10 @@
 """This is a script that takes care of reading and processing data. Generating data is done in physics.py"""
 
+import physics
+import data
 import pandas as pd
 import torch
-from torch.utils.data import Dataset
+from torch.utils.data import Dataset, DataLoader
 
 
 def read_training_data(filename: str) -> pd.DataFrame:
@@ -70,11 +72,22 @@ class CustomDataset(Dataset):
         return feature, label
 
 
-def create_customdataset(frame: pd.DataFrame) -> CustomDataset:
+def generate_customdataset(size: int) -> CustomDataset:
     """
-    Creates a CustomDataset object from a given Pandas DataFrame of training data.
-    :param frame:
-    :return:
+    Generates a CustomDataset object of specified size.
+    :param size: Number of data points in the data set.
+    :return: CustomDataset object containing the desired amount of data points.
     """
+    df = physics.generate_data_as_df(size)
+    return CustomDataset(df)
 
-    return CustomDataset(frame)
+
+def generate_dataloader(size: int) -> DataLoader:
+    """
+    Generates a DataLoader object of a specified size for training or testing data.
+    :param size: Number of datapoints to be included in the dataloader.
+    :return: A DataLoader object of the specified size.
+    """
+    training_data_csv = physics.generate_data_as_df(size)
+    training_data = data.CustomDataset(training_data_csv)
+    return DataLoader(training_data, batch_size=32)

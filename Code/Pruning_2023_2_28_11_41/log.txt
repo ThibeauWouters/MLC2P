@@ -1,0 +1,1652 @@
+======== Pruning iteration 1/100 ========
+Pruned 1/100. Performance is 2.1648321150933435e-07
+======== Pruning iteration 2/100 ========
+Pruned 2/100. Performance is 2.49950459607689e-07
+======== Pruning iteration 3/100 ========
+Pruned 3/100. Performance is 1.621201365469277e-07
+======== Pruning iteration 4/100 ========
+Pruned 4/100. Performance is 1.6170336659645178e-07
+======== Pruning iteration 5/100 ========
+Pruned 5/100. Performance is 2.2933960814248502e-07
+======== Pruning iteration 6/100 ========
+Pruned 6/100. Performance is 2.5687756235903625e-07
+======== Pruning iteration 7/100 ========
+Pruned 7/100. Performance is 1.5962943544670495e-07
+======== Pruning iteration 8/100 ========
+Pruned 8/100. Performance is 1.6077566471192723e-07
+======== Pruning iteration 9/100 ========
+Pruned 9/100. Performance is 2.4007698007798253e-07
+======== Pruning iteration 10/100 ========
+Pruned 10/100. Performance is 1.320168244987402e-07
+======== Pruning iteration 11/100 ========
+Pruned 11/100. Performance is 2.3044529593138103e-07
+======== Pruning iteration 12/100 ========
+Pruned 12/100. Performance is 1.9202058247319894e-07
+======== Pruning iteration 13/100 ========
+Pruned 13/100. Performance is 1.908477044189543e-07
+======== Pruning iteration 14/100 ========
+Pruned 14/100. Performance is 1.8916964956805763e-07
+======== Pruning iteration 15/100 ========
+Pruned 15/100. Performance is 1.5054034467897645e-07
+======== Pruning iteration 16/100 ========
+Pruned 16/100. Performance is 2.692108062686948e-07
+======== Pruning iteration 17/100 ========
+Pruned 17/100. Performance is 1.7358632271964537e-07
+======== Pruning iteration 18/100 ========
+Pruned 18/100. Performance is 2.3487690025376996e-07
+======== Pruning iteration 19/100 ========
+Pruned 19/100. Performance is 2.2378114888934795e-07
+======== Pruning iteration 20/100 ========
+Pruned 20/100. Performance is 2.8919222793270465e-07
+======== Pruning iteration 21/100 ========
+Pruned 21/100. Performance is 2.2509324788271899e-07
+======== Pruning iteration 22/100 ========
+Pruned 22/100. Performance is 2.0293507664405976e-07
+======== Pruning iteration 23/100 ========
+Pruned 23/100. Performance is 1.6713706296735944e-07
+======== Pruning iteration 24/100 ========
+Pruned 24/100. Performance is 3.045368812588408e-07
+======== Pruning iteration 25/100 ========
+Pruned 25/100. Performance is 1.9336772209974375e-07
+======== Pruning iteration 26/100 ========
+Pruned 26/100. Performance is 2.0164049643951774e-07
+======== Pruning iteration 27/100 ========
+Pruned 27/100. Performance is 2.0566886408612146e-07
+======== Pruning iteration 28/100 ========
+Pruned 28/100. Performance is 3.0845953134201877e-07
+======== Pruning iteration 29/100 ========
+Pruned 29/100. Performance is 2.3403007586585714e-07
+======== Pruning iteration 30/100 ========
+Pruned 30/100. Performance is 2.8708567251554764e-07
+======== Pruning iteration 31/100 ========
+Pruned 31/100. Performance is 2.749741949791579e-07
+======== Pruning iteration 32/100 ========
+Pruned 32/100. Performance is 3.5053937179623157e-07
+======== Pruning iteration 33/100 ========
+Pruned 33/100. Performance is 2.6507924231619374e-07
+======== Pruning iteration 34/100 ========
+Pruned 34/100. Performance is 2.421660386696997e-07
+======== Pruning iteration 35/100 ========
+Pruned 35/100. Performance is 2.8665037304512665e-07
+======== Pruning iteration 36/100 ========
+Pruned 36/100. Performance is 3.0571235416630784e-07
+======== Pruning iteration 37/100 ========
+Pruned 37/100. Performance is 3.36470938572389e-07
+======== Pruning iteration 38/100 ========
+Pruned 38/100. Performance is 3.2660713496921884e-07
+======== Pruning iteration 39/100 ========
+Pruned 39/100. Performance is 3.04293611402989e-07
+======== Pruning iteration 40/100 ========
+Pruned 40/100. Performance is 3.4093146727965634e-07
+======== Pruning iteration 41/100 ========
+Pruned 41/100. Performance is 3.3443690814571103e-07
+======== Pruning iteration 42/100 ========
+Pruned 42/100. Performance is 4.535312588571557e-07
+======== Pruning iteration 43/100 ========
+Pruned 43/100. Performance is 3.149001331665765e-07
+======== Pruning iteration 44/100 ========
+Pruned 44/100. Performance is 3.443052242970879e-07
+======== Pruning iteration 45/100 ========
+Pruned 45/100. Performance is 3.632981548426364e-07
+======== Pruning iteration 46/100 ========
+Pruned 46/100. Performance is 4.0408196251773753e-07
+======== Pruning iteration 47/100 ========
+Pruned 47/100. Performance is 4.1947887247070455e-07
+======== Pruning iteration 48/100 ========
+Pruned 48/100. Performance is 3.2190562084665114e-07
+======== Pruning iteration 49/100 ========
+Pruned 49/100. Performance is 3.671298774263292e-07
+======== Pruning iteration 50/100 ========
+Pruned 50/100. Performance is 4.22329518049267e-07
+======== Pruning iteration 51/100 ========
+Pruned 51/100. Performance is 3.5390696705609045e-07
+======== Pruning iteration 52/100 ========
+Pruned 52/100. Performance is 6.44184213790609e-07
+======== Pruning iteration 53/100 ========
+Pruned 53/100. Performance is 4.912613818854789e-07
+======== Pruning iteration 54/100 ========
+Pruned 54/100. Performance is 5.774803414712532e-07
+======== Pruning iteration 55/100 ========
+Pruned 55/100. Performance is 7.913181756312265e-07
+======== Pruning iteration 56/100 ========
+Pruned 56/100. Performance is 6.380982921488316e-07
+======== Pruning iteration 57/100 ========
+Pruned 57/100. Performance is 6.857347275637585e-07
+======== Pruning iteration 58/100 ========
+Pruned 58/100. Performance is 9.661662373960779e-07
+======== Pruning iteration 59/100 ========
+Pruned 59/100. Performance is 9.097539475169445e-07
+======== Pruning iteration 60/100 ========
+Pruned 60/100. Performance is 8.366491985064258e-07
+======== Pruning iteration 61/100 ========
+Pruned 61/100. Performance is 1.166236102364756e-06
+Performance dropped too much, retraining the model.
+Training the model for 100 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 2.100620402984532e-07
+Test  loss: 2.3313470506038063e-07
+
+ Epoch 1 
+ --------------
+Train loss: 2.0354956774610856e-07
+Test  loss: 2.27011381098193e-07
+
+ Epoch 2 
+ --------------
+Train loss: 2.0255940637383675e-07
+Test  loss: 2.264808124811081e-07
+
+ Epoch 3 
+ --------------
+Train loss: 2.023114682899063e-07
+Test  loss: 2.2657454554217956e-07
+
+ Epoch 4 
+ --------------
+Train loss: 2.02314220223343e-07
+Test  loss: 2.2682051803694804e-07
+
+ Epoch 5 
+ --------------
+Train loss: 2.0217669318896016e-07
+Test  loss: 2.2686768359133525e-07
+
+ Epoch 6 
+ --------------
+Train loss: 2.0223899299338654e-07
+Test  loss: 2.270809203039676e-07
+
+ Epoch 7 
+ --------------
+Train loss: 2.022021323739409e-07
+Test  loss: 2.2716742971063455e-07
+
+ Epoch 8 
+ --------------
+Train loss: 2.020488607200832e-07
+Test  loss: 2.271220717497259e-07
+
+ Epoch 9 
+ --------------
+Train loss: 2.0186541413522718e-07
+Test  loss: 2.2703097409847166e-07
+
+ Epoch 10 
+ --------------
+Train loss: 2.0165043360407252e-07
+Test  loss: 2.268974453435034e-07
+
+ Epoch 11 
+ --------------
+Train loss: 2.0157931551239017e-07
+Test  loss: 2.269019598664442e-07
+
+ Epoch 12 
+ --------------
+Train loss: 2.0150061672126185e-07
+Test  loss: 2.2689644359175123e-07
+
+ Epoch 13 
+ --------------
+Train loss: 2.013526371115404e-07
+Test  loss: 2.2680936382130675e-07
+
+ Epoch 14 
+ --------------
+Train loss: 2.0124471758435904e-07
+Test  loss: 2.2676096281925063e-07
+
+ Epoch 15 
+ --------------
+Train loss: 2.0103602656718066e-07
+Test  loss: 2.2658976293856765e-07
+
+ Epoch 16 
+ --------------
+Train loss: 2.0091489482041426e-07
+Test  loss: 2.265306746359817e-07
+
+ Epoch 17 
+ --------------
+Train loss: 2.0064725692918727e-07
+Test  loss: 2.2630571869002686e-07
+
+ Epoch 18 
+ --------------
+Train loss: 2.0076747299100362e-07
+Test  loss: 2.26470725089767e-07
+
+ Epoch 19 
+ --------------
+Train loss: 2.0051654313135713e-07
+Test  loss: 2.2626042902521467e-07
+
+ Epoch 20 
+ --------------
+Train loss: 2.0034429572035607e-07
+Test  loss: 2.2612725209105534e-07
+
+ Epoch 21 
+ --------------
+Train loss: 2.003317652139458e-07
+Test  loss: 2.261529228763966e-07
+
+ Epoch 22 
+ --------------
+Train loss: 2.0016815665684362e-07
+Test  loss: 2.2601371151617228e-07
+
+ Epoch 23 
+ --------------
+Train loss: 2.000078405544059e-07
+Test  loss: 2.258893475139378e-07
+
+ Epoch 24 
+ --------------
+Train loss: 1.9993700879297194e-07
+Test  loss: 2.2585009776884371e-07
+
+ Epoch 25 
+ --------------
+Train loss: 1.997904094309888e-07
+Test  loss: 2.2572965721106817e-07
+
+ Epoch 26 
+ --------------
+Train loss: 1.995913330148369e-07
+Test  loss: 2.2556585839346315e-07
+
+ Epoch 27 
+ --------------
+Train loss: 1.9953548311519854e-07
+Test  loss: 2.255273187030323e-07
+
+ Epoch 28 
+ --------------
+Train loss: 1.993668226973e-07
+Test  loss: 2.2539227545913932e-07
+
+ Epoch 29 
+ --------------
+Train loss: 1.9935207085666206e-07
+Test  loss: 2.2539917834776566e-07
+
+ Epoch 30 
+ --------------
+Train loss: 1.9911027221155563e-07
+Test  loss: 2.251810316145714e-07
+
+ Epoch 31 
+ --------------
+Train loss: 1.9908276139801728e-07
+Test  loss: 2.251730102000129e-07
+
+ Epoch 32 
+ --------------
+Train loss: 1.990433899351274e-07
+Test  loss: 2.2516311591511847e-07
+
+ Epoch 33 
+ --------------
+Train loss: 1.9881238704755332e-07
+Test  loss: 2.2494670180519871e-07
+
+ Epoch 34 
+ --------------
+Train loss: 1.9881698665784597e-07
+Test  loss: 2.249773173437021e-07
+
+ Epoch 35 
+ --------------
+Train loss: 1.986540964566075e-07
+Test  loss: 2.2483165464135485e-07
+
+ Epoch 36 
+ --------------
+Train loss: 1.9854134812362644e-07
+Test  loss: 2.2472928573921735e-07
+
+ Epoch 37 
+ --------------
+Train loss: 1.9835984482057257e-07
+Test  loss: 2.2457019735457898e-07
+
+ Epoch 38 
+ --------------
+Train loss: 1.9840057147888502e-07
+Test  loss: 2.246348946202282e-07
+
+ Epoch 39 
+ --------------
+Train loss: 1.981827572194561e-07
+Test  loss: 2.2442573062278188e-07
+
+ Epoch 40 
+ --------------
+Train loss: 1.9811699868483857e-07
+Test  loss: 2.2437713073686289e-07
+
+ Epoch 41 
+ --------------
+Train loss: 1.979622248825308e-07
+Test  loss: 2.2424402482292558e-07
+
+ Epoch 42 
+ --------------
+Train loss: 1.9790831515678064e-07
+Test  loss: 2.2419852353896378e-07
+
+ Epoch 43 
+ --------------
+Train loss: 1.9773829311873215e-07
+Test  loss: 2.240427826846011e-07
+
+ Epoch 44 
+ --------------
+Train loss: 1.9770999946331359e-07
+Test  loss: 2.2403046182816093e-07
+
+ Epoch 45 
+ --------------
+Train loss: 1.975068105991795e-07
+Test  loss: 2.2384084556510782e-07
+
+ Epoch 46 
+ --------------
+Train loss: 1.9755833815651158e-07
+Test  loss: 2.239062383340499e-07
+
+ Epoch 47 
+ --------------
+Train loss: 1.9736150505309525e-07
+Test  loss: 2.2372442756455748e-07
+
+ Epoch 48 
+ --------------
+Train loss: 1.9734918449927363e-07
+Test  loss: 2.237277023720327e-07
+
+ Epoch 49 
+ --------------
+Train loss: 1.971782749805584e-07
+Test  loss: 2.235650188908629e-07
+
+ Epoch 50 
+ --------------
+Train loss: 1.970801465375871e-07
+Test  loss: 2.2347976358077402e-07
+
+ Epoch 51 
+ --------------
+Train loss: 1.970153343748393e-07
+Test  loss: 2.2342716134156067e-07
+
+ Epoch 52 
+ --------------
+Train loss: 1.9686888085459486e-07
+Test  loss: 2.233005834992813e-07
+
+ Epoch 53 
+ --------------
+Train loss: 1.9684778992541395e-07
+Test  loss: 2.232905948915413e-07
+
+ Epoch 54 
+ --------------
+Train loss: 1.9673722406992055e-07
+Test  loss: 2.23187128416537e-07
+
+ Epoch 55 
+ --------------
+Train loss: 1.9652698016585647e-07
+Test  loss: 2.229899275410995e-07
+
+ Epoch 56 
+ --------------
+Train loss: 1.9654881425736904e-07
+Test  loss: 2.2302595635965075e-07
+
+ Epoch 57 
+ --------------
+Train loss: 1.9640425844613673e-07
+Test  loss: 2.2288992877570773e-07
+
+ Epoch 58 
+ --------------
+Train loss: 1.9634853532011221e-07
+Test  loss: 2.2284225607995576e-07
+
+ Epoch 59 
+ --------------
+Train loss: 1.9622146987217093e-07
+Test  loss: 2.2272628448412195e-07
+
+ Epoch 60 
+ --------------
+Train loss: 1.9621312525117673e-07
+Test  loss: 2.2273218698305884e-07
+
+ Epoch 61 
+ --------------
+Train loss: 1.9593207215962138e-07
+Test  loss: 2.2245757119395122e-07
+
+ Epoch 62 
+ --------------
+Train loss: 1.9598462177015107e-07
+Test  loss: 2.225145924187538e-07
+
+ Epoch 63 
+ --------------
+Train loss: 1.9582422061432682e-07
+Test  loss: 2.2236709785551003e-07
+
+ Epoch 64 
+ --------------
+Train loss: 1.9572253488888693e-07
+Test  loss: 2.222734705245597e-07
+
+ Epoch 65 
+ --------------
+Train loss: 1.956699848776111e-07
+Test  loss: 2.2223091390676307e-07
+
+ Epoch 66 
+ --------------
+Train loss: 1.9559418296353216e-07
+Test  loss: 2.2216667892521197e-07
+
+ Epoch 67 
+ --------------
+Train loss: 1.954540594411469e-07
+Test  loss: 2.2202907079230072e-07
+
+ Epoch 68 
+ --------------
+Train loss: 1.9542050256262655e-07
+Test  loss: 2.2200844940059256e-07
+
+ Epoch 69 
+ --------------
+Train loss: 1.9532240496431542e-07
+Test  loss: 2.219216380700155e-07
+
+ Epoch 70 
+ --------------
+Train loss: 1.9519927132591875e-07
+Test  loss: 2.2180345509720026e-07
+
+ Epoch 71 
+ --------------
+Train loss: 1.9523492435666866e-07
+Test  loss: 2.218467495443898e-07
+
+ Epoch 72 
+ --------------
+Train loss: 1.9505024832824347e-07
+Test  loss: 2.2166755336785557e-07
+
+ Epoch 73 
+ --------------
+Train loss: 1.9499499163941893e-07
+Test  loss: 2.2162356803703598e-07
+
+ Epoch 74 
+ --------------
+Train loss: 1.948570228464064e-07
+Test  loss: 2.2148828627325403e-07
+
+ Epoch 75 
+ --------------
+Train loss: 1.9478197239237717e-07
+Test  loss: 2.2142393568662684e-07
+
+ Epoch 76 
+ --------------
+Train loss: 1.9471837131987967e-07
+Test  loss: 2.213706153225284e-07
+
+ Epoch 77 
+ --------------
+Train loss: 1.9456765159873157e-07
+Test  loss: 2.2122658104565514e-07
+
+ Epoch 78 
+ --------------
+Train loss: 1.945059797563431e-07
+Test  loss: 2.2117169794155894e-07
+
+ Epoch 79 
+ --------------
+Train loss: 1.9441072459329688e-07
+Test  loss: 2.2108453803642256e-07
+
+ Epoch 80 
+ --------------
+Train loss: 1.9432499113491986e-07
+Test  loss: 2.210040342708944e-07
+
+ Epoch 81 
+ --------------
+Train loss: 1.9423659309580898e-07
+Test  loss: 2.209225974583294e-07
+
+ Epoch 82 
+ --------------
+Train loss: 1.9415602490653327e-07
+Test  loss: 2.2084783569534383e-07
+
+ Epoch 83 
+ --------------
+Train loss: 1.940177794139686e-07
+Test  loss: 2.207171403373644e-07
+
+ Epoch 84 
+ --------------
+Train loss: 1.9395996479545375e-07
+Test  loss: 2.206724509563082e-07
+
+ Epoch 85 
+ --------------
+Train loss: 1.9394355745561144e-07
+Test  loss: 2.2066044706322098e-07
+
+ Epoch 86 
+ --------------
+Train loss: 1.9382298161048085e-07
+Test  loss: 2.2054330268595537e-07
+
+ Epoch 87 
+ --------------
+Train loss: 1.9374470253410435e-07
+Test  loss: 2.2047457676785015e-07
+
+ Epoch 88 
+ --------------
+Train loss: 1.9357877770289634e-07
+Test  loss: 2.203143253518792e-07
+
+ Epoch 89 
+ --------------
+Train loss: 1.9361005031015567e-07
+Test  loss: 2.2034832508284736e-07
+
+ Epoch 90 
+ --------------
+Train loss: 1.9348146781652532e-07
+Test  loss: 2.2022537540117276e-07
+
+ Epoch 91 
+ --------------
+Train loss: 1.9330829946682116e-07
+Test  loss: 2.2005819789610657e-07
+
+ Epoch 92 
+ --------------
+Train loss: 1.9333366986700185e-07
+Test  loss: 2.2009321439556875e-07
+
+ Epoch 93 
+ --------------
+Train loss: 1.932688230837698e-07
+Test  loss: 2.200346457653249e-07
+
+ Epoch 94 
+ --------------
+Train loss: 1.9308100759189983e-07
+Test  loss: 2.198511980120642e-07
+
+ Epoch 95 
+ --------------
+Train loss: 1.9309350264080649e-07
+Test  loss: 2.1986857403955362e-07
+
+ Epoch 96 
+ --------------
+Train loss: 1.9300240981579008e-07
+Test  loss: 2.1979178495966654e-07
+
+ Epoch 97 
+ --------------
+Train loss: 1.9283692377456418e-07
+Test  loss: 2.196278573590283e-07
+
+ Epoch 98 
+ --------------
+Train loss: 1.9283098016416033e-07
+Test  loss: 2.1962849570108767e-07
+
+ Epoch 99 
+ --------------
+Train loss: 1.926414358877082e-07
+Test  loss: 2.1944087506427602e-07
+Retrained 61/100. Performance is 2.2750149369419057e-07
+======== Pruning iteration 62/100 ========
+Pruned 62/100. Performance is 1.8638483932081374e-07
+======== Pruning iteration 63/100 ========
+Pruned 63/100. Performance is 2.4757394616249327e-07
+======== Pruning iteration 64/100 ========
+Pruned 64/100. Performance is 4.806446293021679e-07
+======== Pruning iteration 65/100 ========
+Pruned 65/100. Performance is 6.801735910689385e-07
+======== Pruning iteration 66/100 ========
+Pruned 66/100. Performance is 8.457406791401541e-07
+======== Pruning iteration 67/100 ========
+Pruned 67/100. Performance is 1.217204950048745e-06
+Performance dropped too much, retraining the model.
+Training the model for 100 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 2.5913952266591876e-07
+Test  loss: 2.494196260304982e-07
+
+ Epoch 1 
+ --------------
+Train loss: 2.3514542062343935e-07
+Test  loss: 2.2390067925653493e-07
+
+ Epoch 2 
+ --------------
+Train loss: 2.3544461860467437e-07
+Test  loss: 2.2402177503459743e-07
+
+ Epoch 3 
+ --------------
+Train loss: 2.390231969911838e-07
+Test  loss: 2.278379042718443e-07
+
+ Epoch 4 
+ --------------
+Train loss: 2.4171901817453543e-07
+Test  loss: 2.307601072753807e-07
+
+ Epoch 5 
+ --------------
+Train loss: 2.4355874395496356e-07
+Test  loss: 2.328113424982367e-07
+
+ Epoch 6 
+ --------------
+Train loss: 2.4501818313069637e-07
+Test  loss: 2.3440917965226966e-07
+
+ Epoch 7 
+ --------------
+Train loss: 2.458281144953389e-07
+Test  loss: 2.353087710227814e-07
+
+ Epoch 8 
+ --------------
+Train loss: 2.467178431373895e-07
+Test  loss: 2.3624376595693794e-07
+
+ Epoch 9 
+ --------------
+Train loss: 2.467277450961092e-07
+Test  loss: 2.3630674527553876e-07
+
+ Epoch 10 
+ --------------
+Adapting learning rate to 2.5e-06
+Train loss: 2.4751584528814875e-07
+Test  loss: 2.3712516131548235e-07
+
+ Epoch 11 
+ --------------
+Train loss: 2.4672440995914256e-07
+Test  loss: 2.363022868355318e-07
+
+ Epoch 12 
+ --------------
+Train loss: 2.462376112163156e-07
+Test  loss: 2.3577145784880128e-07
+
+ Epoch 13 
+ --------------
+Train loss: 2.4531343496221326e-07
+Test  loss: 2.3483256937881375e-07
+
+ Epoch 14 
+ --------------
+Train loss: 2.4528644707118017e-07
+Test  loss: 2.3478846985038291e-07
+
+ Epoch 15 
+ --------------
+Train loss: 2.4442040427175014e-07
+Test  loss: 2.338788463315252e-07
+
+ Epoch 16 
+ --------------
+Train loss: 2.440301654900168e-07
+Test  loss: 2.3349854775295436e-07
+
+ Epoch 17 
+ --------------
+Train loss: 2.425144881925689e-07
+Test  loss: 2.319619794731695e-07
+
+ Epoch 18 
+ --------------
+Train loss: 2.4184501426134373e-07
+Test  loss: 2.3130382153465488e-07
+
+ Epoch 19 
+ --------------
+Train loss: 2.4113240917102987e-07
+Test  loss: 2.3057669663833e-07
+
+ Epoch 20 
+ --------------
+Train loss: 2.4011753808963475e-07
+Test  loss: 2.2955742913371086e-07
+
+ Epoch 21 
+ --------------
+Train loss: 2.394712114735853e-07
+Test  loss: 2.2891205667394226e-07
+
+ Epoch 22 
+ --------------
+Train loss: 2.3799607691898926e-07
+Test  loss: 2.2743117615952555e-07
+
+ Epoch 23 
+ --------------
+Train loss: 2.3764185021235562e-07
+Test  loss: 2.2709148327654444e-07
+
+ Epoch 24 
+ --------------
+Train loss: 2.3658824869414729e-07
+Test  loss: 2.2602552915852862e-07
+
+ Epoch 25 
+ --------------
+Train loss: 2.356981651800538e-07
+Test  loss: 2.2515868237815883e-07
+
+ Epoch 26 
+ --------------
+Train loss: 2.346305077907118e-07
+Test  loss: 2.240982016866119e-07
+
+ Epoch 27 
+ --------------
+Train loss: 2.3369930090666458e-07
+Test  loss: 2.23173741155766e-07
+
+ Epoch 28 
+ --------------
+Train loss: 2.337181972748681e-07
+Test  loss: 2.232139779650356e-07
+
+ Epoch 29 
+ --------------
+Train loss: 2.3242013409827678e-07
+Test  loss: 2.219179117387379e-07
+
+ Epoch 30 
+ --------------
+Train loss: 2.3205428478121348e-07
+Test  loss: 2.2157063164410268e-07
+
+ Epoch 31 
+ --------------
+Train loss: 2.3113298347965382e-07
+Test  loss: 2.2066575132717132e-07
+
+ Epoch 32 
+ --------------
+Train loss: 2.3066281957113688e-07
+Test  loss: 2.20205298845916e-07
+
+ Epoch 33 
+ --------------
+Train loss: 2.2910876601542896e-07
+Test  loss: 2.1867319064061342e-07
+
+ Epoch 34 
+ --------------
+Train loss: 2.288491083959343e-07
+Test  loss: 2.1842904102280257e-07
+
+ Epoch 35 
+ --------------
+Train loss: 2.2834463171932384e-07
+Test  loss: 2.1794387188683925e-07
+
+ Epoch 36 
+ --------------
+Train loss: 2.2754752175586645e-07
+Test  loss: 2.1715433976097053e-07
+
+ Epoch 37 
+ --------------
+Train loss: 2.2747407914209815e-07
+Test  loss: 2.1709330205714779e-07
+
+ Epoch 38 
+ --------------
+Train loss: 2.2642885206352047e-07
+Test  loss: 2.1607178982203558e-07
+
+ Epoch 39 
+ --------------
+Train loss: 2.2651174119232566e-07
+Test  loss: 2.1615988237126528e-07
+
+ Epoch 40 
+ --------------
+Train loss: 2.262365905053798e-07
+Test  loss: 2.158978643970327e-07
+
+ Epoch 41 
+ --------------
+Train loss: 2.249049171339834e-07
+Test  loss: 2.1458653501471367e-07
+
+ Epoch 42 
+ --------------
+Train loss: 2.251267653946343e-07
+Test  loss: 2.1481879031171047e-07
+
+ Epoch 43 
+ --------------
+Train loss: 2.2439752065537277e-07
+Test  loss: 2.1410442189922075e-07
+
+ Epoch 44 
+ --------------
+Train loss: 2.2368958431826513e-07
+Test  loss: 2.1340757851253504e-07
+
+ Epoch 45 
+ --------------
+Train loss: 2.2365480103445634e-07
+Test  loss: 2.1338303208729472e-07
+
+ Epoch 46 
+ --------------
+Train loss: 2.2302760872321413e-07
+Test  loss: 2.1277740885805726e-07
+
+ Epoch 47 
+ --------------
+Train loss: 2.2234915708878588e-07
+Test  loss: 2.1211481235430136e-07
+
+ Epoch 48 
+ --------------
+Train loss: 2.2216905982332946e-07
+Test  loss: 2.1195271119468497e-07
+
+ Epoch 49 
+ --------------
+Train loss: 2.213070822079999e-07
+Test  loss: 2.1110436727631953e-07
+
+ Epoch 50 
+ --------------
+Train loss: 2.2117745496217366e-07
+Test  loss: 2.1098934168981977e-07
+
+ Epoch 51 
+ --------------
+Train loss: 2.2073819295229668e-07
+Test  loss: 2.1055590389014599e-07
+
+ Epoch 52 
+ --------------
+Train loss: 2.1983660289350837e-07
+Test  loss: 2.0968466218162033e-07
+
+ Epoch 53 
+ --------------
+Train loss: 2.1958689100500805e-07
+Test  loss: 2.0944341219109965e-07
+
+ Epoch 54 
+ --------------
+Train loss: 2.185302048332005e-07
+Test  loss: 2.0841628648676655e-07
+
+ Epoch 55 
+ --------------
+Train loss: 2.1892071796685286e-07
+Test  loss: 2.0881225774822622e-07
+
+ Epoch 56 
+ --------------
+Train loss: 2.1822975868275306e-07
+Test  loss: 2.0814227371121566e-07
+
+ Epoch 57 
+ --------------
+Train loss: 2.178623748918085e-07
+Test  loss: 2.077888511221866e-07
+
+ Epoch 58 
+ --------------
+Train loss: 2.176952818160771e-07
+Test  loss: 2.076223745232622e-07
+
+ Epoch 59 
+ --------------
+Train loss: 2.1723071590571409e-07
+Test  loss: 2.071824524365727e-07
+
+ Epoch 60 
+ --------------
+Train loss: 2.167073504111272e-07
+Test  loss: 2.066745675785123e-07
+
+ Epoch 61 
+ --------------
+Train loss: 2.1617207473809685e-07
+Test  loss: 2.061562051038075e-07
+
+ Epoch 62 
+ --------------
+Train loss: 2.157873755379569e-07
+Test  loss: 2.0579002649063945e-07
+
+ Epoch 63 
+ --------------
+Train loss: 2.1592535431693705e-07
+Test  loss: 2.0592381578551115e-07
+
+ Epoch 64 
+ --------------
+Train loss: 2.1534145229793467e-07
+Test  loss: 2.0537211458889189e-07
+
+ Epoch 65 
+ --------------
+Train loss: 2.150622099748034e-07
+Test  loss: 2.0509631655769158e-07
+
+ Epoch 66 
+ --------------
+Train loss: 2.148551376919272e-07
+Test  loss: 2.0489977450065687e-07
+
+ Epoch 67 
+ --------------
+Train loss: 2.1484417146098167e-07
+Test  loss: 2.048928594612957e-07
+
+ Epoch 68 
+ --------------
+Train loss: 2.1458800197677875e-07
+Test  loss: 2.046399905249979e-07
+
+ Epoch 69 
+ --------------
+Train loss: 2.1384981117051893e-07
+Test  loss: 2.0393243983816095e-07
+
+ Epoch 70 
+ --------------
+Train loss: 2.133227774592683e-07
+Test  loss: 2.034192964530824e-07
+
+ Epoch 71 
+ --------------
+Train loss: 2.129651415074818e-07
+Test  loss: 2.0307920106920746e-07
+
+ Epoch 72 
+ --------------
+Train loss: 2.1257899401234682e-07
+Test  loss: 2.0271585847499904e-07
+
+ Epoch 73 
+ --------------
+Train loss: 2.1240714253423222e-07
+Test  loss: 2.0255226773518046e-07
+
+ Epoch 74 
+ --------------
+Train loss: 2.1248553778718814e-07
+Test  loss: 2.0262926804829935e-07
+
+ Epoch 75 
+ --------------
+Train loss: 2.116894056058527e-07
+Test  loss: 2.0185968459702072e-07
+
+ Epoch 76 
+ --------------
+Train loss: 2.1147160315706515e-07
+Test  loss: 2.0165637244112747e-07
+
+ Epoch 77 
+ --------------
+Train loss: 2.1131389703015202e-07
+Test  loss: 2.0150917342847514e-07
+
+ Epoch 78 
+ --------------
+Train loss: 2.1102002245640962e-07
+Test  loss: 2.0122659944722176e-07
+
+ Epoch 79 
+ --------------
+Train loss: 2.109051008858387e-07
+Test  loss: 2.0112118701586433e-07
+
+ Epoch 80 
+ --------------
+Train loss: 2.0999935680379167e-07
+Test  loss: 2.0025063159968217e-07
+
+ Epoch 81 
+ --------------
+Train loss: 2.1012797073183264e-07
+Test  loss: 2.0037673787313566e-07
+
+ Epoch 82 
+ --------------
+Train loss: 2.0992934723409462e-07
+Test  loss: 2.001893698195109e-07
+
+ Epoch 83 
+ --------------
+Train loss: 2.0970865559206685e-07
+Test  loss: 1.9997835937574606e-07
+
+ Epoch 84 
+ --------------
+Train loss: 2.0950162143549277e-07
+Test  loss: 1.9978565462972696e-07
+
+ Epoch 85 
+ --------------
+Train loss: 2.091258269899754e-07
+Test  loss: 1.9942494962463616e-07
+
+ Epoch 86 
+ --------------
+Train loss: 2.0893588451400547e-07
+Test  loss: 1.9924333175728103e-07
+
+ Epoch 87 
+ --------------
+Train loss: 2.0828160116508343e-07
+Test  loss: 1.9862109047144999e-07
+
+ Epoch 88 
+ --------------
+Train loss: 2.0849336544159768e-07
+Test  loss: 1.9882386277944666e-07
+
+ Epoch 89 
+ --------------
+Train loss: 2.078369234141064e-07
+Test  loss: 1.9820276953090741e-07
+
+ Epoch 90 
+ --------------
+Train loss: 2.079376202431149e-07
+Test  loss: 1.9829657039432763e-07
+
+ Epoch 91 
+ --------------
+Train loss: 2.0775936897052817e-07
+Test  loss: 1.9812834246079165e-07
+
+ Epoch 92 
+ --------------
+Train loss: 2.0762275176622325e-07
+Test  loss: 1.9799833320219684e-07
+
+ Epoch 93 
+ --------------
+Train loss: 2.070615148085153e-07
+Test  loss: 1.9746428860664342e-07
+
+ Epoch 94 
+ --------------
+Train loss: 2.06833759538938e-07
+Test  loss: 1.972513459520088e-07
+
+ Epoch 95 
+ --------------
+Train loss: 2.0641881361740388e-07
+Test  loss: 1.9685544333851184e-07
+
+ Epoch 96 
+ --------------
+Train loss: 2.0641243345096428e-07
+Test  loss: 1.968541031028152e-07
+
+ Epoch 97 
+ --------------
+Train loss: 2.061373987444881e-07
+Test  loss: 1.9659122536619708e-07
+
+ Epoch 98 
+ --------------
+Train loss: 2.0551820055203507e-07
+Test  loss: 1.9600855131661245e-07
+
+ Epoch 99 
+ --------------
+Train loss: 2.0575828808659935e-07
+Test  loss: 1.9623596870859476e-07
+Retrained 67/100. Performance is 2.088766610587178e-07
+======== Pruning iteration 68/100 ========
+Pruned 68/100. Performance is 5.295840561337165e-07
+======== Pruning iteration 69/100 ========
+Pruned 69/100. Performance is 1.0524595276013035e-06
+Performance dropped too much, retraining the model.
+Training the model for 100 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 3.4506823508593245e-07
+Test  loss: 2.944992741258495e-07
+
+ Epoch 1 
+ --------------
+Train loss: 3.103722058312997e-07
+Test  loss: 2.6295943062217346e-07
+
+ Epoch 2 
+ --------------
+Train loss: 2.93957735073036e-07
+Test  loss: 2.486252851080311e-07
+
+ Epoch 3 
+ --------------
+Train loss: 2.8404915016722044e-07
+Test  loss: 2.4023274530469637e-07
+
+ Epoch 4 
+ --------------
+Train loss: 2.769856407581983e-07
+Test  loss: 2.3438079593303952e-07
+
+ Epoch 5 
+ --------------
+Train loss: 2.714815568367612e-07
+Test  loss: 2.299221438869617e-07
+
+ Epoch 6 
+ --------------
+Train loss: 2.6707665031722173e-07
+Test  loss: 2.2641647415304568e-07
+
+ Epoch 7 
+ --------------
+Train loss: 2.6345154212492616e-07
+Test  loss: 2.2358460368471347e-07
+
+ Epoch 8 
+ --------------
+Train loss: 2.605446363389774e-07
+Test  loss: 2.213701756146204e-07
+
+ Epoch 9 
+ --------------
+Train loss: 2.580601272200056e-07
+Test  loss: 2.19509418000601e-07
+
+ Epoch 10 
+ --------------
+Train loss: 2.559345302984184e-07
+Test  loss: 2.17929013320208e-07
+
+ Epoch 11 
+ --------------
+Train loss: 2.5409205872506393e-07
+Test  loss: 2.1658553280416347e-07
+
+ Epoch 12 
+ --------------
+Train loss: 2.5248749234663136e-07
+Test  loss: 2.154249434344359e-07
+
+ Epoch 13 
+ --------------
+Train loss: 2.516083661845414e-07
+Test  loss: 2.1499008891924197e-07
+
+ Epoch 14 
+ --------------
+Train loss: 2.5094211405303214e-07
+Test  loss: 2.1472007619850454e-07
+
+ Epoch 15 
+ --------------
+Train loss: 2.5070953129784356e-07
+Test  loss: 2.1483067928075296e-07
+
+ Epoch 16 
+ --------------
+Train loss: 2.5073629965390864e-07
+Test  loss: 2.1514933311250867e-07
+
+ Epoch 17 
+ --------------
+Train loss: 2.5044146341031136e-07
+Test  loss: 2.1509246601645703e-07
+
+ Epoch 18 
+ --------------
+Train loss: 2.5014660151327915e-07
+Test  loss: 2.1501080980963418e-07
+
+ Epoch 19 
+ --------------
+Train loss: 2.499718107941362e-07
+Test  loss: 2.1503038537550962e-07
+
+ Epoch 20 
+ --------------
+Train loss: 2.4946500237774673e-07
+Test  loss: 2.1467603691864943e-07
+
+ Epoch 21 
+ --------------
+Train loss: 2.4908790151130236e-07
+Test  loss: 2.1445610348828935e-07
+
+ Epoch 22 
+ --------------
+Train loss: 2.4868818140646454e-07
+Test  loss: 2.1420200573302805e-07
+
+ Epoch 23 
+ --------------
+Train loss: 2.482410033053384e-07
+Test  loss: 2.1388887181948315e-07
+
+ Epoch 24 
+ --------------
+Train loss: 2.478920856987088e-07
+Test  loss: 2.1366464965078452e-07
+
+ Epoch 25 
+ --------------
+Train loss: 2.474273977412622e-07
+Test  loss: 2.133137377350009e-07
+
+ Epoch 26 
+ --------------
+Train loss: 2.471641831846227e-07
+Test  loss: 2.1316081259351233e-07
+
+ Epoch 27 
+ --------------
+Train loss: 2.4683020794498135e-07
+Test  loss: 2.129272454825283e-07
+
+ Epoch 28 
+ --------------
+Train loss: 2.465513131824082e-07
+Test  loss: 2.1274723851543973e-07
+
+ Epoch 29 
+ --------------
+Train loss: 2.462437941687767e-07
+Test  loss: 2.125265664838512e-07
+
+ Epoch 30 
+ --------------
+Train loss: 2.459948291004821e-07
+Test  loss: 2.1237908055835536e-07
+
+ Epoch 31 
+ --------------
+Train loss: 2.457583021737264e-07
+Test  loss: 2.1222939181417239e-07
+
+ Epoch 32 
+ --------------
+Train loss: 2.4539755381454143e-07
+Test  loss: 2.1194601722378377e-07
+
+ Epoch 33 
+ --------------
+Train loss: 2.4511356982657163e-07
+Test  loss: 2.117396688711084e-07
+
+ Epoch 34 
+ --------------
+Train loss: 2.4510599608049686e-07
+Test  loss: 2.1181260730879065e-07
+
+ Epoch 35 
+ --------------
+Train loss: 2.446037647246158e-07
+Test  loss: 2.1137548761513657e-07
+
+ Epoch 36 
+ --------------
+Train loss: 2.445207471083677e-07
+Test  loss: 2.113689436073444e-07
+
+ Epoch 37 
+ --------------
+Train loss: 2.4429399286987065e-07
+Test  loss: 2.1120732603108241e-07
+
+ Epoch 38 
+ --------------
+Train loss: 2.4435410238083935e-07
+Test  loss: 2.1134304486945104e-07
+
+ Epoch 39 
+ --------------
+Train loss: 2.439709714337823e-07
+Test  loss: 2.1101964231941482e-07
+
+ Epoch 40 
+ --------------
+Train loss: 2.437813236497277e-07
+Test  loss: 2.1088733601576673e-07
+
+ Epoch 41 
+ --------------
+Train loss: 2.437257073751198e-07
+Test  loss: 2.1089479535242945e-07
+
+ Epoch 42 
+ --------------
+Train loss: 2.434424763265497e-07
+Test  loss: 2.1066543504035893e-07
+
+ Epoch 43 
+ --------------
+Train loss: 2.4337172401658337e-07
+Test  loss: 2.1066158532889698e-07
+
+ Epoch 44 
+ --------------
+Train loss: 2.433962452414562e-07
+Test  loss: 2.1073637208573404e-07
+
+ Epoch 45 
+ --------------
+Train loss: 2.431186998762769e-07
+Test  loss: 2.1051537962888303e-07
+
+ Epoch 46 
+ --------------
+Train loss: 2.4287329424055316e-07
+Test  loss: 2.103190566709925e-07
+
+ Epoch 47 
+ --------------
+Train loss: 2.4280796319828825e-07
+Test  loss: 2.103003176159564e-07
+
+ Epoch 48 
+ --------------
+Train loss: 2.4279946306080547e-07
+Test  loss: 2.1035289934477482e-07
+
+ Epoch 49 
+ --------------
+Train loss: 2.426924198374536e-07
+Test  loss: 2.1029155928004686e-07
+
+ Epoch 50 
+ --------------
+Train loss: 2.427289856910875e-07
+Test  loss: 2.1038317591126124e-07
+
+ Epoch 51 
+ --------------
+Train loss: 2.424798433651176e-07
+Test  loss: 2.1017403705522325e-07
+
+ Epoch 52 
+ --------------
+Train loss: 2.4247473108403026e-07
+Test  loss: 2.102274401759844e-07
+
+ Epoch 53 
+ --------------
+Train loss: 2.42360304508793e-07
+Test  loss: 2.1015138129793883e-07
+
+ Epoch 54 
+ --------------
+Train loss: 2.42380998284375e-07
+Test  loss: 2.1021877271236146e-07
+
+ Epoch 55 
+ --------------
+Train loss: 2.422060809465165e-07
+Test  loss: 2.100898172646923e-07
+
+ Epoch 56 
+ --------------
+Train loss: 2.4225602280694147e-07
+Test  loss: 2.1018922537157157e-07
+
+ Epoch 57 
+ --------------
+Train loss: 2.4226981244055424e-07
+Test  loss: 2.1025119840956155e-07
+
+ Epoch 58 
+ --------------
+Train loss: 2.4235307058688707e-07
+Test  loss: 2.1037651839823972e-07
+
+ Epoch 59 
+ --------------
+Train loss: 2.4205283835101453e-07
+Test  loss: 2.1010772403128365e-07
+
+ Epoch 60 
+ --------------
+Train loss: 2.421813495431024e-07
+Test  loss: 2.1028834769498434e-07
+
+ Epoch 61 
+ --------------
+Train loss: 2.420381368864355e-07
+Test  loss: 2.1018584897691603e-07
+
+ Epoch 62 
+ --------------
+Train loss: 2.4212743865632547e-07
+Test  loss: 2.1031691455490205e-07
+
+ Epoch 63 
+ --------------
+Train loss: 2.420498427966322e-07
+Test  loss: 2.1027286124580062e-07
+
+ Epoch 64 
+ --------------
+Adapting learning rate to 2.5e-06
+Train loss: 2.421782800240635e-07
+Test  loss: 2.1045124694959517e-07
+
+ Epoch 65 
+ --------------
+Train loss: 2.418237837304105e-07
+Test  loss: 2.1012993766299868e-07
+
+ Epoch 66 
+ --------------
+Train loss: 2.4212949982995723e-07
+Test  loss: 2.104800847237943e-07
+
+ Epoch 67 
+ --------------
+Train loss: 2.4201826427940885e-07
+Test  loss: 2.1040457166969563e-07
+
+ Epoch 68 
+ --------------
+Train loss: 2.4197657121476367e-07
+Test  loss: 2.1040212270356812e-07
+
+ Epoch 69 
+ --------------
+Train loss: 2.422036094600344e-07
+Test  loss: 2.106715872053983e-07
+
+ Epoch 70 
+ --------------
+Train loss: 2.4206988687183185e-07
+Test  loss: 2.1057084454943438e-07
+
+ Epoch 71 
+ --------------
+Train loss: 2.4187103438748637e-07
+Test  loss: 2.1040426257225507e-07
+
+ Epoch 72 
+ --------------
+Train loss: 2.4183441293814665e-07
+Test  loss: 2.1040650455024633e-07
+
+ Epoch 73 
+ --------------
+Train loss: 2.417177655473779e-07
+Test  loss: 2.1032361247578523e-07
+
+ Epoch 74 
+ --------------
+Train loss: 2.419501879643349e-07
+Test  loss: 2.1059205000500123e-07
+
+ Epoch 75 
+ --------------
+Train loss: 2.419655730506065e-07
+Test  loss: 2.106514202091748e-07
+
+ Epoch 76 
+ --------------
+Train loss: 2.417641523180691e-07
+Test  loss: 2.10476947484657e-07
+
+ Epoch 77 
+ --------------
+Adapting learning rate to 2.5e-06
+Train loss: 2.418706154173833e-07
+Test  loss: 2.1062108121481223e-07
+
+ Epoch 78 
+ --------------
+Train loss: 2.417318255140799e-07
+Test  loss: 2.1051256808165087e-07
+
+ Epoch 79 
+ --------------
+Train loss: 2.4183177913243983e-07
+Test  loss: 2.106436910705819e-07
+
+ Epoch 80 
+ --------------
+Train loss: 2.416751912022619e-07
+Test  loss: 2.1052279989704582e-07
+
+ Epoch 81 
+ --------------
+Train loss: 2.4179857192905275e-07
+Test  loss: 2.1068487169853464e-07
+
+ Epoch 82 
+ --------------
+Train loss: 2.4172403340969595e-07
+Test  loss: 2.1063779676672256e-07
+
+ Epoch 83 
+ --------------
+Train loss: 2.4175833796107325e-07
+Test  loss: 2.1070586210709399e-07
+
+ Epoch 84 
+ --------------
+Train loss: 2.4168943675419994e-07
+Test  loss: 2.1066401652010556e-07
+
+ Epoch 85 
+ --------------
+Train loss: 2.4178032790018734e-07
+Test  loss: 2.107965909231054e-07
+
+ Epoch 86 
+ --------------
+Train loss: 2.4157264363680045e-07
+Test  loss: 2.1061491910671475e-07
+
+ Epoch 87 
+ --------------
+Train loss: 2.4155163562227243e-07
+Test  loss: 2.1062281784482136e-07
+
+ Epoch 88 
+ --------------
+Train loss: 2.418325210328476e-07
+Test  loss: 2.1094115354412026e-07
+
+ Epoch 89 
+ --------------
+Train loss: 2.4173273249630254e-07
+Test  loss: 2.1087147808666835e-07
+
+ Epoch 90 
+ --------------
+Train loss: 2.4169974145706873e-07
+Test  loss: 2.108693598293771e-07
+
+ Epoch 91 
+ --------------
+Adapting learning rate to 2.5e-06
+Train loss: 2.4173066393018416e-07
+Test  loss: 2.109289727531331e-07
+
+ Epoch 92 
+ --------------
+Train loss: 2.4178148625537686e-07
+Test  loss: 2.11012908939498e-07
+
+ Epoch 93 
+ --------------
+Train loss: 2.4192249651378005e-07
+Test  loss: 2.1119073967082414e-07
+
+ Epoch 94 
+ --------------
+Train loss: 2.4176305481375946e-07
+Test  loss: 2.1105618401134488e-07
+
+ Epoch 95 
+ --------------
+Train loss: 2.418356261273402e-07
+Test  loss: 2.1115589243035996e-07
+
+ Epoch 96 
+ --------------
+Train loss: 2.419674858202825e-07
+Test  loss: 2.1132229384342043e-07
+
+ Epoch 97 
+ --------------
+Train loss: 2.416471542886711e-07
+Test  loss: 2.1102622843764705e-07
+
+ Epoch 98 
+ --------------
+Train loss: 2.41790283962473e-07
+Test  loss: 2.1120076515641316e-07
+
+ Epoch 99 
+ --------------
+Train loss: 2.4188845643209333e-07
+Test  loss: 2.1133291815989848e-07
+Retrained 69/100. Performance is 2.2831110480759416e-07
+======== Pruning iteration 70/100 ========
