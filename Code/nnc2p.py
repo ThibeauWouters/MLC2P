@@ -316,6 +316,7 @@ class Trainer:
         self.test_dataloader = test_dataloader
         self.model = model
         self.loss_fn = loss_fn
+        self.learning_rate = learning_rate
         self.optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
         # For list arguments, make sure that empty list is initialized as default
         if train_losses is None:
@@ -382,11 +383,11 @@ class Trainer:
                 if current / previous >= adaptation_threshold:
                     # Reset counter (note: will increment later, so set to -1 st it becomes 0)
                     counter = -1
-                    old_learning_rate = self.optimizer.param_groups[-1]['lr']
-                    learning_rate = adaptation_multiplier * old_learning_rate
-                    write_to_txt(log_file, f"Adapting learning rate to {learning_rate}")
+                    self.learning_rate = adaptation_multiplier * self.learning_rate
+                    write_to_txt(log_file, f"Adapting learning rate to {self.learning_rate}")
                     # Change optimizer
-                    optimizer = torch.optim.Adam(self.model.parameters(), lr=learning_rate)
+                    optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate)
+                    self.optimizer = optimizer
                     # Add the epoch time for plotting later on
                     self.adaptation_indices.append(epoch_counter)
 
@@ -475,7 +476,7 @@ def measure_performance(model: NeuralNetwork, test_data: CustomDataset = TEST_DA
     delta_p_linfty = linfty_norm(p_hat, p)
 
     if verbose:
-        print("Errors: %e  with L1, %e  with L2 and %e with Linfty" % (delta_p_l1, delta_p_l1, delta_p_linfty))
+        print("Errors: %e  with L1, %e  with L2 and %e with Linfty" % (delta_p_l1, delta_p_l2, delta_p_linfty))
 
     return delta_p_l1, delta_p_l2, delta_p_linfty
 
@@ -493,7 +494,7 @@ def measure_performance_size(model: NeuralNetwork, size_test_data: int = 1000, v
 
     # Generate test data of specified size using physics package
 
-    test_data = data.CustomDataset(physics.generate_data_as_df(size_test_data))
+    test_data = data.CustomDataset(physics.generate_data_as_df(number_of_points=size_test_data))
     # Measure performance on this test data
     return measure_performance(model, test_data, verbose=verbose)
 
@@ -608,7 +609,7 @@ def prune(old_model: NeuralNetwork, layer_index: int, neuron_index: int) -> Neur
     return new_model
 
 
-def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int = 1000, verbose=True) -> tuple[int, int, float, dict]:
+def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int = 2000, verbose=True) -> tuple[int, int, float, dict]:
     """
     Finds the optimal neuron to prune, that is, the neuron which after pruning this neuron from the current model,
     gives the model which has the best performance over all pruned models.
@@ -630,7 +631,7 @@ def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int
     values_dict = {'layer_index': [], 'neuron_index': [], 'l1_norm': [], 'l2_norm': [], 'linfty_norm': []}
 
     # Get the validation set to compare performances, 1000 datapoints are tested
-    validation_data = data.create_customdataset(physics.generate_data_as_df(validation_data_size))
+    validation_data = data.CustomDataset(physics.generate_data_as_df(validation_data_size))
 
     # Start form an existing model
     current_model = model
@@ -671,8 +672,8 @@ def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int
     return best_layer_index, best_neuron_index, best_performance, values_dict
 
 
-def hill_climbing_pruning(model, max_pruning_number, validation_data_size: int = 1000, train_data_size: int = 40000,
-                          test_data_size: int = 10000, l2_threshold: float = 1e-6, nb_of_train_epochs: int = 100):
+def hill_climbing_pruning(model, max_pruning_number, lr: float = 1e-6, validation_data_size: int = 1000, train_data_size: int = 40000,
+                          test_data_size: int = 10000, l2_threshold: float = 4e-7, nb_of_train_epochs: int = 100):
 
     # Prepare everything for saving progress: make directory, create empty txt file for logging
     identifier = generate_time_identifier()
@@ -702,21 +703,24 @@ def hill_climbing_pruning(model, max_pruning_number, validation_data_size: int =
         # Next iteration of pruning to do
         write_to_txt(txt_file, f"======== Pruning iteration {counter}/{max_pruning_number} ========")
         # Find best neuron to prune
-        best_layer_index, best_neuron_index, best_performance, values_dict = find_optimal_neuron_to_prune(model, validation_data_size=validation_data_size)
+        best_layer_index, best_neuron_index, _, values_dict = find_optimal_neuron_to_prune(model, validation_data_size=validation_data_size)
         # Prune that neuron
         model = prune(model, best_layer_index, best_neuron_index)
-
+        # Test the performance on a larger dataset to have a statistically more accurate measure of its performance before
+        # we decide to retrain this model
+        _, best_performance, _ = measure_performance_size(model, size_test_data=10000, verbose=True)
         # Show progress and save to the txt log file
         write_to_txt(txt_file, f"Pruned {counter}/{max_pruning_number}. Performance is {best_performance}")
         write_to_csv(csv_file, [counter, best_layer_index, best_neuron_index, best_performance])
-        # If the model is too bad after pruning, retrain it
         if best_performance > l2_threshold:
-            write_to_txt(txt_file, "Performance dropped too much, retraining the model.")
+            # If the model is too bad after pruning, retrain it
+
+            write_to_txt(txt_file, f"Performance dropped too much, retraining the model for {nb_of_train_epochs} epochs.")
             # Generate training data
             train_dataloader = data.generate_dataloader(train_data_size)
             test_dataloader = data.generate_dataloader(test_data_size)
             # Create trainer object and train it
-            trainer = Trainer(train_dataloader, test_dataloader, model, learning_rate=5e-6)
+            trainer = Trainer(model, lr, train_dataloader, test_dataloader)
             trainer.train(number_of_epochs=nb_of_train_epochs, log_file=txt_file)
             # After retraining, get the performance again (the L2 norm, so second return argument)
             _, best_performance, _ = measure_performance_size(model)

@@ -1,0 +1,12 @@
+======== Pruning iteration 1/100 ========
+Pruned 1/100. Performance is 8.377130427073205e-07
+Performance dropped too much, retraining the model for 100 epochs.
+Training the model for 100 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 1.814520183685886e-07
+Test  loss: 1.7504067772798123e-07
+
+ Epoch 1 
+ --------------
