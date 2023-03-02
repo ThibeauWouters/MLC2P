@@ -345,11 +345,20 @@ class Trainer:
     #     self.trained = trainer.trained
 
     def train(self, adaptation_threshold=0.9995, adaptation_multiplier=0.5, number_of_epochs: int = 500,
-              log_file: str = "log.txt"):
+              log_file: str = "train_log.txt", csv_file: str = "train_log.csv"):
 
         # TODO - write doc
 
+        # Initialize txt log file
         write_to_txt(log_file, f"Training the model for {number_of_epochs} epochs.")
+
+        # Initialize csv file
+        header = ['epoch', 'train_loss', 'test_loss', 'learning_rate']
+        # Open the filename and write the data to it
+        with open(csv_file, 'a', newline='') as file:
+            writer = csv.writer(file)
+            # Write header
+            writer.writerow(header)
 
         # Initialize a few auxiliary variables
         epoch_counter = 0  # epoch counter for this training session
@@ -365,6 +374,7 @@ class Trainer:
         # Keep on continuing the training until we hit max number of epochs
         while epoch_counter < number_of_epochs:
             write_to_txt(log_file, f"\n Epoch {epoch_counter} \n --------------")
+            # Train the network
             train_loop(self.train_dataloader, self.model, self.loss_fn, self.optimizer)
             # Test on the training data
             average_train_loss = test_loop(self.train_dataloader, self.model, self.loss_fn)
@@ -394,6 +404,8 @@ class Trainer:
             # Report progress:
             write_to_txt(log_file, f"Train loss: {average_train_loss}")
             write_to_txt(log_file, f"Test  loss: {average_test_loss}")
+            # Save progress in CSV
+            write_to_csv(csv_file, [epoch_counter, average_train_loss, average_test_loss, self.learning_rate])
 
             # Another epoch passed - increment counter
             counter += 1
@@ -441,7 +453,7 @@ def l2_norm(predictions, y):
     :param y: Actual values
     :return: L_infinity norm between predictions and y
     """
-    return sum(abs(predictions - y)**2)/len(predictions)
+    return np.mean(abs(predictions - y)**2)
 
 
 def measure_performance(model: NeuralNetwork, test_data: CustomDataset = TEST_DATA, verbose=False):
@@ -617,8 +629,8 @@ def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int
     :param model: Current model which we wish to prune
     :param validation_data_size: Number of data points to be used in the validation set.
     :param verbose: Boolean indicating whether or not we wish to print the progress.
-    :return: best_layer_index, best_neuron_index: The layer and neuron index of the neuron that gives best model
-    after pruning.
+    :return: best_layer_index, best_neuron_index, best_performance, values_dict: The layer and neuron index of the neuron
+     that gives best model after pruning and its performance after pruning. Values dict is useful for plotting this function.
     """
     # Initialize the return values
     best_layer_index  = 0
@@ -665,9 +677,9 @@ def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int
             # Save results
             values_dict['layer_index'].append(layer_index)
             values_dict['neuron_index'].append(neuron_index)
-            values_dict['l1_norm'].append(l1_norm)
-            values_dict['l2_norm'].append(l2_norm)
-            values_dict['linfty_norm'].append(linfty_norm)
+            values_dict['l1_norm'].append(l1)
+            values_dict['l2_norm'].append(l2)
+            values_dict['linfty_norm'].append(linfty)
 
     return best_layer_index, best_neuron_index, best_performance, values_dict
 
@@ -721,7 +733,10 @@ def hill_climbing_pruning(model, max_pruning_number, lr: float = 1e-6, validatio
             test_dataloader = data.generate_dataloader(test_data_size)
             # Create trainer object and train it
             trainer = Trainer(model, lr, train_dataloader, test_dataloader)
-            trainer.train(number_of_epochs=nb_of_train_epochs, log_file=txt_file)
+            # Specify where we log the training procedure for this model
+            train_txt = os.path.join(save_dir, "training_log" + str(counter) + ".txt")
+            train_csv = os.path.join(save_dir, "training_log" + str(counter) + ".csv")
+            trainer.train(number_of_epochs=nb_of_train_epochs, log_file=train_txt, csv_file=train_csv)
             # After retraining, get the performance again (the L2 norm, so second return argument)
             _, best_performance, _ = measure_performance_size(model)
             write_to_txt(txt_file, f"Retrained {counter}/{max_pruning_number}. Performance is {best_performance}")
@@ -738,7 +753,6 @@ def hill_climbing_pruning(model, max_pruning_number, lr: float = 1e-6, validatio
 
     return model
 
-
-
-
-
+###################
+# POST-PROCESSING #
+###################

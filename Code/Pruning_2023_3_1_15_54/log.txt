@@ -1,3 +1,0 @@
-======== Pruning iteration 1/100 ========
-Pruned 1/100. Performance is 6.283507246906185e-07
-======== Pruning iteration 2/100 ========
