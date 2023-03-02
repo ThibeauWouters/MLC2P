@@ -12,6 +12,9 @@ import data
 import physics
 from data import CustomDataset
 from datetime import datetime
+# Get appropriate directories
+cwd = os.getcwd()  # "Code" folder
+master_dir = os.path.abspath(os.path.join(cwd, ".."))  # master directory of this repo
 
 #####################
 # AUXILIARY METHODS #
@@ -61,7 +64,7 @@ def write_to_csv(csv_file, row):
     """
     with open(csv_file, 'a', newline='') as file:
         writer = csv.writer(file)
-        # Write header
+        # Write data
         writer.writerow(row)
 
 
@@ -72,8 +75,8 @@ def write_to_csv(csv_file, row):
 # Specify the desired CSV file locations of the "standard" train and test data already saved
 TRAIN_SIZE = 80000
 TEST_SIZE = 10000
-TRAINING_DATA_CSV = data.read_training_data("D:/Coding/master-thesis-AI/data/NNC2P_data_train.csv")
-TEST_DATA_CSV     = data.read_training_data("D:/Coding/master-thesis-AI/data/NNC2P_data_test.csv")
+TRAINING_DATA_CSV = data.read_training_data("D:/Coding/master-thesis-AI/Data/NNC2P_data_train.csv")
+TEST_DATA_CSV     = data.read_training_data("D:/Coding/master-thesis-AI/Data/NNC2P_data_test.csv")
 # Load them as CustomDatasets
 TRAINING_DATA = data.CustomDataset(TRAINING_DATA_CSV)
 TEST_DATA     = data.CustomDataset(TEST_DATA_CSV)
@@ -181,9 +184,10 @@ def get_hidden_sizes_from_state_dict(state_dict):
 
     return h1, h2
 
-def get_number_of_parameters(h1, h2):
 
-    return 3*h1 + h2*h1 + h2 + 1 + h1 + h2
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
 
 def create_nn(state_dict):
     """
@@ -621,7 +625,7 @@ def prune(old_model: NeuralNetwork, layer_index: int, neuron_index: int) -> Neur
     return new_model
 
 
-def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int = 2000, verbose=True) -> tuple[int, int, float, dict]:
+def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int = 1000, verbose=True) -> tuple[int, int, float, dict]:
     """
     Finds the optimal neuron to prune, that is, the neuron which after pruning this neuron from the current model,
     gives the model which has the best performance over all pruned models.
@@ -756,3 +760,39 @@ def hill_climbing_pruning(model, max_pruning_number, lr: float = 1e-6, validatio
 ###################
 # POST-PROCESSING #
 ###################
+
+
+def evaluate_models(models: list, csv_file: str = "performance_models.csv", size_test_data: int = 10000) -> pd.DataFrame:
+    """
+    Evaluates a list of models and saves this evaluation to a specified CSV file and returns it as a Pandas DataFrame.
+    It also specifies the compression ratio, assuming the first element to be the largest model to which we compare
+    subsequent model sizes.
+    :param models: List of neural networks which we wish to evaluate and compare to one another
+    :param csv_file: The location of the CSV file where we wish to save the results
+    :param size_test_data: Size of dataset used to evaluate the performance of the networks.
+    :return: Pandas DataFrame showing the data, for ease of visualization later on in notebooks.
+    """
+    # Initialize CSV file
+    header = ['h1', 'h2', 'N', 'l1', 'l2', 'linfty', 'nb_params', 'compression_ratio']
+    # Open the filename and write the data to it
+    with open(csv_file, 'w', newline='') as file:
+        writer = csv.writer(file)
+        # Write header
+        writer.writerow(header)
+
+    # Dataset to evaluate the models
+    test_data = data.CustomDataset(physics.generate_data_as_df(number_of_points=size_test_data))
+
+    # Go over all models, evaluate performance
+    for i, model in enumerate(models):
+        h1 = model.h1
+        h2 = model.h2
+        N = h1 + h2
+        l1, l2, linfty = measure_performance(model, test_data)
+        nb_params = count_parameters(model)
+        if i == 0:
+            largest = nb_params
+        compression_ratio = nb_params/largest
+        write_to_csv(csv_file, [h1, h2, N, l1, l2, linfty, nb_params, compression_ratio])
+
+    return pd.read_csv(csv_file)
