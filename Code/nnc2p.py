@@ -294,7 +294,7 @@ def test_loop(dataloader: DataLoader, model: NeuralNetwork, loss_fn: Callable) -
 
 class Trainer:
 
-    def __init__(self, model: NeuralNetwork, learning_rate: float, train_dataloader: DataLoader = TRAIN_DATALOADER,
+    def __init__(self, model: nn.Module, learning_rate: float, train_dataloader: DataLoader = TRAIN_DATALOADER,
                  test_dataloader: DataLoader = TEST_DATALOADER, loss_fn: Callable = nn.MSELoss(), train_losses=None,
                  test_losses: list = None, adaptation_indices: list = None) -> None:
         """
@@ -406,8 +406,8 @@ class Trainer:
                     self.adaptation_indices.append(epoch_counter)
 
             # Report progress:
-            write_to_txt(log_file, f"Train loss: {average_train_loss}")
-            write_to_txt(log_file, f"Test  loss: {average_test_loss}")
+            write_to_txt(log_file, "Train loss: %0.2E" % average_train_loss)
+            write_to_txt(log_file, "Test  loss: %0.2E" % average_test_loss)
             # Save progress in CSV
             write_to_csv(csv_file, [epoch_counter, average_train_loss, average_test_loss, self.learning_rate])
 
@@ -762,7 +762,7 @@ def hill_climbing_pruning(model, max_pruning_number, lr: float = 1e-6, validatio
 ###################
 
 
-def evaluate_models(models: list, csv_file: str = "performance_models.csv", size_test_data: int = 10000) -> pd.DataFrame:
+def evaluate_models(models: list, csv_file: str = "performance_models.csv", size_test_data: int = 40000) -> pd.DataFrame:
     """
     Evaluates a list of models and saves this evaluation to a specified CSV file and returns it as a Pandas DataFrame.
     It also specifies the compression ratio, assuming the first element to be the largest model to which we compare
