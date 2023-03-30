@@ -3,20 +3,23 @@
 import physics
 import data
 import pandas as pd
+import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 
 
 def read_training_data(filename: str) -> pd.DataFrame:
     """
-    Reads data from a CSV.
-    Args:
-        filename (str): Location of the data to be read.
-    Returns:
-        pd.DataFrame: Pandas dataframe of the data stored in the CSV.
+    Read data from a given file and create a Pandas DataFrame from it.
+    :param filename: Location of the data to be read.
+    :return: Pandas dataframe of the data stored in the CSV.
     """
 
     return pd.read_csv(filename)
+
+
+# def normalize(x, mean, std):
+#     return (x-mean)/std
 
 
 class CustomDataset(Dataset):
@@ -24,28 +27,40 @@ class CustomDataset(Dataset):
     Custom data set used to represent the C2P training data conveniently for neural network training.
     """
 
-    def __init__(self, all_data: pd.DataFrame, transform=None, target_transform=None):
+    def __init__(self, all_data: pd.DataFrame, feature_names: list = ["D", "S", "tau"], label_names: list = ["p"],
+                 mean: np.array = None, std: np.array = None, normalize = True):
         """
         Initializes the class by separating data into features and labels. See PyTorch tutorial for more information.
         :param all_data: The data of tuples of conserved and primite variables.
-        :param transform: Don't know
-        :param target_transform: Don't know
         """
 
-        # TODO - remove this? Not sure what it does
-        self.transform        = transform
-        self.target_transform = target_transform
+        # Hard copy
+        all_data = all_data.copy()
 
-        # Separate features (D, S, tau) from the labels (p). Initialize empty lists
+        # Get mean and std for normalization of input data later on, in case mean and std are not given
+        if mean is None and std is None:
+            data_as_np_array = np.array([all_data[var] for var in feature_names])
+            mean = np.mean(data_as_np_array, axis=1)
+            std  = np.std(data_as_np_array, axis=1)
+
+        self.mean = mean
+        self.std = std
+
+        # Normalize input data
+        if normalize:
+            for i, var in enumerate(feature_names):
+                all_data[var] = (all_data[var] - self.mean[i])/self.std[i]
+
+        # Separate features E from the label T. Initialize empty lists
         features = []
         labels   = []
 
         for i in range(len(all_data)):
             # Separate the features
-            new_feature = [all_data['D'][i], all_data['S'][i], all_data['tau'][i]]
+            new_feature = [all_data[var][i] for var in feature_names]
             features.append(torch.tensor(new_feature, dtype=torch.float32))
             # Separate the labels
-            new_label = [all_data['p'][i]]
+            new_label = [all_data[var][i] for var in label_names]
             labels.append(torch.tensor(new_label, dtype=torch.float32))
 
         # Save as instance variables to the dataloader
@@ -61,20 +76,17 @@ class CustomDataset(Dataset):
         :param idx: Index used to fetch the item.
         :return: Tuple of feature and its label.
         """
-        # Get the feature
+        # Get the feature, but normalized
         feature = self.features[idx]
-        if self.transform:
-            feature = self.transform(feature)
+
         # Get the label
         label = self.labels[idx]
-        if self.target_transform:
-            feature = self.target_transform(label)
         return feature, label
 
 
-def generate_customdataset(size: int) -> CustomDataset:
+def generate_CustomDataset(size: int) -> CustomDataset:
     """
-    Generates a CustomDataset object of specified size.
+    Generates a CustomDataset object of specified size. Uses ideal gas law.
     :param size: Number of data points in the data set.
     :return: CustomDataset object containing the desired amount of data points.
     """

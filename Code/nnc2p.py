@@ -16,6 +16,24 @@ from datetime import datetime
 cwd = os.getcwd()  # "Code" folder
 master_dir = os.path.abspath(os.path.join(cwd, ".."))  # master directory of this repo
 
+
+##########################
+# LOAD STANDARD DATASETS #
+##########################
+
+# Specify the desired CSV file locations of the "standard" train and test data already saved
+TRAIN_SIZE = 80000
+TEST_SIZE = 10000
+# Standard training and testing datasets: 
+TRAINING_DATA_CSV = data.read_training_data("D:/Coding/master-thesis-AI/Data/ideal_gas_c2p_train_data.csv")
+TEST_DATA_CSV     = data.read_training_data("D:/Coding/master-thesis-AI/Data/ideal_gas_c2p_test_data.csv")
+# Load them as CustomDatasets
+TRAINING_DATA = data.CustomDataset(TRAINING_DATA_CSV)
+TEST_DATA     = data.CustomDataset(TEST_DATA_CSV)
+# Put this data into a DataLoader
+TRAIN_DATALOADER = DataLoader(TRAINING_DATA, batch_size=32)
+TEST_DATALOADER  = DataLoader(TEST_DATA, batch_size=32)
+
 #####################
 # AUXILIARY METHODS #
 #####################
@@ -68,28 +86,11 @@ def write_to_csv(csv_file, row):
         writer.writerow(row)
 
 
-##########################
-# LOAD STANDARD DATASETS #
-##########################
-
-# Specify the desired CSV file locations of the "standard" train and test data already saved
-TRAIN_SIZE = 80000
-TEST_SIZE = 10000
-TRAINING_DATA_CSV = data.read_training_data("D:/Coding/master-thesis-AI/Data/NNC2P_data_train.csv")
-TEST_DATA_CSV     = data.read_training_data("D:/Coding/master-thesis-AI/Data/NNC2P_data_test.csv")
-# Load them as CustomDatasets
-TRAINING_DATA = data.CustomDataset(TRAINING_DATA_CSV)
-TEST_DATA     = data.CustomDataset(TEST_DATA_CSV)
-# Put this data into a DataLoader
-TRAIN_DATALOADER = DataLoader(TRAINING_DATA, batch_size=32)
-TEST_DATALOADER  = DataLoader(TEST_DATA, batch_size=32)
-
-
 #########################
 # NETWORK ARCHITECTURES #
 #########################
 
-
+### TODO replace by the version defined in the notebooks!
 class NeuralNetwork(nn.Module):
     """
     Implements a two-layered neural network for the C2P conversion. Note that hence the number of layers is fixed
@@ -119,17 +120,6 @@ class NeuralNetwork(nn.Module):
         self.linear2 = nn.Linear(h1, h2)
         self.linear3 = nn.Linear(h2, 1)
 
-        # Network uses sigmoid activation functions. Input has size 3 (D, S, tau) and returns the pressure.
-        # previous code:
-        # self.stack = nn.Sequential(
-        #     nn.Linear(3, h1),
-        #     nn.Sigmoid(),
-        #     nn.Linear(h1, h2),
-        #     nn.Sigmoid(),
-        #     nn.Linear(h2, 1)
-        # )
-
-    # TODO - what is input type here?
     def forward(self, x):
         """
         Computes a forward step given the input x.
@@ -205,7 +195,42 @@ def create_nn(state_dict):
 # GENERAL TRAINING ASPECTS #
 ############################
 
+# def torch_mse(y: np.array, y_hat: np.array):  #  -> torch.Tensor
+#     """
+#     Compute the MSE, the mean squared error, between two numpy arrays.
+#     """
 
+#     return 
+
+# TODO fix this!!!
+def c2p_loss(prediction, original_cons):
+    """
+    Loss function which considers the mean squared error between the original conserved variables and the values
+    for the conserved variables obtained by performing the P2C transformation on the prims obtained after the C2P conversion by the neural network.
+    :param: prediction: Parameter returned by the neural network, i.e. the pressure.
+    :param: original_cons: D, S, tau which was the input into the neural network. 
+    """
+
+    # Get the input values as separate variables
+    D_value, S_value, tau_value = original_cons[:, 0], original_cons[:, 1], original_cons[:, 2]
+    # Get all primitives
+    v, W_value, eps_value, rho_value = physics.get_prims(D_value, S_value, tau_value, prediction)
+    # Get predicted values:
+    D_pred, S_pred, tau_pred = physics.p2c(rho_value, v, eps_value, prediction)
+    print(D_pred)
+    print(S_pred)
+    print(tau_pred)
+    # Save into new torch
+    new_prims = torch.zeros_like(original_cons)
+    new_prims[:, 0] = D_pred
+    new_prims[:, 1] = S_pred
+    new_prims[:, 2] = tau_pred
+
+    loss_list = torch.mean((original_cons - new_prims)**2)
+
+    return torch.mean(loss_list)
+
+     
 def compute_loss(prediction, y, loss_fn, model, lambdaa=0.001) -> torch.tensor:
     """
     Computes the loss function, possibly with a regularization term with coefficient lambda.
@@ -233,7 +258,7 @@ def compute_loss(prediction, y, loss_fn, model, lambdaa=0.001) -> torch.tensor:
 
 
 def train_loop(dataloader: DataLoader, model: NeuralNetwork, loss_fn: Callable, optimizer: torch.optim.Adam,
-               report_progress: bool = False) -> None:
+               report_progress: bool = False, use_c2p_loss: bool = False) -> None:
     """
     Does one epoch of the training loop.
 
@@ -242,14 +267,19 @@ def train_loop(dataloader: DataLoader, model: NeuralNetwork, loss_fn: Callable, 
     :param loss_fn: The loss function on which the neural network is trained.
     :param optimizer: The optimization algorithm used.
     :param report_progress: Boolean indicating whether or not we want to print the progress of training.
+    :param use_c2p_loss: Boolean indicating whether we compute loss through conservative variables.
     :return: None
     """
     # TODO - what's the issue here?
     size = len(dataloader.dataset)
     for batch, (X, y) in enumerate(dataloader):
-        # Compute prediction and loss
+        # Compute prediction 
         prediction = model(X)
-        loss = compute_loss(prediction, y, loss_fn, model)
+        # In case we use C2P loss function, have to provide conserved variables for the loss computation
+        if use_c2p_loss:
+            loss = compute_loss(prediction, X, loss_fn, model)
+        else:
+            loss = compute_loss(prediction, y, loss_fn, model)
 
         # Do the backpropagation
         optimizer.zero_grad()
@@ -294,9 +324,9 @@ def test_loop(dataloader: DataLoader, model: NeuralNetwork, loss_fn: Callable) -
 
 class Trainer:
 
-    def __init__(self, model: nn.Module, learning_rate: float, train_dataloader: DataLoader = TRAIN_DATALOADER,
-                 test_dataloader: DataLoader = TEST_DATALOADER, loss_fn: Callable = nn.MSELoss(), train_losses=None,
-                 test_losses: list = None, adaptation_indices: list = None) -> None:
+    def __init__(self, model: nn.Module, learning_rate: float, train_dataloader: DataLoader = None,
+                 test_dataloader: DataLoader = None, loss_fn: Callable = nn.MSELoss(), train_losses=None,
+                 test_losses: list = None, adaptation_indices: list = None, use_c2p_loss: bool = False) -> None:
         """
         Initializes a Trainer object. This object brings together the neural network architecture defined above,
         the optimizer used, the dataloaders used while training, and simplifies the training process for the
@@ -306,6 +336,7 @@ class Trainer:
         :param train_losses: List that contains the train losses during training, for plotting purposes.
         :param test_losses: List that contains the test losses during training, for plotting purposes.
         :param adaptation_indices: Indices at which the learning rate gets adapted, for plotting purposes.
+        :param use_c2p_loss: Boolean indicating whether we compute loss through conservative variables.
         """
 
         # If None as argument given for train dataloader and test dataloader, make new sample
@@ -319,8 +350,12 @@ class Trainer:
         self.train_dataloader = train_dataloader
         self.test_dataloader = test_dataloader
         self.model = model
+        # From the train dataloader, also save the normalization function
+        # self.model.mean = train_dataloader.dataset.mean
+        # self.model.std = train_dataloader.dataset.std
         self.loss_fn = loss_fn
         self.learning_rate = learning_rate
+        self.use_c2p_loss = use_c2p_loss
         self.optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
         # For list arguments, make sure that empty list is initialized as default
         if train_losses is None:
@@ -337,16 +372,6 @@ class Trainer:
             self.trained = True
         else:
             self.trained = False
-
-    # def __init__(self, trainer: Trainer) -> None:
-    #     # Save the model and optimizer as fields
-    #     self.model = trainer.model
-    #     self.optimizer = trainer.optimizer
-    #     self.trained = trainer.trained
-    #     self.train_losses = trainer.train_losses
-    #     self.test_losses = trainer.test_losses
-    #     self.adaptation_indices = trainer.daptation_indices
-    #     self.trained = trainer.trained
 
     def train(self, adaptation_threshold=0.9995, adaptation_multiplier=0.5, number_of_epochs: int = 500,
               log_file: str = "train_log.txt", csv_file: str = "train_log.csv"):
@@ -379,7 +404,7 @@ class Trainer:
         while epoch_counter < number_of_epochs:
             write_to_txt(log_file, f"\n Epoch {epoch_counter} \n --------------")
             # Train the network
-            train_loop(self.train_dataloader, self.model, self.loss_fn, self.optimizer)
+            train_loop(self.train_dataloader, self.model, self.loss_fn, self.optimizer, use_c2p_loss=self.use_c2p_loss)
             # Test on the training data
             average_train_loss = test_loop(self.train_dataloader, self.model, self.loss_fn)
             self.train_losses.append(average_train_loss)
@@ -460,7 +485,7 @@ def l2_norm(predictions, y):
     return np.mean(abs(predictions - y)**2)
 
 
-def measure_performance(model: NeuralNetwork, test_data: CustomDataset = TEST_DATA, verbose=False):
+def measure_performance(model: NeuralNetwork, test_data: CustomDataset = None, verbose=False):
     """
     Measures the performance similar to how the Dieslhorst et al. paper does it. Computes the L1-norm and Linfty-norm
     errors (difference between the predictions and true values) on the provided test set.
@@ -470,6 +495,9 @@ def measure_performance(model: NeuralNetwork, test_data: CustomDataset = TEST_DA
     :param verbose: Show the errors by printing them directly to the screen.
     :return: delta_p_l1, delta_p_l2, delta_p_linfty: The computed errors in respective norms.
     """
+    if test_data is None:
+        test_data = data.generate_dataloader(TEST_SIZE)
+
     # Get features and labels
     test_features = test_data.features
     test_labels = test_data.labels
