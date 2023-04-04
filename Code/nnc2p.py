@@ -25,8 +25,8 @@ master_dir = os.path.abspath(os.path.join(cwd, ".."))  # master directory of thi
 TRAIN_SIZE = 80000
 TEST_SIZE = 10000
 # Standard training and testing datasets: 
-TRAINING_DATA_CSV = data.read_training_data("D:/Coding/master-thesis-AI/Data/ideal_gas_c2p_train_data.csv")
-TEST_DATA_CSV     = data.read_training_data("D:/Coding/master-thesis-AI/Data/ideal_gas_c2p_test_data.csv")
+TRAINING_DATA_CSV = data.read_training_data(os.path.join(master_dir, "Data/ideal_gas_c2p_train_data.csv"))
+TEST_DATA_CSV     = data.read_training_data(os.path.join(master_dir, "Data/ideal_gas_c2p_test_data.csv"))
 # Load them as CustomDatasets
 TRAINING_DATA = data.CustomDataset(TRAINING_DATA_CSV)
 TEST_DATA     = data.CustomDataset(TEST_DATA_CSV)

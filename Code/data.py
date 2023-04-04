@@ -2,10 +2,12 @@
 
 import physics
 import data
+from typing import Callable
 import pandas as pd
 import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
+from sklearn.preprocessing import StandardScaler
 
 
 def read_training_data(filename: str) -> pd.DataFrame:
@@ -27,41 +29,35 @@ class CustomDataset(Dataset):
     Custom data set used to represent the C2P training data conveniently for neural network training.
     """
 
-    def __init__(self, all_data: pd.DataFrame, feature_names: list = ["D", "S", "tau"], label_names: list = ["p"],
-                 mean: np.array = None, std: np.array = None, normalize = True):
+    def __init__(self, all_data: pd.DataFrame, feature_names: list = ["D", "S", "tau"], label_names: list = ["p"], 
+                 normalization_function: Callable = None):
         """
         Initializes the class by separating data into features and labels. See PyTorch tutorial for more information.
         :param all_data: The data of tuples of conserved and primite variables.
         """
 
-        # Hard copy
+        # Hard copy (weird stuff happening?)
         all_data = all_data.copy()
 
-        # Get mean and std for normalization of input data later on, in case mean and std are not given
-        if mean is None and std is None:
-            data_as_np_array = np.array([all_data[var] for var in feature_names])
-            mean = np.mean(data_as_np_array, axis=1)
-            std  = np.std(data_as_np_array, axis=1)
+        # Get the desired input/output data out of the Pandas dataframe and as np arrays 
+        feature_data = np.array([all_data[var] for var in feature_names], dtype=np.float32).transpose()
+        label_data   = np.array([all_data[var] for var in label_names], dtype=np.float32).transpose()
 
-        self.mean = mean
-        self.std = std
+        # Normalize input data if given a StandardScaler object's function
+        if normalization_function is not None:
+            feature_data = normalization_function(feature_data)
 
-        # Normalize input data
-        if normalize:
-            for i, var in enumerate(feature_names):
-                all_data[var] = (all_data[var] - self.mean[i])/self.std[i]
+        # Convert to Torch tensors for PyTOrch
+        features = torch.from_numpy(feature_data)
+        labels   = torch.from_numpy(label_data)
 
-        # Separate features E from the label T. Initialize empty lists
-        features = []
-        labels   = []
-
-        for i in range(len(all_data)):
-            # Separate the features
-            new_feature = [all_data[var][i] for var in feature_names]
-            features.append(torch.tensor(new_feature, dtype=torch.float32))
-            # Separate the labels
-            new_label = [all_data[var][i] for var in label_names]
-            labels.append(torch.tensor(new_label, dtype=torch.float32))
+        # for i in range(len(all_data)):
+        #     # Separate the features
+        #     new_feature = [all_data[var][i] for var in feature_names]
+        #     features.append(torch.tensor(new_feature, dtype=torch.float32))
+        #     # Separate the labels
+        #     new_label = [all_data[var][i] for var in label_names]
+        #     labels.append(torch.tensor(new_label, dtype=torch.float32))
 
         # Save as instance variables to the dataloader
         self.features = features
