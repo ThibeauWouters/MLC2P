@@ -441,6 +441,21 @@ class Trainer:
             epoch_counter += 1
 
         print("Done!")
+        
+    def report_training(self, csv_filename):
+        """Writes the performance (training) of a network to a CSV file such that we can improve architecture design. Saves the hidden layers, the activation functions
+
+        Args:
+            csv_filename (str): Name of the CSV file to which we want to save the information to.
+
+        Returns:
+            None: Void return
+        """
+        
+        activation_func = self.model.activation1.__class__.__name__
+        final_lr = self.optimizer.param_groups[0]['lr']
+        dat = [self.h, activation_func, len(self.train_losses), self.train_losses[-1], final_lr]
+        write_to_csv(csv_filename, dat)
 
 ###########################
 # PERFORMANCE OF NETWORKS #

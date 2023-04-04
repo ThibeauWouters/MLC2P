@@ -1,0 +1,2 @@
+"Filename","Description"
+"NNEOS_tab_eos.pth","Neural network parameters for the tabular EOS case that take as input the three directions of the table (rho, temp, ye) and give the energy and pressure (logenergy and logpress) of that input. Had a training loss of around 10e-5"
