@@ -1,4 +1,5 @@
 // Detailing the experiments I'm doing to replace the tabular EOS with a neural net. Output of the network is p and eps
-"Hidden layers","Activation functions","Epochs","Loss","Learning rate"
-"[100, 100]","Sigmoid",500,0.00005,0.00015625
-"[100, 100, 100]","Sigmoid",142,7.513745933305471e-05,0.000625
+"Hidden layers","Activation functions","Epochs","Loss","Learning rate","Comment"
+"[100, 100]","Sigmoid",500,0.00005,0.00015625," "
+"[100, 100, 100]","Sigmoid",142,7.513745933305471e-05,0.000625," "
+"[100, 100]",Sigmoid,334,0.00041958606285508724,0.00125,"Output now also has cs2, previous did not."

@@ -259,6 +259,7 @@ def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int 
     rho_table  = eos_table["logrho"][()]
     eps_table  = eos_table["logenergy"][()]
     p_table    = eos_table["logpress"][()]
+    cs2_table  = eos_table["cs2"][()]
 
     # Get the sizes of the table axes: the table uses the form (Y_e, T, rho)
     len_ye   = eos_table["pointsye"][()][0]
@@ -281,14 +282,16 @@ def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int 
         rho  = rho_table[rho_index]
         eps  = eps_table[ye_index, temp_index, rho_index]
         p    = p_table[ye_index, temp_index, rho_index]
+        cs2  = cs2_table[ye_index, temp_index, rho_index]
 
         # Do P2C with above values
-        Dvalue   = D(rho, eps, v)
-        Svalue   = S(rho, eps, v)
-        tauvalue = tau(rho, eps, v)
+        Dvalue   = D(rho, 10**eps, v, 10**p)
+        Svalue   = S(rho, 10**eps, v, 10**p)
+        tauvalue = tau(rho, 10**eps, v, 10**p)
 
         # Add the values to a new row
-        new_row = [rho, eps, v, temp, ye, p, Dvalue, Svalue, tauvalue]
+        # NOTE - we take the log of cs2
+        new_row = [rho, eps, v, temp, ye, p, np.log(cs2), Dvalue, Svalue, tauvalue]
 
         # Append the row to the list
         data.append(new_row)
@@ -296,7 +299,7 @@ def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int 
     # Done generating data, now save if wanted by the user:
     if len(save_name) > 0:
         # Save as CSV, specify the header
-        header = ["rho", "eps", "v", "temp", "ye", "p", "D", "S", "tau"]
+        header = ["rho", "logeps", "v", "logtemp", "ye", "logpress", "logcs2", "D", "S", "tau"]
         # Get the correct filename, pointing to the "data" directory
         save_name = "Data/" + save_name
         filename = os.path.join(master_dir, save_name)

@@ -442,7 +442,7 @@ class Trainer:
 
         print("Done!")
         
-    def report_training(self, csv_filename):
+    def report_training(self, csv_filename, comment = " "):
         """Writes the performance (training) of a network to a CSV file such that we can improve architecture design. Saves the hidden layers, the activation functions
         The CSV file saves:
         1. Hidden layer details
@@ -460,7 +460,7 @@ class Trainer:
         
         activation_func = self.model.activation1.__class__.__name__
         final_lr = self.optimizer.param_groups[0]['lr']
-        dat = [self.model.h, str(activation_func), len(self.train_losses), self.train_losses[-1], final_lr]
+        dat = [self.model.h, str(activation_func), len(self.train_losses), self.train_losses[-1], final_lr, comment]
         write_to_csv(csv_filename, dat)
 
 ###########################
