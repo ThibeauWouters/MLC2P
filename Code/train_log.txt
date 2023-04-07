@@ -11616,3 +11616,48 @@ Test  loss: 8.05E-05
 
  Epoch 133 
  --------------
+Train loss: 7.80E-05
+Test  loss: 8.01E-05
+
+ Epoch 134 
+ --------------
+Train loss: 7.76E-05
+Test  loss: 7.96E-05
+
+ Epoch 135 
+ --------------
+Train loss: 7.73E-05
+Test  loss: 7.93E-05
+
+ Epoch 136 
+ --------------
+Train loss: 7.69E-05
+Test  loss: 7.89E-05
+
+ Epoch 137 
+ --------------
+Train loss: 7.65E-05
+Test  loss: 7.85E-05
+
+ Epoch 138 
+ --------------
+Train loss: 7.61E-05
+Test  loss: 7.81E-05
+
+ Epoch 139 
+ --------------
+Train loss: 7.58E-05
+Test  loss: 7.78E-05
+
+ Epoch 140 
+ --------------
+Train loss: 7.55E-05
+Test  loss: 7.74E-05
+
+ Epoch 141 
+ --------------
+Train loss: 7.51E-05
+Test  loss: 7.71E-05
+
+ Epoch 142 
+ --------------

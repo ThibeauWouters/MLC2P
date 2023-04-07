@@ -1,3 +1,4 @@
 // Detailing the experiments I'm doing to replace the tabular EOS with a neural net. Output of the network is p and eps
 "Hidden layers","Activation functions","Epochs","Loss","Learning rate"
-(100, 100),torch.nn.Sigmoid,500,0.00005,0.00015625
+"[100, 100]","Sigmoid",500,0.00005,0.00015625
+"[100, 100, 100]","Sigmoid",142,7.513745933305471e-05,0.000625

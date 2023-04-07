@@ -7,6 +7,8 @@ import data
 import pandas as pd
 import numpy as np
 import torch
+from torch import nn
+from torch.utils.data import Dataset, DataLoader
 # from data import CustomDataset
 import os
 import h5py
@@ -39,13 +41,10 @@ def ideal_eos(rho: float, eps: float, gamma: float = 5 / 3) -> float:
     return (gamma - 1) * rho * eps
 
 
-def h(rho: float, eps: float, v: float, p=None) -> float:
+def h(rho: float, eps: float, v: float, p: float) -> float:
     """
     See eq2 Dieselhorst et al. paper. Computes enthalpy
     """
-    # First compute pressure
-    p = ideal_eos(rho, eps)
-    # Then compute enthalpy
     return 1 + eps + p/rho
 
 
@@ -53,55 +52,109 @@ def W(rho: float, eps: float, v: float, p: float = None) -> float:
     """
     See eq2 Dieselhorst et al. paper. Lorentz factor. Here, in 1D so v = v_x
     """
-    return (1-v**2)**(-1/2)
+    return (1 - v**2)**(-1/2)
 
 
-def D(rho: float, eps: float, v: float, p: float = None) -> float:
+def D(rho: float, eps: float, v: float, p: float) -> float:
     """
     See eq2 Dieselhorst et al. paper.
     """
-    return rho*W(rho, eps, v)
+    return rho * W(rho, eps, v, p)
 
 
-def S(rho: float, eps: float, v: float, p: float = None) -> float:
+def S(rho: float, eps: float, v: float, p: float) -> float:
     """
     See eq2 Dieselhorst et al. paper.
     """
-    return rho*h(rho, eps, v)*((W(rho, eps, v))**2)*v
+    return rho * h(rho, eps, v, p) * ((W(rho, eps, v, p))**2) * v
 
 
-def tau(rho: float, eps: float, v: float, p: float = None) -> float:
+def tau(rho: float, eps: float, v: float, p: float) -> float:
     """
     See eq2 Dieselhorst et al. paper.
     """
-    # If the pressure is None, rely on the ideal gas EOS
-    if p is None:
-        p = ideal_eos(rho, eps)
-    return rho*(h(rho, eps, v))*((W(rho, eps, v))**2) - p - D(rho, eps, v)
+    return rho * (h(rho, eps, v, p)) * ((W(rho, eps, v, p))**2) - p - D(rho, eps, v, p)
 
 
 def p2c(rho: float, eps: float, v: float, p: float):
     """
     Performs the P2C transformation, as given by the Eq. 2 of Dieselhorst et al. paper.
     """
-    # If the pressure is None, rely on the ideal gas EOS
-    if p is None:
-        p = ideal_eos(rho, eps)
+    d = D(rho, eps, v, p)
+    s = S(rho, eps, v, p)
+    t = tau(rho, eps, v, p)
 
-    return D(rho, eps, v, p), S(rho, eps, v, p), tau(rho, eps, v, p)
+    return d, s, t
 
 
-def get_prims(D_value, S_value, tau_value, p):
+def get_prims(D_value: float, S_value: float, tau_value: float, p: float) -> tuple[float, float, float, float]:
 
-    v = S_value/(tau_value + D_value + p)
-    if isinstance(v, torch.Tensor):
-        W_value = 1/torch.sqrt(1-v**2)
-    else:
-        W_value = 1/np.sqrt(1-v**2)
-    eps_value = (tau_value + D_value*(1-W_value) + p*(1-W_value**2))/(D_value*W_value)
+    v         = S_value/(tau_value + D_value + p)
+    W_value   = 1/np.sqrt(1 - v**2)
+    eps_value = (tau_value + D_value * (1 - W_value) + p * (1 - W_value**2)) / (D_value*W_value)
     rho_value = D_value/W_value
 
     return v, W_value, eps_value, rho_value
+
+def c2c(D_value: float, S_value: float, tau_value: float, model: nn.Module, nb_repetitions: int = 1):
+    
+    # Make a copy for clarity -- we are going to override these variables later on
+    d = D_value
+    s = S_value
+    t = tau_value
+    
+    for _ in range(nb_repetitions):
+        # Repeat the chain several times
+        with torch.no_grad():
+            # Get the pressure using the neural network
+            press = model(torch.tensor([d, s, t]).double())
+            # press is a tensor, convert to a float
+            press = press.item()
+            
+        # From cons and pressure, compute other prims
+        v, _, eps, rho = get_prims(d, s, t, press)
+        d, s, t        = p2c(rho, eps, v, press)
+    
+    return d, s, t
+
+
+def c2c_dataset(dataset: Dataset, model: nn.Module, nb_repetitions: int = 1):
+    # Measure the performance/robustness of a model on a whole dataset, return error
+    
+    l1_error   = []
+    l2_error   = []
+    # TODO linfty error norm?
+    
+    # Iterate over all test examples
+    cons_dataset = dataset.features
+    for i in range(len(cons_dataset)):
+        D_value, S_value, tau_value = cons_dataset[i][0].item(), cons_dataset[i][1].item(), cons_dataset[i][2].item()
+        # Get the version after certain nb of repetitions
+        D_prime, S_prime, tau_prime = c2c(D_value, S_value, tau_value, model, nb_repetitions=nb_repetitions)
+        # Compute errors
+        cons       = np.array([D_value, S_value, tau_value])
+        cons_prime = np.array([D_prime, S_prime, tau_prime])
+        l1_error.append(abs(cons - cons_prime))
+        l2_error.append((cons - cons_prime)**2)
+
+    return l1_error, l2_error
+
+def p2p(rho: float, eps: float, v: float, model: nn.Module, nb_repetitions: int = 1):
+    
+    press = ideal_eos(rho, eps)
+    
+    for _ in range(nb_repetitions):
+        # Compute the cons from the prims 
+        d, s, t = p2c(rho, eps, v, press)
+        with torch.no_grad():
+            # Use cons and neural net to get pressure
+            press = model(torch.tensor([d, s, t]).double())
+        # Get new primitives
+        v, _, eps, rho = get_prims(d, s, t, press)
+    
+    return press
+
+
 
 #############################
 # DATA GENERATING FUNCTIONS #
