@@ -13,6 +13,12 @@ from torch.utils.data import Dataset, DataLoader
 import os
 import h5py
 
+if torch.cuda.is_available(): 
+ DEVICE = "cuda:0" 
+ torch.set_default_device('cuda')
+else: 
+ DEVICE = "cpu" 
+
 ###################
 # HYPERPARAMETERS #
 ###################
@@ -239,6 +245,43 @@ def read_eos_table(filename: str):
     filename = os.path.join(master_dir, filename)
 
     return h5py.File(filename, 'r')
+
+def convert_eos_table(eos_table, var_names=["logenergy", "logpress"], save_name = "train_eos_table.h5"):
+  """
+  Convert the EOS table to rows of training examples, taking the provided variables into account for the output.
+  That is, the format of the EOS tables as provided on the website treat all variables as different datasets in the .h5 files. Here, we convert these to a different format:
+  the result of this function is a saved .h5 file which contains rows of examples: the first three values correspond to (logrho, logtemp, ye) and are the "input" data, while the
+  remaining values correspond to the desired "output" variables of a neural network trying to do regression in this EOS table and for the provided variable names. This can then easily
+  be fed into a custom PyTorch dataset such that the whole table can get processed during training.
+  Note: the order is reversed compared to the original EOS tables. That is, the EOS tables use (ye, T, rho), but here we use (rho, T, ye).
+  """
+
+  # Get the "index" or "input" variables (rho, temp, ye).
+  rho, temp, ye = eos_table["logrho"][()], eos_table["logtemp"][()], eos_table["ye"][()]
+  # Get a dict to save the columns of the "output" variables
+  var_dict = {}
+  for name in var_names:
+    var_dict[name] = eos_table[name][()]
+  # Fill an array of values
+  features_array = []
+  labels_array = []
+  for i, r in enumerate(rho):
+    for j, t in enumerate(temp):
+      for k, y in enumerate(ye):
+        # Start by saving the "input" values of this example
+        features_array.append([r, t, y])
+        # Get appropriate column (output variable) then use the three indices to get the correct value
+        # NOTE - reversed order compared to original EOS table, see the documentation above for explanation
+        new_row = [var_dict[name][k, j, i] for name in var_names]
+        # Add to our array
+        labels_array.append(new_row)
+  # Save examples as HDF5 file
+  with h5py.File(save_name, 'w') as f:
+      # Save the examples under "my dataset"
+      dataset = f.create_dataset('features', data=features_array)
+      dataset = f.create_dataset('labels', data=labels_array)
+      # Save the names of variables of examples in a separate dataset
+      dataset = f.create_dataset('var_names', data=var_names)
 
 
 def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int = 10000, save_name: str = "") -> list:

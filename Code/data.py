@@ -9,6 +9,12 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from sklearn.preprocessing import StandardScaler
 
+# Check if we use a GPU 
+if torch.cuda.is_available(): 
+ DEVICE = "cuda:0" 
+ torch.set_default_device('cuda')
+else: 
+ DEVICE = "cpu" 
 
 def read_training_data(filename: str) -> pd.DataFrame:
     """
@@ -18,11 +24,6 @@ def read_training_data(filename: str) -> pd.DataFrame:
     """
 
     return pd.read_csv(filename)
-
-
-# def normalize(x, mean, std):
-#     return (x-mean)/std
-
 
 class CustomDataset(Dataset):
     """
@@ -51,17 +52,65 @@ class CustomDataset(Dataset):
         features = torch.from_numpy(feature_data)
         labels   = torch.from_numpy(label_data)
 
-        # for i in range(len(all_data)):
-        #     # Separate the features
-        #     new_feature = [all_data[var][i] for var in feature_names]
-        #     features.append(torch.tensor(new_feature, dtype=torch.float32))
-        #     # Separate the labels
-        #     new_label = [all_data[var][i] for var in label_names]
-        #     labels.append(torch.tensor(new_label, dtype=torch.float32))
+        # Save as instance variables to the dataloader
+        self.features = features
+        self.labels   = labels
+        
+        # Move to specified device (for GPU training)
+        
+        self.features = self.features.to(DEVICE)
+        self.labels = self.labels.to(DEVICE)
+
+    def __len__(self):
+        return len(self.labels)
+
+    def __getitem__(self, idx: int):
+        """
+        Gets an item from the dataset based on a specified index.
+        :param idx: Index used to fetch the item.
+        :return: Tuple of feature and its label.
+        """
+        # Get the feature, but normalized
+        feature = self.features[idx]
+
+        # Get the label
+        label = self.labels[idx]
+        return feature, label
+    
+class HDF5Dataset(Dataset):
+    """
+    Custom data set used to represent training data obtained from tabular HDF5 training data, converted to rows of training examples.
+    """
+
+    def __init__(self, features: np.array, labels: np.array, normalization_function: Callable = None):
+        """
+        Initializes the class by separating data into features and labels. See PyTorch tutorial for more information.
+        Args:
+            features (np.array): Features or input data for training.
+            labels (np.array): Labels or output data for training.
+        """
+
+        # Get the desired input/output data out of the Pandas dataframe and as np arrays 
+        # feature_data = np.array([all_data[var] for var in feature_names], dtype=np.float32).transpose()
+        # label_data   = np.array([all_data[var] for var in label_names], dtype=np.float32).transpose()
+
+        # Normalize input data if given a StandardScaler object's function
+        if normalization_function is not None:
+            features = normalization_function(features)
+
+        # Convert to Torch tensors for PyTorch
+        features = torch.from_numpy(features)
+        features.to(DEVICE)
+        labels   = torch.from_numpy(labels)
+        labels.to(DEVICE)
 
         # Save as instance variables to the dataloader
         self.features = features
         self.labels   = labels
+        
+        # Move to speficied device for GPU training
+        self.features = self.features.to(DEVICE)
+        self.labels = self.labels.to(DEVICE)
 
     def __len__(self):
         return len(self.labels)

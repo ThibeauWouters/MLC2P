@@ -16,6 +16,11 @@ from datetime import datetime
 cwd = os.getcwd()  # "Code" folder
 master_dir = os.path.abspath(os.path.join(cwd, ".."))  # master directory of this repo
 
+if torch.cuda.is_available(): 
+ DEVICE = "cuda:0" 
+ torch.set_default_device('cuda')
+else: 
+ DEVICE = "cpu" 
 
 ##########################
 # LOAD STANDARD DATASETS #
