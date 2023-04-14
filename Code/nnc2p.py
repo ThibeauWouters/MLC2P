@@ -17,10 +17,10 @@ cwd = os.getcwd()  # "Code" folder
 master_dir = os.path.abspath(os.path.join(cwd, ".."))  # master directory of this repo
 
 if torch.cuda.is_available(): 
- DEVICE = "cuda:0" 
- torch.set_default_device('cuda')
+    DEVICE = "cuda:0"
+    torch.set_default_device('cuda')
 else: 
- DEVICE = "cpu" 
+    DEVICE = "cpu"
 
 ##########################
 # LOAD STANDARD DATASETS #
@@ -488,7 +488,7 @@ def l1_norm(predictions, y):
         print("Predictions and y must have same size")
         return 0
 
-    return sum(abs(predictions - y))/len(predictions)
+    return np.sum(abs(predictions - y), axis=0)/len(predictions)
 
 
 def linfty_norm(predictions, y):
@@ -498,7 +498,7 @@ def linfty_norm(predictions, y):
     :param y: Actual values
     :return: L_infinity norm between predictions and y
     """
-    return max(abs(predictions - y))
+    return np.max(abs(predictions - y), axis=0)
 
 
 def l2_norm(predictions, y):
@@ -508,7 +508,7 @@ def l2_norm(predictions, y):
     :param y: Actual values
     :return: L_infinity norm between predictions and y
     """
-    return np.mean(abs(predictions - y)**2)
+    return np.mean(abs(predictions - y)**2, axis=0)
 
 
 def measure_performance(model: NeuralNetwork, test_data: CustomDataset = None, verbose=False):
