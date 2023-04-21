@@ -13,11 +13,11 @@ from torch.utils.data import Dataset, DataLoader
 import os
 import h5py
 
-if torch.cuda.is_available(): 
- DEVICE = "cuda:0" 
- torch.set_default_device('cuda')
-else: 
- DEVICE = "cpu" 
+if torch.cuda.is_available():
+    DEVICE = "cuda:0"
+    torch.set_default_device('cuda')
+else:
+    DEVICE = "cpu"
 
 ###################
 # HYPERPARAMETERS #
@@ -33,6 +33,7 @@ V_MAX = 0.721
 # Get master folder
 cwd = os.getcwd()  # this refers to the "Code" folder
 master_dir = os.path.abspath(os.path.join(cwd, ".."))  # this refers to the root folder
+
 
 ###########################
 # BASIC PHYSICS FUNCTIONS #
@@ -51,14 +52,14 @@ def h(rho: float, eps: float, v: float, p: float) -> float:
     """
     See eq2 Dieselhorst et al. paper. Computes enthalpy
     """
-    return 1 + eps + p/rho
+    return 1 + eps + p / rho
 
 
 def W(rho: float, eps: float, v: float, p: float = None) -> float:
     """
     See eq2 Dieselhorst et al. paper. Lorentz factor. Here, in 1D so v = v_x
     """
-    return (1 - v**2)**(-1/2)
+    return (1 - v ** 2) ** (-1 / 2)
 
 
 def D(rho: float, eps: float, v: float, p: float) -> float:
@@ -72,14 +73,14 @@ def S(rho: float, eps: float, v: float, p: float) -> float:
     """
     See eq2 Dieselhorst et al. paper.
     """
-    return rho * h(rho, eps, v, p) * ((W(rho, eps, v, p))**2) * v
+    return rho * h(rho, eps, v, p) * ((W(rho, eps, v, p)) ** 2) * v
 
 
 def tau(rho: float, eps: float, v: float, p: float) -> float:
     """
     See eq2 Dieselhorst et al. paper.
     """
-    return rho * (h(rho, eps, v, p)) * ((W(rho, eps, v, p))**2) - p - D(rho, eps, v, p)
+    return rho * (h(rho, eps, v, p)) * ((W(rho, eps, v, p)) ** 2) - p - D(rho, eps, v, p)
 
 
 def p2c(rho: float, eps: float, v: float, p: float):
@@ -94,21 +95,20 @@ def p2c(rho: float, eps: float, v: float, p: float):
 
 
 def get_prims(D_value: float, S_value: float, tau_value: float, p: float) -> tuple[float, float, float, float]:
-
-    v         = S_value/(tau_value + D_value + p)
-    W_value   = 1/np.sqrt(1 - v**2)
-    eps_value = (tau_value + D_value * (1 - W_value) + p * (1 - W_value**2)) / (D_value*W_value)
-    rho_value = D_value/W_value
+    v = S_value / (tau_value + D_value + p)
+    W_value = 1 / np.sqrt(1 - v ** 2)
+    eps_value = (tau_value + D_value * (1 - W_value) + p * (1 - W_value ** 2)) / (D_value * W_value)
+    rho_value = D_value / W_value
 
     return v, W_value, eps_value, rho_value
 
+
 def c2c(D_value: float, S_value: float, tau_value: float, model: nn.Module, nb_repetitions: int = 1):
-    
     # Make a copy for clarity -- we are going to override these variables later on
     d = D_value
     s = S_value
     t = tau_value
-    
+
     for _ in range(nb_repetitions):
         # Repeat the chain several times
         with torch.no_grad():
@@ -116,21 +116,21 @@ def c2c(D_value: float, S_value: float, tau_value: float, model: nn.Module, nb_r
             press = model(torch.tensor([d, s, t]).double())
             # press is a tensor, convert to a float
             press = press.item()
-            
+
         # From cons and pressure, compute other prims
         v, _, eps, rho = get_prims(d, s, t, press)
-        d, s, t        = p2c(rho, eps, v, press)
-    
+        d, s, t = p2c(rho, eps, v, press)
+
     return d, s, t
 
 
 def c2c_dataset(dataset: Dataset, model: nn.Module, nb_repetitions: int = 1):
     # Measure the performance/robustness of a model on a whole dataset, return error
-    
-    l1_error   = []
-    l2_error   = []
+
+    l1_error = []
+    l2_error = []
     # TODO linfty error norm?
-    
+
     # Iterate over all test examples
     cons_dataset = dataset.features
     for i in range(len(cons_dataset)):
@@ -138,17 +138,17 @@ def c2c_dataset(dataset: Dataset, model: nn.Module, nb_repetitions: int = 1):
         # Get the version after certain nb of repetitions
         D_prime, S_prime, tau_prime = c2c(D_value, S_value, tau_value, model, nb_repetitions=nb_repetitions)
         # Compute errors
-        cons       = np.array([D_value, S_value, tau_value])
+        cons = np.array([D_value, S_value, tau_value])
         cons_prime = np.array([D_prime, S_prime, tau_prime])
         l1_error.append(abs(cons - cons_prime))
-        l2_error.append((cons - cons_prime)**2)
+        l2_error.append((cons - cons_prime) ** 2)
 
     return l1_error, l2_error
 
+
 def p2p(rho: float, eps: float, v: float, model: nn.Module, nb_repetitions: int = 1):
-    
     press = ideal_eos(rho, eps)
-    
+
     for _ in range(nb_repetitions):
         # Compute the cons from the prims 
         d, s, t = p2c(rho, eps, v, press)
@@ -157,9 +157,8 @@ def p2p(rho: float, eps: float, v: float, model: nn.Module, nb_repetitions: int 
             press = model(torch.tensor([d, s, t]).double())
         # Get new primitives
         v, _, eps, rho = get_prims(d, s, t, press)
-    
-    return press
 
+    return press
 
 
 #############################
@@ -183,11 +182,11 @@ def generate_data(number_of_points: int = 10000, save_name: str = "") -> list:
         # Generate primitive variables
         rho = random.uniform(RHO_MIN, RHO_MAX)
         eps = random.uniform(EPS_MIN, EPS_MAX)
-        v   = random.uniform(V_MIN, V_MAX)
+        v = random.uniform(V_MIN, V_MAX)
 
         # Use above transformations to compute the pressure and conserved variables D, S, tau
         # Compute the pressure using an ideal gas law
-        p        = ideal_eos(rho, eps)
+        p = ideal_eos(rho, eps)
         # Do the P2C transformation
         Dvalue, Svalue, tauvalue = p2c(rho, eps, v, p)
 
@@ -238,7 +237,6 @@ def generate_data_as_df(number_of_points: int = 1000, save_name: str = "") -> pd
 
 
 def read_eos_table(filename: str):
-
     # Convert to proper filepath towards eos tables
     filename = os.path.join("eos_tables", filename)
     # Append it to the master dir
@@ -246,42 +244,43 @@ def read_eos_table(filename: str):
 
     return h5py.File(filename, 'r')
 
-def convert_eos_table(eos_table, var_names=["logenergy", "logpress"], save_name = "train_eos_table.h5"):
-  """
-  Convert the EOS table to rows of training examples, taking the provided variables into account for the output.
-  That is, the format of the EOS tables as provided on the website treat all variables as different datasets in the .h5 files. Here, we convert these to a different format:
-  the result of this function is a saved .h5 file which contains rows of examples: the first three values correspond to (logrho, logtemp, ye) and are the "input" data, while the
-  remaining values correspond to the desired "output" variables of a neural network trying to do regression in this EOS table and for the provided variable names. This can then easily
-  be fed into a custom PyTorch dataset such that the whole table can get processed during training.
-  Note: the order is reversed compared to the original EOS tables. That is, the EOS tables use (ye, T, rho), but here we use (rho, T, ye).
-  """
 
-  # Get the "index" or "input" variables (rho, temp, ye).
-  rho, temp, ye = eos_table["logrho"][()], eos_table["logtemp"][()], eos_table["ye"][()]
-  # Get a dict to save the columns of the "output" variables
-  var_dict = {}
-  for name in var_names:
-    var_dict[name] = eos_table[name][()]
-  # Fill an array of values
-  features_array = []
-  labels_array = []
-  for i, r in enumerate(rho):
-    for j, t in enumerate(temp):
-      for k, y in enumerate(ye):
-        # Start by saving the "input" values of this example
-        features_array.append([r, t, y])
-        # Get appropriate column (output variable) then use the three indices to get the correct value
-        # NOTE - reversed order compared to original EOS table, see the documentation above for explanation
-        new_row = [var_dict[name][k, j, i] for name in var_names]
-        # Add to our array
-        labels_array.append(new_row)
-  # Save examples as HDF5 file
-  with h5py.File(save_name, 'w') as f:
-      # Save the examples under "my dataset"
-      dataset = f.create_dataset('features', data=features_array)
-      dataset = f.create_dataset('labels', data=labels_array)
-      # Save the names of variables of examples in a separate dataset
-      dataset = f.create_dataset('var_names', data=var_names)
+def convert_eos_table(eos_table, var_names=["logenergy", "logpress", "cs2"], save_name="train_eos_table.h5"):
+    """
+    Convert the EOS table to rows of training examples, taking the provided variables into account for the output.
+    That is, the format of the EOS tables as provided on the website treat all variables as different datasets in the .h5 files. Here, we convert these to a different format:
+    the result of this function is a saved .h5 file which contains rows of examples: the first three values correspond to (logrho, logtemp, ye) and are the "input" data, while the
+    remaining values correspond to the desired "output" variables of a neural network trying to do regression in this EOS table and for the provided variable names. This can then easily
+    be fed into a custom PyTorch dataset such that the whole table can get processed during training.
+    Note: the order is reversed compared to the original EOS tables. That is, the EOS tables use (ye, T, rho), but here we use (rho, T, ye).
+    """
+
+    # Get the "index" or "input" variables (rho, temp, ye).
+    rho, temp, ye = eos_table["logrho"][()], eos_table["logtemp"][()], eos_table["ye"][()]
+    # Get a dict to save the columns of the "output" variables
+    var_dict = {}
+    for name in var_names:
+        var_dict[name] = eos_table[name][()]
+    # Fill an array of values
+    features_array = []
+    labels_array = []
+    for i, r in enumerate(rho):
+        for j, t in enumerate(temp):
+            for k, y in enumerate(ye):
+                # Start by saving the "input" values of this example
+                features_array.append([r, t, y])
+                # Get appropriate column (output variable) then use the three indices to get the correct value
+                # NOTE - reversed order compared to original EOS table, see the documentation above for explanation
+                new_row = [var_dict[name][k, j, i] for name in var_names]
+                # Add to our array
+                labels_array.append(new_row)
+    # Save examples as HDF5 file
+    with h5py.File(save_name, 'w') as f:
+        # Save the examples under "my dataset"
+        dataset = f.create_dataset('features', data=features_array)
+        dataset = f.create_dataset('labels', data=labels_array)
+        # Save the names of variables of examples in a separate dataset
+        dataset = f.create_dataset('var_names', data=var_names)
 
 
 def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int = 10000, save_name: str = "") -> list:
@@ -297,17 +296,17 @@ def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int 
     data = []
 
     # Get the appropriate Numpy arrays from the EOS table
-    ye_table   = eos_table["ye"][()]
+    ye_table = eos_table["ye"][()]
     temp_table = eos_table["logtemp"][()]
-    rho_table  = eos_table["logrho"][()]
-    eps_table  = eos_table["logenergy"][()]
-    p_table    = eos_table["logpress"][()]
-    cs2_table  = eos_table["cs2"][()]
+    rho_table = eos_table["logrho"][()]
+    eps_table = eos_table["logenergy"][()]
+    p_table = eos_table["logpress"][()]
+    cs2_table = eos_table["cs2"][()]
 
     # Get the sizes of the table axes: the table uses the form (Y_e, T, rho)
-    len_ye   = eos_table["pointsye"][()][0]
+    len_ye = eos_table["pointsye"][()][0]
     len_temp = eos_table["pointstemp"][()][0]
-    len_rho  = eos_table["pointsrho"][()][0]
+    len_rho = eos_table["pointsrho"][()][0]
 
     # Sample and generate a new row for the training data
     for i in range(number_of_points):
@@ -315,22 +314,22 @@ def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int 
         v = random.uniform(V_MIN, V_MAX)
 
         # Sample indices for the table:
-        ye_index    = np.random.choice(len_ye)
-        temp_index  = np.random.choice(len_temp)
-        rho_index   = np.random.choice(len_rho)
+        ye_index = np.random.choice(len_ye)
+        temp_index = np.random.choice(len_temp)
+        rho_index = np.random.choice(len_rho)
 
         # Get the values:
-        ye   = ye_table[ye_index]
+        ye = ye_table[ye_index]
         temp = temp_table[temp_index]
-        rho  = rho_table[rho_index]
-        eps  = eps_table[ye_index, temp_index, rho_index]
-        p    = p_table[ye_index, temp_index, rho_index]
-        cs2  = cs2_table[ye_index, temp_index, rho_index]
+        rho = rho_table[rho_index]
+        eps = eps_table[ye_index, temp_index, rho_index]
+        p = p_table[ye_index, temp_index, rho_index]
+        cs2 = cs2_table[ye_index, temp_index, rho_index]
 
         # Do P2C with above values
-        Dvalue   = D(rho, 10**eps, v, 10**p)
-        Svalue   = S(rho, 10**eps, v, 10**p)
-        tauvalue = tau(rho, 10**eps, v, 10**p)
+        Dvalue = D(rho, 10 ** eps, v, 10 ** p)
+        Svalue = S(rho, 10 ** eps, v, 10 ** p)
+        tauvalue = tau(rho, 10 ** eps, v, 10 ** p)
 
         # Add the values to a new row
         # NOTE - we take the log of cs2

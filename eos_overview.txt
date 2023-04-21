@@ -1,0 +1,13 @@
+- calls to get pressure and get eps are isolated? Can undo this in the code? At first, no issue - still can have speedup as Python shows... Or can train for the get all one grid, but what is "all"?
+- EOS table hdf5 needs to save also ranges of the input variables
+- train SMALL neural net to circumvent the rootfinding for Temp
+- why are all variables that are in "get" of "inout"?
+- for the important order of variables, see get all one grid, they seem to be ordered there
+- don't forget energy shift!
+- the tabulated eos just gives pointers to the functions eos_get_pressure_one_grid etc
+- looking at mod_eos: have to give the same names, and order of the variables?
+- a lot of fixme in mod_eos, in tabulated case for the atmosphere -- can this interfere with our results?
+- does our neural net take care of atmosphere right now for the simplest case?
+- how is CS2 fixed right now?
+- can return 0 for "get all" that we don't need/give right now, but do need derivatives and cs2!
+- Train on the Hempel EOS
