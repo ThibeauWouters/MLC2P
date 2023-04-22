@@ -1,0 +1,13 @@
+5
+Gemm
+50 3 
+50 
+Sigmoid
+Gemm
+50 50 
+50 
+Sigmoid
+MatMul
+Gemm
+50 3 
+50
