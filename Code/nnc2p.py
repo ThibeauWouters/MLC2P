@@ -474,7 +474,7 @@ class Trainer:
 
 
 # TODO - type hinting?
-def l1_norm(predictions, y):
+def l1_norm(predictions, y, reduction = True):
     """
     Computes the L1 norm between predictions made by the neural network and the actual values.
     :param predictions: Predictions made by the neural network architecture.
@@ -488,7 +488,10 @@ def l1_norm(predictions, y):
         print("Predictions and y must have same size")
         return 0
 
-    return np.sum(abs(predictions - y), axis=0)/len(predictions)
+    if reduction:
+        return np.sum(abs(predictions - y), axis=0)/len(predictions)
+    else:
+        return abs(predictions - y)
 
 
 def linfty_norm(predictions, y):
@@ -501,14 +504,17 @@ def linfty_norm(predictions, y):
     return np.max(abs(predictions - y), axis=0)
 
 
-def l2_norm(predictions, y):
+def l2_norm(predictions, y, reduction = True):
     """
     Computes the L_infinity norm between predictions made by the neural network and the actual values.
     :param predictions: Predictions made by the neural network architecture.
     :param y: Actual values
     :return: L_infinity norm between predictions and y
     """
-    return np.mean(abs(predictions - y)**2, axis=0)
+    if reduction:
+        return np.mean(abs(predictions - y)**2, axis=0)
+    else:
+        return abs(predictions - y) ** 2
 
 
 def measure_performance(model: NeuralNetwork, test_data: CustomDataset = None, verbose=False):
