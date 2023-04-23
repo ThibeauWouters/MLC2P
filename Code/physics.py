@@ -150,7 +150,7 @@ def p2p(rho: float, eps: float, v: float, model: nn.Module, nb_repetitions: int 
     press = ideal_eos(rho, eps)
 
     for _ in range(nb_repetitions):
-        # Compute the cons from the prims 
+        # Compute the cons from the prims
         d, s, t = p2c(rho, eps, v, press)
         with torch.no_grad():
             # Use cons and neural net to get pressure
@@ -166,7 +166,7 @@ def p2p(rho: float, eps: float, v: float, model: nn.Module, nb_repetitions: int 
 #############################
 
 
-def generate_data(number_of_points: int = 10000, save_name: str = "") -> list:
+def generate_c2p_data_ideal_gas(number_of_points: int = 10000, save_name: str = "") -> list:
     """
     Generates training data of specified size, with ideal gas EOS, by sampling and performing the P2C transformation.
     :param number_of_points: The number of data points to be generated.
@@ -218,19 +218,6 @@ def generate_data(number_of_points: int = 10000, save_name: str = "") -> list:
     return data
 
 
-def generate_data_as_df(number_of_points: int = 1000, save_name: str = "") -> pd.DataFrame:
-    """
-    Same as above function, but creates Pandas DataFrame out of generated data before returning.
-    :param number_of_points: The number of data points to be generated.
-    :param save_name: In case we save the data, the name of the .csv file to which the data is saved.
-    :return: Pandas DataFrame of sampled data of conserved and primitive variables.
-    """
-    # Generate the data using function above
-    test_data_csv = generate_data(number_of_points, save_name=save_name)
-    # Return after making correct Pandas DataFrame
-    return pd.DataFrame(test_data_csv, columns=['rho', 'eps', 'v', 'p', 'D', 'S', 'tau'])
-
-
 #################
 # TABULATED EOS #
 #################
@@ -245,7 +232,7 @@ def read_eos_table(filename: str):
     return h5py.File(filename, 'r')
 
 
-def convert_eos_table(eos_table, var_names=["logenergy", "logpress", "cs2"], save_name="train_eos_table.h5"):
+def generate_eos_data(eos_table, var_names=["logenergy", "logpress", "cs2"], save_name="train_eos_table.h5"):
     """
     Convert the EOS table to rows of training examples, taking the provided variables into account for the output.
     That is, the format of the EOS tables as provided on the website treat all variables as different datasets in the .h5 files. Here, we convert these to a different format:
@@ -283,7 +270,7 @@ def convert_eos_table(eos_table, var_names=["logenergy", "logpress", "cs2"], sav
         dataset = f.create_dataset('var_names', data=var_names)
 
 
-def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int = 10000, save_name: str = "") -> list:
+def generate_c2p_data_tabular_eos(eos_table: h5py._hl.files.File, number_of_points: int = 10000, save_name: str = "", save_raw_data=False) -> list:
     """
     Generates training data of specified size by sampling from tabulated EOS and performing the P2C transformation.
     :param eos_table: An h5py File object containing the contents of the EOS table that we read in.
@@ -292,21 +279,26 @@ def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int 
     :return: list of which rows of sampled data of conserved and primitive variables.
     """
 
-    # Initialize empty data
-    data = []
+    # Initialize empty arrays for saving data
+    features = []  # features for training the network
+    labels = []  # labels for training the network
+    if save_raw_data:
+        data = []  # save raw data
+
+    # Names for saving later on:
+    var_names = ["logrho", "rho", "logeps", "eps", "v", "logtemp", "temp", "ye", "logp", "p", "logD", "D", "logS", "S", "logtau", "tau"]
 
     # Get the appropriate Numpy arrays from the EOS table
-    ye_table = eos_table["ye"][()]
+    ye_table   = eos_table["ye"][()]
     temp_table = eos_table["logtemp"][()]
-    rho_table = eos_table["logrho"][()]
-    eps_table = eos_table["logenergy"][()]
-    p_table = eos_table["logpress"][()]
-    cs2_table = eos_table["cs2"][()]
+    rho_table  = eos_table["logrho"][()]
+    eps_table  = eos_table["logenergy"][()]
+    p_table    = eos_table["logpress"][()]
 
     # Get the sizes of the table axes: the table uses the form (Y_e, T, rho)
-    len_ye = eos_table["pointsye"][()][0]
+    len_ye   = eos_table["pointsye"][()][0]
     len_temp = eos_table["pointstemp"][()][0]
-    len_rho = eos_table["pointsrho"][()][0]
+    len_rho  = eos_table["pointsrho"][()][0]
 
     # Sample and generate a new row for the training data
     for i in range(number_of_points):
@@ -314,63 +306,58 @@ def generate_tabular_data(eos_table: h5py._hl.files.File, number_of_points: int 
         v = random.uniform(V_MIN, V_MAX)
 
         # Sample indices for the table:
-        ye_index = np.random.choice(len_ye)
+        ye_index   = np.random.choice(len_ye)
         temp_index = np.random.choice(len_temp)
-        rho_index = np.random.choice(len_rho)
+        rho_index  = np.random.choice(len_rho)
 
         # Get the values:
-        ye = ye_table[ye_index]
-        temp = temp_table[temp_index]
-        rho = rho_table[rho_index]
-        eps = eps_table[ye_index, temp_index, rho_index]
-        p = p_table[ye_index, temp_index, rho_index]
-        cs2 = cs2_table[ye_index, temp_index, rho_index]
+        ye      = ye_table[ye_index]
+        logtemp = temp_table[temp_index]
+        logrho  = rho_table[rho_index]
+        logeps  = eps_table[ye_index, temp_index, rho_index]
+        logp    = p_table[ye_index, temp_index, rho_index]
+
+        # Get rid of the log values
+        temp = 10 ** logtemp
+        rho  = 10 ** logrho
+        eps  = 10 ** logeps
+        p    = 10 ** logp
 
         # Do P2C with above values
-        Dvalue = D(rho, 10 ** eps, v, 10 ** p)
-        Svalue = S(rho, 10 ** eps, v, 10 ** p)
-        tauvalue = tau(rho, 10 ** eps, v, 10 ** p)
+        Dvalue   = D(rho, eps, v, p)
+        Svalue   = S(rho, eps, v, p)
+        tauvalue = tau(rho, eps, v, p)
 
-        # Add the values to a new row
-        # NOTE - we take the log of cs2
-        new_row = [rho, eps, v, temp, ye, p, np.log(cs2), Dvalue, Svalue, tauvalue]
+        # Get the log values
+        logD   = np.log10(Dvalue)
+        logS   = np.log10(Svalue)
+        logtau = np.log10(tauvalue)
 
-        # Append the row to the list
-        data.append(new_row)
+        # Add the values to a new row for the raw data
+        if save_raw_data:
+            new_row = [logrho, rho, logeps, eps, v, logtemp, temp, ye, logp, p, logD, Dvalue, logS, Svalue, logtau, tauvalue]
+            # Append the row to the list
+            data.append(new_row)
 
-    # Done generating data, now save if wanted by the user:
-    if len(save_name) > 0:
-        # Save as CSV, specify the header
-        header = ["rho", "logeps", "v", "logtemp", "ye", "logpress", "logcs2", "D", "S", "tau"]
-        # Get the correct filename, pointing to the "data" directory
-        save_name = "Data/" + save_name
-        filename = os.path.join(master_dir, save_name)
-        if (save_name[-3:]) != ".csv":
-            # Make sure the file extension is csv
-            filename += ".csv"
+        # Save the feature and label data
+        features.append([logD, logS, logtau, ye])
+        # TODO - nested list or not???
+        labels.append([logp])
 
-        print("Saving to ", filename)
+    # In the end, we will save as HDF5
+    with h5py.File(save_name, 'w') as f:
+        # Save the features and labels data
+        dataset = f.create_dataset("features", data=features)
+        dataset = f.create_dataset("labels", data=labels)
+        if save_raw_data:
+            # Convert to an array
+            data = np.array(data)
+            # Save the raw data under "my dataset"
+            dataset = f.create_dataset('var_names', data=var_names)
+            for i in range(len(var_names)):
+                dataset = f.create_dataset(var_names[i], data=data[:, i])
 
-        # Open the filename and write the data to it
-        with open(filename, 'w', newline='') as file:
-            writer = csv.writer(file)
-            # write header
-            writer.writerow(header)
-            # write data
-            writer.writerows(data)
+    # Don't forget to close EOS tables!
+    eos_table.close()
 
-    # Also return the data to the user
-    return data
-
-# def generate_data_as_df(number_of_points: int = 1000, save: bool = False, name: str = "C2P_data") -> pd.DataFrame:
-#     """
-#     Same as above function, but creates Pandas DataFrame out of generated data before returning.
-#     :param number_of_points: The number of data points to be generated.
-#     :param save: Decides whether the data, after generation, gets saved or not.
-#     :param name: In case we save the data, the name of the .csv file to which the data is saved.
-#     :return: Pandas DataFrame of sampled data of conserved and primitive variables.
-#     """
-#     # Generate the data using function above
-#     test_data_csv = generate_data(number_of_points, save=save, name=name)
-#     # Return after making correct Pandas DataFrame
-#     return pd.DataFrame(test_data_csv, columns=['rho', 'eps', 'v', 'p', 'D', 'S', 'tau'])
+    return None
