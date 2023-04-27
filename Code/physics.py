@@ -231,6 +231,63 @@ def read_eos_table(filename: str):
 
     return h5py.File(filename, 'r')
 
+# TODO - provide documentation and explain how this is different from the function below
+def convert_eos_table(eos_table, var_names=["logenergy", "logpress", "cs2"], save_name="train_eos_table.h5"):
+    """
+    Convert the EOS table to rows, but each variable is one column
+    That is, the format of the EOS tables as provided on the website treat all variables as different datasets in the .h5 files. Here, we convert these to a different format:
+    """
+
+    # Get the "index" or "input" variables (rho, temp, ye).
+    rho, temp, ye = eos_table["logrho"][()], eos_table["logtemp"][()], eos_table["ye"][()]
+
+    # Save the values to a dict for lookup
+    values_dict = {}
+    for name in var_names:
+        values_dict[name] = eos_table[name][()]
+
+    # Get lengths
+    n_rho = len(rho)
+    n_temp = len(temp)
+    n_ye = len(ye)
+
+    size = n_rho * n_temp * n_ye
+
+    # We are going to save the values as columns later on
+    rho_array = np.empty(size)
+    temp_array = np.empty(size)
+    ye_array = np.empty(size)
+
+    # Get a dict to save the columns of the "output" variables
+    var_dict = {}
+    for name in var_names:
+        var_dict[name] = np.empty(size)
+
+    counter = 0
+
+    # Loop and get values
+    for i, r in enumerate(rho):
+        for j, t in enumerate(temp):
+            for k, y in enumerate(ye):
+                # Start by saving the "input" values of this example
+                rho_array[counter]  = r
+                temp_array[counter] = t
+                ye_array[counter]   = y
+                # Add the "output" columns
+                for name in var_names:
+                    var_dict[name][counter] = values_dict[name][k, j, i]
+                # Added an example, increment counter
+                counter += 1
+
+    # Save examples as HDF5 file
+    with h5py.File(save_name, 'w') as f:
+        # Save the examples under "my dataset"
+        dataset = f.create_dataset('var_names', data=np.array(var_names))
+        dataset = f.create_dataset('logrho', data=rho_array)
+        dataset = f.create_dataset('logtemp', data=temp_array)
+        dataset = f.create_dataset('ye', data=ye_array)
+        for name in var_names:
+            dataset = f.create_dataset(name, data=var_dict[name])
 
 def generate_eos_data(eos_table, var_names=["logenergy", "logpress", "cs2"], save_name="train_eos_table.h5"):
     """
@@ -244,6 +301,7 @@ def generate_eos_data(eos_table, var_names=["logenergy", "logpress", "cs2"], sav
 
     # Get the "index" or "input" variables (rho, temp, ye).
     rho, temp, ye = eos_table["logrho"][()], eos_table["logtemp"][()], eos_table["ye"][()]
+
     # Get a dict to save the columns of the "output" variables
     var_dict = {}
     for name in var_names:
@@ -261,6 +319,7 @@ def generate_eos_data(eos_table, var_names=["logenergy", "logpress", "cs2"], sav
                 new_row = [var_dict[name][k, j, i] for name in var_names]
                 # Add to our array
                 labels_array.append(new_row)
+
     # Save examples as HDF5 file
     with h5py.File(save_name, 'w') as f:
         # Save the examples under "my dataset"
