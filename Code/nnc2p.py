@@ -7,7 +7,7 @@ import os
 import csv
 import torch.optim
 from torch import nn
-from torch.utils.data import DataLoader
+from torch.utils.data import Dataset, DataLoader
 import data
 import physics
 from data import CustomDataset
@@ -196,6 +196,54 @@ def create_nn(state_dict):
 
     return model
 
+
+# The most recent and up to date, most flexible neural network we created:
+
+class Net(nn.Module):
+    """
+    Implements a simple feedforward neural network.
+    """
+
+    def __init__(self, nb_of_inputs: int = 3, nb_of_outputs: int = 1, h: list = [600, 200], reg: bool = False,
+                 activation_function=torch.nn.Sigmoid, output_bias=True) -> None:
+        """
+        Initialize the neural network class.
+        """
+        # Call the super constructor first
+        super(Net, self).__init__()
+
+        # For convenience, save the sizes of the hidden layers as fields as well
+        self.h = h
+        # Add visible layers as well: input is 3D and output is 1D
+        self.h_augmented = [nb_of_inputs] + h + [nb_of_outputs]
+
+        # Add field to specify whether or not we do regularization
+        self.regularization = reg
+
+        # Define the layers:
+        for i in range(len(self.h_augmented) - 1):
+            if i == len(self.h_augmented) - 2:
+                setattr(self, f"linear{i + 1}",
+                        nn.Linear(self.h_augmented[i], self.h_augmented[i + 1], bias=output_bias))
+            else:
+                setattr(self, f"linear{i + 1}", nn.Linear(self.h_augmented[i], self.h_augmented[i + 1]))
+                setattr(self, f"activation{i + 1}", activation_function())
+
+    def forward(self, x):
+        """
+        Computes a forward step given the input x.
+        :param x: Input for the neural network.
+        :return: x: Output neural network
+        """
+
+        for i, module in enumerate(self.modules()):
+            # The first module is the whole NNC2P object, continue
+            if i == 0:
+                continue
+            x = module(x)
+
+        return x
+
 ############################
 # GENERAL TRAINING ASPECTS #
 ############################
@@ -330,8 +378,8 @@ def test_loop(dataloader: DataLoader, model: NeuralNetwork, loss_fn: Callable) -
 class Trainer:
 
     def __init__(self, model: nn.Module, learning_rate: float, train_dataloader: DataLoader = None,
-                 test_dataloader: DataLoader = None, loss_fn: Callable = nn.MSELoss(), train_losses=None,
-                 test_losses: list = None, adaptation_indices: list = None, use_c2p_loss: bool = False) -> None:
+                 test_dataloader: DataLoader = None, loss_fn: Callable = nn.MSELoss(), optimizer = torch.optim.Adam,
+                 train_losses=None, test_losses: list = None, adaptation_indices: list = None, use_c2p_loss: bool = False) -> None:
         """
         Initializes a Trainer object. This object brings together the neural network architecture defined above,
         the optimizer used, the dataloaders used while training, and simplifies the training process for the
@@ -361,7 +409,7 @@ class Trainer:
         self.loss_fn = loss_fn
         self.learning_rate = learning_rate
         self.use_c2p_loss = use_c2p_loss
-        self.optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+        self.optimizer = optimizer(model.parameters(), lr=learning_rate)
         # For list arguments, make sure that empty list is initialized as default
         if train_losses is None:
             train_losses = []
@@ -517,7 +565,7 @@ def l2_norm(predictions, y, reduction = True):
         return abs(predictions - y) ** 2
 
 
-def measure_performance(model: NeuralNetwork, test_data: CustomDataset = None, verbose=False):
+def measure_performance(model: nn.Module, test_data: Dataset = None, verbose=False):
     """
     Measures the performance similar to how the Dieslhorst et al. paper does it. Computes the L1-norm and Linfty-norm
     errors (difference between the predictions and true values) on the provided test set.
@@ -629,7 +677,7 @@ def prune_bias(b: torch.tensor, index: int) -> torch.tensor:
     return torch.cat([before, after])
 
 
-def prune(old_model: NeuralNetwork, layer_index: int, neuron_index: int) -> NeuralNetwork:
+def prune(old_model: nn.Module, layer_index: int, neuron_index: int) -> NeuralNetwork:
     """
     Prunes a neural network once given the hidden layer index and the neuron index. Note: we assume two layers.
 
@@ -645,8 +693,12 @@ def prune(old_model: NeuralNetwork, layer_index: int, neuron_index: int) -> Neur
     new_state_dict = state_dict.copy()
 
     # For convenience, get the sizes of the hidden layers from the old network
-    h1 = old_model.h1
-    h2 = old_model.h2
+    #h1 = old_model.h1
+    #h2 = old_model.h2
+
+    # Updated code:
+    h1 = old_model.h[0]
+    h2 = old_model.h[1]
 
     # Based on the layer_index, get the correct layers' parameters' names:
     this_layer_name = "linear" + str(layer_index)
@@ -677,7 +729,13 @@ def prune(old_model: NeuralNetwork, layer_index: int, neuron_index: int) -> Neur
     else:
         h2 = h2 - 1
 
-    new_model = NeuralNetwork(h1=h1, h2=h2)
+    # This depends on the implementation of the
+    ac_func = old_model.activation_function
+    out_bias = old_model.output_bias
+    new_model = Net(h=[h1, h2], nb_of_outputs=3, activation_function=ac_func, output_bias=old_model.output_bias).double()
+
+    new_model.activation_function = ac_func
+    new_model.output_bias = out_bias
 
     # Now, load the pruned model's weights into the architecture
     new_model.load_state_dict(new_state_dict)
@@ -685,14 +743,14 @@ def prune(old_model: NeuralNetwork, layer_index: int, neuron_index: int) -> Neur
     return new_model
 
 
-def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int = 1000, verbose=True) -> tuple[int, int, float, dict]:
+def find_optimal_neuron_to_prune(model: nn.Module, validation_data, verbose=True) -> tuple[int, int, float, dict]:
     """
     Finds the optimal neuron to prune, that is, the neuron which after pruning this neuron from the current model,
     gives the model which has the best performance over all pruned models.
 
     :param model: Current model which we wish to prune
     :param validation_data_size: Number of data points to be used in the validation set.
-    :param verbose: Boolean indicating whether or not we wish to print the progress.
+    :param verbose: Boolean indicating whether we wish to print the progress.
     :return: best_layer_index, best_neuron_index, best_performance, values_dict: The layer and neuron index of the neuron
      that gives best model after pruning and its performance after pruning. Values dict is useful for plotting this function.
     """
@@ -707,14 +765,17 @@ def find_optimal_neuron_to_prune(model: NeuralNetwork, validation_data_size: int
     values_dict = {'layer_index': [], 'neuron_index': [], 'l1_norm': [], 'l2_norm': [], 'linfty_norm': []}
 
     # Get the validation set to compare performances, 1000 datapoints are tested
-    validation_data = data.CustomDataset(physics.generate_data_as_df(validation_data_size))
+    #validation_data = data.CustomDataset(physics.generate_data_as_df(validation_data_size))
+
 
     # Start form an existing model
     current_model = model
 
     # Get the sizes of hidden layers of this model
-    h1 = current_model.h1
-    h2 = current_model.h2
+    #h1 = current_model.h1
+    #h2 = current_model.h2
+    h1 = current_model.h[0]
+    h2 = current_model.h[1]
     hidden_layer_sizes = [h1, h2]
 
     # Loop over all layers:
@@ -822,7 +883,7 @@ def hill_climbing_pruning(model, max_pruning_number, lr: float = 1e-6, validatio
 ###################
 
 
-def evaluate_models(models: list, csv_file: str = "performance_models.csv", size_test_data: int = 40000) -> pd.DataFrame:
+def evaluate_models(models: list, test_data: Dataset, csv_file: str = "performance_models.csv") -> pd.DataFrame:
     """
     Evaluates a list of models and saves this evaluation to a specified CSV file and returns it as a Pandas DataFrame.
     It also specifies the compression ratio, assuming the first element to be the largest model to which we compare
@@ -841,7 +902,7 @@ def evaluate_models(models: list, csv_file: str = "performance_models.csv", size
         writer.writerow(header)
 
     # Dataset to evaluate the models
-    test_data = data.CustomDataset(physics.generate_data_as_df(number_of_points=size_test_data))
+    #test_data = data.CustomDataset(physics.generate_data_as_df(number_of_points=size_test_data))
 
     # Go over all models, evaluate performance
     for i, model in enumerate(models):

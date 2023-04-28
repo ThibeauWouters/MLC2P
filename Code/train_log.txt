@@ -32670,3 +32670,5521 @@ Test  loss: 4.61E-02
 
  Epoch 41 
  --------------
+Training the model for 500 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 1.90E-01
+Test  loss: 1.88E-01
+
+ Epoch 1 
+ --------------
+Train loss: 1.17E-01
+Test  loss: 1.17E-01
+
+ Epoch 2 
+ --------------
+Train loss: 9.46E-02
+Test  loss: 9.42E-02
+
+ Epoch 3 
+ --------------
+Train loss: 1.07E-01
+Test  loss: 1.06E-01
+
+ Epoch 4 
+ --------------
+Train loss: 9.38E-02
+Test  loss: 9.32E-02
+
+ Epoch 5 
+ --------------
+Train loss: 1.05E-01
+Test  loss: 1.05E-01
+
+ Epoch 6 
+ --------------
+Train loss: 1.06E-01
+Test  loss: 1.05E-01
+
+ Epoch 7 
+ --------------
+Train loss: 7.33E-02
+Test  loss: 7.31E-02
+
+ Epoch 8 
+ --------------
+Train loss: 9.04E-02
+Test  loss: 9.04E-02
+
+ Epoch 9 
+ --------------
+Train loss: 7.86E-02
+Test  loss: 7.86E-02
+
+ Epoch 10 
+ --------------
+Train loss: 1.09E-01
+Test  loss: 1.10E-01
+
+ Epoch 11 
+ --------------
+Train loss: 7.86E-02
+Test  loss: 7.86E-02
+
+ Epoch 12 
+ --------------
+Adapting learning rate to 0.05
+Train loss: 1.39E-01
+Test  loss: 1.40E-01
+
+ Epoch 13 
+ --------------
+Train loss: 5.18E-02
+Test  loss: 5.17E-02
+
+ Epoch 14 
+ --------------
+Train loss: 5.21E-02
+Test  loss: 5.20E-02
+
+ Epoch 15 
+ --------------
+Train loss: 5.20E-02
+Test  loss: 5.19E-02
+
+ Epoch 16 
+ --------------
+Train loss: 5.55E-02
+Test  loss: 5.54E-02
+
+ Epoch 17 
+ --------------
+Train loss: 5.78E-02
+Test  loss: 5.75E-02
+
+ Epoch 18 
+ --------------
+Train loss: 5.96E-02
+Test  loss: 5.96E-02
+
+ Epoch 19 
+ --------------
+Train loss: 5.91E-02
+Test  loss: 5.91E-02
+
+ Epoch 20 
+ --------------
+Train loss: 6.27E-02
+Test  loss: 6.26E-02
+
+ Epoch 21 
+ --------------
+Train loss: 6.25E-02
+Test  loss: 6.24E-02
+
+ Epoch 22 
+ --------------
+Train loss: 5.95E-02
+Test  loss: 5.94E-02
+
+ Epoch 23 
+ --------------
+Adapting learning rate to 0.025
+Train loss: 6.17E-02
+Test  loss: 6.16E-02
+
+ Epoch 24 
+ --------------
+Train loss: 4.35E-02
+Test  loss: 4.31E-02
+
+ Epoch 25 
+ --------------
+Train loss: 4.20E-02
+Test  loss: 4.16E-02
+
+ Epoch 26 
+ --------------
+Train loss: 4.16E-02
+Test  loss: 4.12E-02
+
+ Epoch 27 
+ --------------
+Train loss: 4.20E-02
+Test  loss: 4.16E-02
+
+ Epoch 28 
+ --------------
+Train loss: 4.21E-02
+Test  loss: 4.17E-02
+
+ Epoch 29 
+ --------------
+Train loss: 4.22E-02
+Test  loss: 4.18E-02
+
+ Epoch 30 
+ --------------
+Train loss: 4.20E-02
+Test  loss: 4.16E-02
+
+ Epoch 31 
+ --------------
+Train loss: 4.37E-02
+Test  loss: 4.34E-02
+
+ Epoch 32 
+ --------------
+Train loss: 4.25E-02
+Test  loss: 4.22E-02
+
+ Epoch 33 
+ --------------
+Train loss: 4.24E-02
+Test  loss: 4.21E-02
+
+ Epoch 34 
+ --------------
+Adapting learning rate to 0.0125
+Train loss: 4.31E-02
+Test  loss: 4.28E-02
+
+ Epoch 35 
+ --------------
+Train loss: 3.64E-02
+Test  loss: 3.60E-02
+
+ Epoch 36 
+ --------------
+Train loss: 3.62E-02
+Test  loss: 3.57E-02
+
+ Epoch 37 
+ --------------
+Train loss: 3.61E-02
+Test  loss: 3.56E-02
+
+ Epoch 38 
+ --------------
+Train loss: 3.61E-02
+Test  loss: 3.56E-02
+
+ Epoch 39 
+ --------------
+Train loss: 3.59E-02
+Test  loss: 3.55E-02
+
+ Epoch 40 
+ --------------
+Train loss: 3.59E-02
+Test  loss: 3.55E-02
+
+ Epoch 41 
+ --------------
+Train loss: 3.59E-02
+Test  loss: 3.55E-02
+
+ Epoch 42 
+ --------------
+Train loss: 3.59E-02
+Test  loss: 3.54E-02
+
+ Epoch 43 
+ --------------
+Train loss: 3.57E-02
+Test  loss: 3.53E-02
+
+ Epoch 44 
+ --------------
+Train loss: 3.58E-02
+Test  loss: 3.54E-02
+
+ Epoch 45 
+ --------------
+Train loss: 3.60E-02
+Test  loss: 3.56E-02
+
+ Epoch 46 
+ --------------
+Train loss: 3.60E-02
+Test  loss: 3.55E-02
+
+ Epoch 47 
+ --------------
+Train loss: 3.56E-02
+Test  loss: 3.52E-02
+
+ Epoch 48 
+ --------------
+Train loss: 3.60E-02
+Test  loss: 3.56E-02
+
+ Epoch 49 
+ --------------
+Train loss: 3.55E-02
+Test  loss: 3.51E-02
+
+ Epoch 50 
+ --------------
+Train loss: 3.56E-02
+Test  loss: 3.51E-02
+
+ Epoch 51 
+ --------------
+Train loss: 3.56E-02
+Test  loss: 3.52E-02
+
+ Epoch 52 
+ --------------
+Train loss: 3.56E-02
+Test  loss: 3.51E-02
+
+ Epoch 53 
+ --------------
+Train loss: 3.57E-02
+Test  loss: 3.53E-02
+
+ Epoch 54 
+ --------------
+Adapting learning rate to 0.00625
+Train loss: 3.58E-02
+Test  loss: 3.54E-02
+
+ Epoch 55 
+ --------------
+Train loss: 3.49E-02
+Test  loss: 3.45E-02
+
+ Epoch 56 
+ --------------
+Train loss: 3.48E-02
+Test  loss: 3.43E-02
+
+ Epoch 57 
+ --------------
+Train loss: 3.47E-02
+Test  loss: 3.43E-02
+
+ Epoch 58 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 59 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 60 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 61 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 62 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 63 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 64 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 65 
+ --------------
+Train loss: 3.46E-02
+Test  loss: 3.42E-02
+
+ Epoch 66 
+ --------------
+Training the model for 500 epochs.
+
+ Epoch 0 
+ --------------
+Training the model for 1000 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 1.83E-01
+Test  loss: 1.83E-01
+
+ Epoch 1 
+ --------------
+Train loss: 4.29E-02
+Test  loss: 4.31E-02
+
+ Epoch 2 
+ --------------
+Train loss: 7.17E-02
+Test  loss: 7.22E-02
+
+ Epoch 3 
+ --------------
+Train loss: 5.32E-02
+Test  loss: 5.33E-02
+
+ Epoch 4 
+ --------------
+Training the model for 1000 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 1.44E+01
+Test  loss: 1.44E+01
+
+ Epoch 1 
+ --------------
+Train loss: 1.44E+01
+Test  loss: 1.44E+01
+
+ Epoch 2 
+ --------------
+Train loss: 1.44E+01
+Test  loss: 1.44E+01
+
+ Epoch 3 
+ --------------
+Train loss: 1.44E+01
+Test  loss: 1.44E+01
+
+ Epoch 4 
+ --------------
+Training the model for 1000 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 1.16E+01
+Test  loss: 1.16E+01
+
+ Epoch 1 
+ --------------
+Train loss: 6.27E+00
+Test  loss: 6.23E+00
+
+ Epoch 2 
+ --------------
+Train loss: 5.32E+00
+Test  loss: 5.28E+00
+
+ Epoch 3 
+ --------------
+Train loss: 4.70E+00
+Test  loss: 4.68E+00
+
+ Epoch 4 
+ --------------
+Train loss: 4.24E+00
+Test  loss: 4.22E+00
+
+ Epoch 5 
+ --------------
+Train loss: 3.85E+00
+Test  loss: 3.83E+00
+
+ Epoch 6 
+ --------------
+Training the model for 1000 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 1.68E+00
+Test  loss: 1.67E+00
+
+ Epoch 1 
+ --------------
+Train loss: 1.33E+00
+Test  loss: 1.33E+00
+
+ Epoch 2 
+ --------------
+Train loss: 1.18E+00
+Test  loss: 1.18E+00
+
+ Epoch 3 
+ --------------
+Train loss: 1.07E+00
+Test  loss: 1.07E+00
+
+ Epoch 4 
+ --------------
+Training the model for 1000 epochs.
+
+ Epoch 0 
+ --------------
+Train loss: 3.00E-02
+Test  loss: 2.99E-02
+
+ Epoch 1 
+ --------------
+Train loss: 2.00E-02
+Test  loss: 1.98E-02
+
+ Epoch 2 
+ --------------
+Train loss: 1.42E-02
+Test  loss: 1.41E-02
+
+ Epoch 3 
+ --------------
+Train loss: 1.23E-02
+Test  loss: 1.22E-02
+
+ Epoch 4 
+ --------------
+Train loss: 9.68E-03
+Test  loss: 9.59E-03
+
+ Epoch 5 
+ --------------
+Train loss: 8.35E-03
+Test  loss: 8.25E-03
+
+ Epoch 6 
+ --------------
+Train loss: 7.73E-03
+Test  loss: 7.66E-03
+
+ Epoch 7 
+ --------------
+Train loss: 7.34E-03
+Test  loss: 7.29E-03
+
+ Epoch 8 
+ --------------
+Train loss: 7.10E-03
+Test  loss: 7.07E-03
+
+ Epoch 9 
+ --------------
+Train loss: 6.89E-03
+Test  loss: 6.86E-03
+
+ Epoch 10 
+ --------------
+Train loss: 6.75E-03
+Test  loss: 6.74E-03
+
+ Epoch 11 
+ --------------
+Train loss: 6.70E-03
+Test  loss: 6.69E-03
+
+ Epoch 12 
+ --------------
+Train loss: 6.61E-03
+Test  loss: 6.60E-03
+
+ Epoch 13 
+ --------------
+Train loss: 6.47E-03
+Test  loss: 6.46E-03
+
+ Epoch 14 
+ --------------
+Train loss: 6.59E-03
+Test  loss: 6.56E-03
+
+ Epoch 15 
+ --------------
+Train loss: 6.64E-03
+Test  loss: 6.61E-03
+
+ Epoch 16 
+ --------------
+Train loss: 6.54E-03
+Test  loss: 6.51E-03
+
+ Epoch 17 
+ --------------
+Train loss: 6.47E-03
+Test  loss: 6.45E-03
+
+ Epoch 18 
+ --------------
+Train loss: 6.37E-03
+Test  loss: 6.34E-03
+
+ Epoch 19 
+ --------------
+Train loss: 6.34E-03
+Test  loss: 6.32E-03
+
+ Epoch 20 
+ --------------
+Train loss: 6.21E-03
+Test  loss: 6.19E-03
+
+ Epoch 21 
+ --------------
+Train loss: 6.19E-03
+Test  loss: 6.18E-03
+
+ Epoch 22 
+ --------------
+Train loss: 6.07E-03
+Test  loss: 6.07E-03
+
+ Epoch 23 
+ --------------
+Train loss: 6.11E-03
+Test  loss: 6.12E-03
+
+ Epoch 24 
+ --------------
+Train loss: 6.06E-03
+Test  loss: 6.07E-03
+
+ Epoch 25 
+ --------------
+Train loss: 6.03E-03
+Test  loss: 6.04E-03
+
+ Epoch 26 
+ --------------
+Train loss: 5.96E-03
+Test  loss: 5.97E-03
+
+ Epoch 27 
+ --------------
+Train loss: 5.94E-03
+Test  loss: 5.95E-03
+
+ Epoch 28 
+ --------------
+Train loss: 6.04E-03
+Test  loss: 6.04E-03
+
+ Epoch 29 
+ --------------
+Train loss: 6.07E-03
+Test  loss: 6.08E-03
+
+ Epoch 30 
+ --------------
+Train loss: 6.17E-03
+Test  loss: 6.18E-03
+
+ Epoch 31 
+ --------------
+Train loss: 6.26E-03
+Test  loss: 6.28E-03
+
+ Epoch 32 
+ --------------
+Adapting learning rate to 0.0005
+Train loss: 6.22E-03
+Test  loss: 6.24E-03
+
+ Epoch 33 
+ --------------
+Train loss: 4.60E-03
+Test  loss: 4.61E-03
+
+ Epoch 34 
+ --------------
+Train loss: 4.60E-03
+Test  loss: 4.61E-03
+
+ Epoch 35 
+ --------------
+Train loss: 4.61E-03
+Test  loss: 4.62E-03
+
+ Epoch 36 
+ --------------
+Train loss: 4.61E-03
+Test  loss: 4.62E-03
+
+ Epoch 37 
+ --------------
+Train loss: 4.62E-03
+Test  loss: 4.64E-03
+
+ Epoch 38 
+ --------------
+Train loss: 4.63E-03
+Test  loss: 4.65E-03
+
+ Epoch 39 
+ --------------
+Train loss: 4.64E-03
+Test  loss: 4.66E-03
+
+ Epoch 40 
+ --------------
+Train loss: 4.63E-03
+Test  loss: 4.65E-03
+
+ Epoch 41 
+ --------------
+Train loss: 4.63E-03
+Test  loss: 4.65E-03
+
+ Epoch 42 
+ --------------
+Train loss: 4.61E-03
+Test  loss: 4.64E-03
+
+ Epoch 43 
+ --------------
+Train loss: 4.59E-03
+Test  loss: 4.61E-03
+
+ Epoch 44 
+ --------------
+Train loss: 4.58E-03
+Test  loss: 4.60E-03
+
+ Epoch 45 
+ --------------
+Train loss: 4.56E-03
+Test  loss: 4.58E-03
+
+ Epoch 46 
+ --------------
+Train loss: 4.55E-03
+Test  loss: 4.57E-03
+
+ Epoch 47 
+ --------------
+Train loss: 4.54E-03
+Test  loss: 4.57E-03
+
+ Epoch 48 
+ --------------
+Train loss: 4.53E-03
+Test  loss: 4.56E-03
+
+ Epoch 49 
+ --------------
+Train loss: 4.52E-03
+Test  loss: 4.54E-03
+
+ Epoch 50 
+ --------------
+Train loss: 4.51E-03
+Test  loss: 4.53E-03
+
+ Epoch 51 
+ --------------
+Train loss: 4.51E-03
+Test  loss: 4.54E-03
+
+ Epoch 52 
+ --------------
+Train loss: 4.50E-03
+Test  loss: 4.53E-03
+
+ Epoch 53 
+ --------------
+Train loss: 4.50E-03
+Test  loss: 4.53E-03
+
+ Epoch 54 
+ --------------
+Train loss: 4.50E-03
+Test  loss: 4.54E-03
+
+ Epoch 55 
+ --------------
+Train loss: 4.51E-03
+Test  loss: 4.54E-03
+
+ Epoch 56 
+ --------------
+Train loss: 4.50E-03
+Test  loss: 4.54E-03
+
+ Epoch 57 
+ --------------
+Train loss: 4.51E-03
+Test  loss: 4.54E-03
+
+ Epoch 58 
+ --------------
+Adapting learning rate to 0.00025
+Train loss: 4.51E-03
+Test  loss: 4.54E-03
+
+ Epoch 59 
+ --------------
+Train loss: 3.70E-03
+Test  loss: 3.72E-03
+
+ Epoch 60 
+ --------------
+Train loss: 3.69E-03
+Test  loss: 3.71E-03
+
+ Epoch 61 
+ --------------
+Train loss: 3.69E-03
+Test  loss: 3.70E-03
+
+ Epoch 62 
+ --------------
+Train loss: 3.68E-03
+Test  loss: 3.69E-03
+
+ Epoch 63 
+ --------------
+Train loss: 3.67E-03
+Test  loss: 3.68E-03
+
+ Epoch 64 
+ --------------
+Train loss: 3.66E-03
+Test  loss: 3.67E-03
+
+ Epoch 65 
+ --------------
+Train loss: 3.65E-03
+Test  loss: 3.66E-03
+
+ Epoch 66 
+ --------------
+Train loss: 3.63E-03
+Test  loss: 3.65E-03
+
+ Epoch 67 
+ --------------
+Train loss: 3.63E-03
+Test  loss: 3.64E-03
+
+ Epoch 68 
+ --------------
+Train loss: 3.62E-03
+Test  loss: 3.63E-03
+
+ Epoch 69 
+ --------------
+Train loss: 3.61E-03
+Test  loss: 3.63E-03
+
+ Epoch 70 
+ --------------
+Train loss: 3.60E-03
+Test  loss: 3.62E-03
+
+ Epoch 71 
+ --------------
+Train loss: 3.60E-03
+Test  loss: 3.61E-03
+
+ Epoch 72 
+ --------------
+Train loss: 3.60E-03
+Test  loss: 3.61E-03
+
+ Epoch 73 
+ --------------
+Train loss: 3.59E-03
+Test  loss: 3.61E-03
+
+ Epoch 74 
+ --------------
+Train loss: 3.59E-03
+Test  loss: 3.60E-03
+
+ Epoch 75 
+ --------------
+Train loss: 3.58E-03
+Test  loss: 3.60E-03
+
+ Epoch 76 
+ --------------
+Train loss: 3.58E-03
+Test  loss: 3.60E-03
+
+ Epoch 77 
+ --------------
+Train loss: 3.58E-03
+Test  loss: 3.59E-03
+
+ Epoch 78 
+ --------------
+Train loss: 3.57E-03
+Test  loss: 3.59E-03
+
+ Epoch 79 
+ --------------
+Train loss: 3.57E-03
+Test  loss: 3.59E-03
+
+ Epoch 80 
+ --------------
+Train loss: 3.57E-03
+Test  loss: 3.58E-03
+
+ Epoch 81 
+ --------------
+Train loss: 3.56E-03
+Test  loss: 3.58E-03
+
+ Epoch 82 
+ --------------
+Train loss: 3.55E-03
+Test  loss: 3.57E-03
+
+ Epoch 83 
+ --------------
+Train loss: 3.55E-03
+Test  loss: 3.57E-03
+
+ Epoch 84 
+ --------------
+Train loss: 3.55E-03
+Test  loss: 3.56E-03
+
+ Epoch 85 
+ --------------
+Train loss: 3.54E-03
+Test  loss: 3.56E-03
+
+ Epoch 86 
+ --------------
+Train loss: 3.54E-03
+Test  loss: 3.55E-03
+
+ Epoch 87 
+ --------------
+Train loss: 3.53E-03
+Test  loss: 3.55E-03
+
+ Epoch 88 
+ --------------
+Train loss: 3.52E-03
+Test  loss: 3.54E-03
+
+ Epoch 89 
+ --------------
+Train loss: 3.52E-03
+Test  loss: 3.53E-03
+
+ Epoch 90 
+ --------------
+Train loss: 3.51E-03
+Test  loss: 3.53E-03
+
+ Epoch 91 
+ --------------
+Train loss: 3.51E-03
+Test  loss: 3.52E-03
+
+ Epoch 92 
+ --------------
+Train loss: 3.50E-03
+Test  loss: 3.52E-03
+
+ Epoch 93 
+ --------------
+Train loss: 3.49E-03
+Test  loss: 3.51E-03
+
+ Epoch 94 
+ --------------
+Train loss: 3.48E-03
+Test  loss: 3.50E-03
+
+ Epoch 95 
+ --------------
+Train loss: 3.48E-03
+Test  loss: 3.49E-03
+
+ Epoch 96 
+ --------------
+Train loss: 3.47E-03
+Test  loss: 3.49E-03
+
+ Epoch 97 
+ --------------
+Train loss: 3.46E-03
+Test  loss: 3.48E-03
+
+ Epoch 98 
+ --------------
+Train loss: 3.46E-03
+Test  loss: 3.48E-03
+
+ Epoch 99 
+ --------------
+Train loss: 3.46E-03
+Test  loss: 3.47E-03
+
+ Epoch 100 
+ --------------
+Train loss: 3.45E-03
+Test  loss: 3.47E-03
+
+ Epoch 101 
+ --------------
+Train loss: 3.45E-03
+Test  loss: 3.47E-03
+
+ Epoch 102 
+ --------------
+Train loss: 3.45E-03
+Test  loss: 3.46E-03
+
+ Epoch 103 
+ --------------
+Train loss: 3.44E-03
+Test  loss: 3.46E-03
+
+ Epoch 104 
+ --------------
+Train loss: 3.44E-03
+Test  loss: 3.46E-03
+
+ Epoch 105 
+ --------------
+Train loss: 3.44E-03
+Test  loss: 3.45E-03
+
+ Epoch 106 
+ --------------
+Train loss: 3.44E-03
+Test  loss: 3.45E-03
+
+ Epoch 107 
+ --------------
+Train loss: 3.43E-03
+Test  loss: 3.44E-03
+
+ Epoch 108 
+ --------------
+Train loss: 3.43E-03
+Test  loss: 3.44E-03
+
+ Epoch 109 
+ --------------
+Train loss: 3.42E-03
+Test  loss: 3.44E-03
+
+ Epoch 110 
+ --------------
+Train loss: 3.42E-03
+Test  loss: 3.44E-03
+
+ Epoch 111 
+ --------------
+Train loss: 3.42E-03
+Test  loss: 3.43E-03
+
+ Epoch 112 
+ --------------
+Train loss: 3.41E-03
+Test  loss: 3.43E-03
+
+ Epoch 113 
+ --------------
+Train loss: 3.41E-03
+Test  loss: 3.43E-03
+
+ Epoch 114 
+ --------------
+Train loss: 3.41E-03
+Test  loss: 3.42E-03
+
+ Epoch 115 
+ --------------
+Train loss: 3.40E-03
+Test  loss: 3.42E-03
+
+ Epoch 116 
+ --------------
+Train loss: 3.40E-03
+Test  loss: 3.42E-03
+
+ Epoch 117 
+ --------------
+Train loss: 3.40E-03
+Test  loss: 3.41E-03
+
+ Epoch 118 
+ --------------
+Train loss: 3.39E-03
+Test  loss: 3.41E-03
+
+ Epoch 119 
+ --------------
+Train loss: 3.39E-03
+Test  loss: 3.41E-03
+
+ Epoch 120 
+ --------------
+Train loss: 3.39E-03
+Test  loss: 3.40E-03
+
+ Epoch 121 
+ --------------
+Train loss: 3.38E-03
+Test  loss: 3.40E-03
+
+ Epoch 122 
+ --------------
+Train loss: 3.38E-03
+Test  loss: 3.40E-03
+
+ Epoch 123 
+ --------------
+Train loss: 3.38E-03
+Test  loss: 3.40E-03
+
+ Epoch 124 
+ --------------
+Train loss: 3.38E-03
+Test  loss: 3.39E-03
+
+ Epoch 125 
+ --------------
+Train loss: 3.37E-03
+Test  loss: 3.39E-03
+
+ Epoch 126 
+ --------------
+Train loss: 3.37E-03
+Test  loss: 3.39E-03
+
+ Epoch 127 
+ --------------
+Train loss: 3.37E-03
+Test  loss: 3.39E-03
+
+ Epoch 128 
+ --------------
+Train loss: 3.36E-03
+Test  loss: 3.38E-03
+
+ Epoch 129 
+ --------------
+Train loss: 3.36E-03
+Test  loss: 3.38E-03
+
+ Epoch 130 
+ --------------
+Train loss: 3.36E-03
+Test  loss: 3.38E-03
+
+ Epoch 131 
+ --------------
+Train loss: 3.35E-03
+Test  loss: 3.37E-03
+
+ Epoch 132 
+ --------------
+Train loss: 3.35E-03
+Test  loss: 3.37E-03
+
+ Epoch 133 
+ --------------
+Train loss: 3.35E-03
+Test  loss: 3.37E-03
+
+ Epoch 134 
+ --------------
+Train loss: 3.35E-03
+Test  loss: 3.37E-03
+
+ Epoch 135 
+ --------------
+Train loss: 3.35E-03
+Test  loss: 3.37E-03
+
+ Epoch 136 
+ --------------
+Train loss: 3.34E-03
+Test  loss: 3.36E-03
+
+ Epoch 137 
+ --------------
+Train loss: 3.34E-03
+Test  loss: 3.36E-03
+
+ Epoch 138 
+ --------------
+Train loss: 3.34E-03
+Test  loss: 3.36E-03
+
+ Epoch 139 
+ --------------
+Train loss: 3.33E-03
+Test  loss: 3.35E-03
+
+ Epoch 140 
+ --------------
+Train loss: 3.33E-03
+Test  loss: 3.35E-03
+
+ Epoch 141 
+ --------------
+Train loss: 3.33E-03
+Test  loss: 3.35E-03
+
+ Epoch 142 
+ --------------
+Train loss: 3.32E-03
+Test  loss: 3.35E-03
+
+ Epoch 143 
+ --------------
+Train loss: 3.32E-03
+Test  loss: 3.34E-03
+
+ Epoch 144 
+ --------------
+Train loss: 3.32E-03
+Test  loss: 3.34E-03
+
+ Epoch 145 
+ --------------
+Train loss: 3.31E-03
+Test  loss: 3.34E-03
+
+ Epoch 146 
+ --------------
+Train loss: 3.31E-03
+Test  loss: 3.33E-03
+
+ Epoch 147 
+ --------------
+Train loss: 3.31E-03
+Test  loss: 3.33E-03
+
+ Epoch 148 
+ --------------
+Train loss: 3.31E-03
+Test  loss: 3.33E-03
+
+ Epoch 149 
+ --------------
+Train loss: 3.30E-03
+Test  loss: 3.33E-03
+
+ Epoch 150 
+ --------------
+Train loss: 3.30E-03
+Test  loss: 3.33E-03
+
+ Epoch 151 
+ --------------
+Train loss: 3.30E-03
+Test  loss: 3.32E-03
+
+ Epoch 152 
+ --------------
+Train loss: 3.30E-03
+Test  loss: 3.32E-03
+
+ Epoch 153 
+ --------------
+Train loss: 3.30E-03
+Test  loss: 3.32E-03
+
+ Epoch 154 
+ --------------
+Train loss: 3.29E-03
+Test  loss: 3.32E-03
+
+ Epoch 155 
+ --------------
+Train loss: 3.29E-03
+Test  loss: 3.32E-03
+
+ Epoch 156 
+ --------------
+Train loss: 3.29E-03
+Test  loss: 3.31E-03
+
+ Epoch 157 
+ --------------
+Train loss: 3.28E-03
+Test  loss: 3.31E-03
+
+ Epoch 158 
+ --------------
+Train loss: 3.28E-03
+Test  loss: 3.31E-03
+
+ Epoch 159 
+ --------------
+Train loss: 3.28E-03
+Test  loss: 3.31E-03
+
+ Epoch 160 
+ --------------
+Train loss: 3.28E-03
+Test  loss: 3.31E-03
+
+ Epoch 161 
+ --------------
+Train loss: 3.28E-03
+Test  loss: 3.30E-03
+
+ Epoch 162 
+ --------------
+Train loss: 3.27E-03
+Test  loss: 3.30E-03
+
+ Epoch 163 
+ --------------
+Train loss: 3.27E-03
+Test  loss: 3.30E-03
+
+ Epoch 164 
+ --------------
+Train loss: 3.27E-03
+Test  loss: 3.30E-03
+
+ Epoch 165 
+ --------------
+Train loss: 3.27E-03
+Test  loss: 3.30E-03
+
+ Epoch 166 
+ --------------
+Train loss: 3.27E-03
+Test  loss: 3.30E-03
+
+ Epoch 167 
+ --------------
+Train loss: 3.26E-03
+Test  loss: 3.30E-03
+
+ Epoch 168 
+ --------------
+Train loss: 3.26E-03
+Test  loss: 3.29E-03
+
+ Epoch 169 
+ --------------
+Train loss: 3.27E-03
+Test  loss: 3.30E-03
+
+ Epoch 170 
+ --------------
+Train loss: 3.26E-03
+Test  loss: 3.29E-03
+
+ Epoch 171 
+ --------------
+Train loss: 3.26E-03
+Test  loss: 3.29E-03
+
+ Epoch 172 
+ --------------
+Train loss: 3.26E-03
+Test  loss: 3.29E-03
+
+ Epoch 173 
+ --------------
+Train loss: 3.26E-03
+Test  loss: 3.29E-03
+
+ Epoch 174 
+ --------------
+Train loss: 3.26E-03
+Test  loss: 3.29E-03
+
+ Epoch 175 
+ --------------
+Train loss: 3.25E-03
+Test  loss: 3.29E-03
+
+ Epoch 176 
+ --------------
+Train loss: 3.25E-03
+Test  loss: 3.28E-03
+
+ Epoch 177 
+ --------------
+Train loss: 3.25E-03
+Test  loss: 3.28E-03
+
+ Epoch 178 
+ --------------
+Train loss: 3.25E-03
+Test  loss: 3.28E-03
+
+ Epoch 179 
+ --------------
+Train loss: 3.25E-03
+Test  loss: 3.28E-03
+
+ Epoch 180 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.28E-03
+
+ Epoch 181 
+ --------------
+Train loss: 3.25E-03
+Test  loss: 3.28E-03
+
+ Epoch 182 
+ --------------
+Train loss: 3.25E-03
+Test  loss: 3.28E-03
+
+ Epoch 183 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.28E-03
+
+ Epoch 184 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 185 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 186 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 187 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 188 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 189 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 190 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 191 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 192 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 193 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 194 
+ --------------
+Train loss: 3.24E-03
+Test  loss: 3.27E-03
+
+ Epoch 195 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.27E-03
+
+ Epoch 196 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.27E-03
+
+ Epoch 197 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.27E-03
+
+ Epoch 198 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.26E-03
+
+ Epoch 199 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.26E-03
+
+ Epoch 200 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.26E-03
+
+ Epoch 201 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.26E-03
+
+ Epoch 202 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.26E-03
+
+ Epoch 203 
+ --------------
+Train loss: 3.23E-03
+Test  loss: 3.26E-03
+
+ Epoch 204 
+ --------------
+Adapting learning rate to 0.000125
+Train loss: 3.23E-03
+Test  loss: 3.26E-03
+
+ Epoch 205 
+ --------------
+Train loss: 3.11E-03
+Test  loss: 3.14E-03
+
+ Epoch 206 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.14E-03
+
+ Epoch 207 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.14E-03
+
+ Epoch 208 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.14E-03
+
+ Epoch 209 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 210 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 211 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 212 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 213 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 214 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 215 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 216 
+ --------------
+Train loss: 3.10E-03
+Test  loss: 3.13E-03
+
+ Epoch 217 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.13E-03
+
+ Epoch 218 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 219 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 220 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 221 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 222 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 223 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 224 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 225 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 226 
+ --------------
+Train loss: 3.09E-03
+Test  loss: 3.12E-03
+
+ Epoch 227 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 228 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 229 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 230 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 231 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 232 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 233 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 234 
+ --------------
+Train loss: 3.08E-03
+Test  loss: 3.11E-03
+
+ Epoch 235 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.11E-03
+
+ Epoch 236 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.11E-03
+
+ Epoch 237 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.11E-03
+
+ Epoch 238 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 239 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 240 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 241 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 242 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 243 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 244 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 245 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 246 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 247 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 248 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 249 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 250 
+ --------------
+Train loss: 3.07E-03
+Test  loss: 3.10E-03
+
+ Epoch 251 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.10E-03
+
+ Epoch 252 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.10E-03
+
+ Epoch 253 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 254 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 255 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 256 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 257 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 258 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 259 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 260 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 261 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 262 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 263 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 264 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 265 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 266 
+ --------------
+Train loss: 3.06E-03
+Test  loss: 3.09E-03
+
+ Epoch 267 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.09E-03
+
+ Epoch 268 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.09E-03
+
+ Epoch 269 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.09E-03
+
+ Epoch 270 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.09E-03
+
+ Epoch 271 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.09E-03
+
+ Epoch 272 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.09E-03
+
+ Epoch 273 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 274 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 275 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 276 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 277 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 278 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 279 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 280 
+ --------------
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 281 
+ --------------
+Adapting learning rate to 6.25e-05
+Train loss: 3.05E-03
+Test  loss: 3.08E-03
+
+ Epoch 282 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 283 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 284 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 285 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 286 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 287 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 288 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 289 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 290 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 291 
+ --------------
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 292 
+ --------------
+Adapting learning rate to 3.125e-05
+Train loss: 2.98E-03
+Test  loss: 3.02E-03
+
+ Epoch 293 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.02E-03
+
+ Epoch 294 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.02E-03
+
+ Epoch 295 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.02E-03
+
+ Epoch 296 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.02E-03
+
+ Epoch 297 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.01E-03
+
+ Epoch 298 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.01E-03
+
+ Epoch 299 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.01E-03
+
+ Epoch 300 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.01E-03
+
+ Epoch 301 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.01E-03
+
+ Epoch 302 
+ --------------
+Train loss: 2.97E-03
+Test  loss: 3.01E-03
+
+ Epoch 303 
+ --------------
+Adapting learning rate to 1.5625e-05
+Train loss: 2.97E-03
+Test  loss: 3.01E-03
+
+ Epoch 304 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 305 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 306 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 307 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 308 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 309 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 310 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 311 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 312 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 313 
+ --------------
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 314 
+ --------------
+Adapting learning rate to 7.8125e-06
+Train loss: 2.95E-03
+Test  loss: 2.99E-03
+
+ Epoch 315 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 316 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 317 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 318 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 319 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 320 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 321 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 322 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 323 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 324 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 325 
+ --------------
+Adapting learning rate to 3.90625e-06
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 326 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 327 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 328 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 329 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 330 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 331 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 332 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 333 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 334 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 335 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 336 
+ --------------
+Adapting learning rate to 1.953125e-06
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 337 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 338 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 339 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 340 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 341 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 342 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 343 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 344 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 345 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 346 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 347 
+ --------------
+Adapting learning rate to 9.765625e-07
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 348 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 349 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 350 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 351 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 352 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 353 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 354 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 355 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 356 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 357 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 358 
+ --------------
+Adapting learning rate to 4.8828125e-07
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 359 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 360 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 361 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 362 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 363 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 364 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 365 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 366 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 367 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 368 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 369 
+ --------------
+Adapting learning rate to 2.44140625e-07
+Train loss: 2.94E-03
+Test  loss: 2.98E-03
+
+ Epoch 370 
+ --------------
+Train loss: 2.94E-03
+Test  loss: 2.97E-03
+
+ Epoch 371 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 372 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 373 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 374 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 375 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 376 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 377 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 378 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 379 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 380 
+ --------------
+Adapting learning rate to 1.220703125e-07
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 381 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 382 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 383 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 384 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 385 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 386 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 387 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 388 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 389 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 390 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 391 
+ --------------
+Adapting learning rate to 6.103515625e-08
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 392 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 393 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 394 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 395 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 396 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 397 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 398 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 399 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 400 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 401 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 402 
+ --------------
+Adapting learning rate to 3.0517578125e-08
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 403 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 404 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 405 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 406 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 407 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 408 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 409 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 410 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 411 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 412 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 413 
+ --------------
+Adapting learning rate to 1.52587890625e-08
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 414 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 415 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 416 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 417 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 418 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 419 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 420 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 421 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 422 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 423 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 424 
+ --------------
+Adapting learning rate to 7.62939453125e-09
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 425 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 426 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 427 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 428 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 429 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 430 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 431 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 432 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 433 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 434 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 435 
+ --------------
+Adapting learning rate to 3.814697265625e-09
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 436 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 437 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 438 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 439 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 440 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 441 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 442 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 443 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 444 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 445 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 446 
+ --------------
+Adapting learning rate to 1.9073486328125e-09
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 447 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 448 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 449 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 450 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 451 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 452 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 453 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 454 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 455 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 456 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 457 
+ --------------
+Adapting learning rate to 9.5367431640625e-10
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 458 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 459 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 460 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 461 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 462 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 463 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 464 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 465 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 466 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 467 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 468 
+ --------------
+Adapting learning rate to 4.76837158203125e-10
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 469 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 470 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 471 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 472 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 473 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 474 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 475 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 476 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 477 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 478 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 479 
+ --------------
+Adapting learning rate to 2.384185791015625e-10
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 480 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 481 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 482 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 483 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 484 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 485 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 486 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 487 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 488 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 489 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 490 
+ --------------
+Adapting learning rate to 1.1920928955078125e-10
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 491 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 492 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 493 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 494 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 495 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 496 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 497 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 498 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 499 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 500 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 501 
+ --------------
+Adapting learning rate to 5.960464477539063e-11
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 502 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 503 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 504 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 505 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 506 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 507 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 508 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 509 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 510 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 511 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 512 
+ --------------
+Adapting learning rate to 2.980232238769531e-11
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 513 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 514 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 515 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 516 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 517 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 518 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 519 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 520 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 521 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 522 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 523 
+ --------------
+Adapting learning rate to 1.4901161193847657e-11
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 524 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 525 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 526 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 527 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 528 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 529 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 530 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 531 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 532 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 533 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 534 
+ --------------
+Adapting learning rate to 7.450580596923828e-12
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 535 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 536 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 537 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 538 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 539 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 540 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 541 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 542 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 543 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 544 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 545 
+ --------------
+Adapting learning rate to 3.725290298461914e-12
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 546 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 547 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 548 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 549 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 550 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 551 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 552 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 553 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 554 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 555 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 556 
+ --------------
+Adapting learning rate to 1.862645149230957e-12
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 557 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 558 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 559 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 560 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 561 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 562 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 563 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 564 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 565 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 566 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 567 
+ --------------
+Adapting learning rate to 9.313225746154785e-13
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 568 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 569 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 570 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 571 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 572 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 573 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 574 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 575 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 576 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 577 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 578 
+ --------------
+Adapting learning rate to 4.656612873077393e-13
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 579 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 580 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 581 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 582 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 583 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 584 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 585 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 586 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 587 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 588 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 589 
+ --------------
+Adapting learning rate to 2.3283064365386963e-13
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 590 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 591 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 592 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 593 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 594 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 595 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 596 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 597 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 598 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 599 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 600 
+ --------------
+Adapting learning rate to 1.1641532182693482e-13
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 601 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 602 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 603 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 604 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 605 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 606 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 607 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 608 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 609 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 610 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 611 
+ --------------
+Adapting learning rate to 5.820766091346741e-14
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 612 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 613 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 614 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 615 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 616 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 617 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 618 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 619 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 620 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 621 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 622 
+ --------------
+Adapting learning rate to 2.9103830456733704e-14
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 623 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 624 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 625 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 626 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 627 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 628 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 629 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 630 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 631 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 632 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 633 
+ --------------
+Adapting learning rate to 1.4551915228366852e-14
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 634 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 635 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 636 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 637 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 638 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 639 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 640 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 641 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 642 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 643 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 644 
+ --------------
+Adapting learning rate to 7.275957614183426e-15
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 645 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 646 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 647 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 648 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 649 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 650 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 651 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 652 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 653 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 654 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 655 
+ --------------
+Adapting learning rate to 3.637978807091713e-15
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 656 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 657 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 658 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 659 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 660 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 661 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 662 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 663 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 664 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 665 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 666 
+ --------------
+Adapting learning rate to 1.8189894035458565e-15
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 667 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 668 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 669 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 670 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 671 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 672 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 673 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 674 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 675 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 676 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 677 
+ --------------
+Adapting learning rate to 9.094947017729283e-16
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 678 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 679 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 680 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 681 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 682 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 683 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 684 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 685 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 686 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 687 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 688 
+ --------------
+Adapting learning rate to 4.547473508864641e-16
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 689 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 690 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 691 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 692 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 693 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 694 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 695 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 696 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 697 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 698 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 699 
+ --------------
+Adapting learning rate to 2.2737367544323206e-16
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 700 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 701 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 702 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 703 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 704 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 705 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 706 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 707 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 708 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 709 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 710 
+ --------------
+Adapting learning rate to 1.1368683772161603e-16
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 711 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 712 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 713 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 714 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 715 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 716 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 717 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 718 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 719 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 720 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 721 
+ --------------
+Adapting learning rate to 5.684341886080802e-17
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 722 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 723 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 724 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 725 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 726 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 727 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 728 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 729 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 730 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 731 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 732 
+ --------------
+Adapting learning rate to 2.842170943040401e-17
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 733 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 734 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 735 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 736 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 737 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 738 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 739 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 740 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 741 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 742 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 743 
+ --------------
+Adapting learning rate to 1.4210854715202004e-17
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 744 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 745 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 746 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 747 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 748 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 749 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 750 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 751 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 752 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 753 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 754 
+ --------------
+Adapting learning rate to 7.105427357601002e-18
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 755 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 756 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 757 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 758 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 759 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 760 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 761 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 762 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 763 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 764 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 765 
+ --------------
+Adapting learning rate to 3.552713678800501e-18
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 766 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 767 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 768 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 769 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 770 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 771 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 772 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 773 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 774 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 775 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 776 
+ --------------
+Adapting learning rate to 1.7763568394002505e-18
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 777 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 778 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 779 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 780 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 781 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 782 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 783 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 784 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 785 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 786 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 787 
+ --------------
+Adapting learning rate to 8.881784197001253e-19
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 788 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 789 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 790 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 791 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 792 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 793 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 794 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 795 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 796 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 797 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 798 
+ --------------
+Adapting learning rate to 4.440892098500626e-19
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 799 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 800 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 801 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 802 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 803 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 804 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 805 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 806 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 807 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 808 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 809 
+ --------------
+Adapting learning rate to 2.220446049250313e-19
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 810 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 811 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 812 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 813 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 814 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 815 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 816 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 817 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 818 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 819 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 820 
+ --------------
+Adapting learning rate to 1.1102230246251566e-19
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 821 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 822 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 823 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 824 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 825 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 826 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 827 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 828 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 829 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 830 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 831 
+ --------------
+Adapting learning rate to 5.551115123125783e-20
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 832 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 833 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 834 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 835 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 836 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 837 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 838 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 839 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 840 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 841 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 842 
+ --------------
+Adapting learning rate to 2.7755575615628914e-20
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 843 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 844 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 845 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 846 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 847 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 848 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 849 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 850 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 851 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 852 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 853 
+ --------------
+Adapting learning rate to 1.3877787807814457e-20
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 854 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 855 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 856 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 857 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 858 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 859 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 860 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 861 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 862 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 863 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 864 
+ --------------
+Adapting learning rate to 6.938893903907229e-21
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 865 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 866 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 867 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 868 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 869 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 870 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 871 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 872 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 873 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 874 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 875 
+ --------------
+Adapting learning rate to 3.469446951953614e-21
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 876 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 877 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 878 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 879 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 880 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 881 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 882 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 883 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 884 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 885 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 886 
+ --------------
+Adapting learning rate to 1.734723475976807e-21
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 887 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 888 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 889 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 890 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 891 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 892 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 893 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 894 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 895 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 896 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 897 
+ --------------
+Adapting learning rate to 8.673617379884036e-22
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 898 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 899 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 900 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 901 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 902 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 903 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 904 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 905 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 906 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 907 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 908 
+ --------------
+Adapting learning rate to 4.336808689942018e-22
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 909 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 910 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 911 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 912 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 913 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 914 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 915 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 916 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 917 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 918 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 919 
+ --------------
+Adapting learning rate to 2.168404344971009e-22
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 920 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 921 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 922 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 923 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 924 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 925 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 926 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 927 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 928 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 929 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 930 
+ --------------
+Adapting learning rate to 1.0842021724855045e-22
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 931 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 932 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 933 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 934 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 935 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 936 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 937 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 938 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 939 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 940 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 941 
+ --------------
+Adapting learning rate to 5.421010862427522e-23
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 942 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 943 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 944 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 945 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 946 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 947 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 948 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 949 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 950 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 951 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 952 
+ --------------
+Adapting learning rate to 2.710505431213761e-23
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 953 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 954 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 955 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 956 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 957 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 958 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 959 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 960 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 961 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 962 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 963 
+ --------------
+Adapting learning rate to 1.3552527156068806e-23
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 964 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 965 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 966 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 967 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 968 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 969 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 970 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 971 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 972 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 973 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 974 
+ --------------
+Adapting learning rate to 6.776263578034403e-24
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 975 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 976 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 977 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 978 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 979 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 980 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 981 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 982 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 983 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 984 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 985 
+ --------------
+Adapting learning rate to 3.3881317890172014e-24
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 986 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 987 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 988 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 989 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 990 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 991 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 992 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 993 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 994 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 995 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 996 
+ --------------
+Adapting learning rate to 1.6940658945086007e-24
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 997 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 998 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
+
+ Epoch 999 
+ --------------
+Train loss: 2.93E-03
+Test  loss: 2.97E-03
