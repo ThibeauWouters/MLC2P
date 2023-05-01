@@ -166,7 +166,9 @@ def p2p(rho: float, eps: float, v: float, model: nn.Module, nb_repetitions: int 
 #############################
 
 
-def generate_c2p_data_ideal_gas(number_of_points: int = 10000, save_name: str = "") -> list:
+def generate_c2p_data_ideal_gas(number_of_points: int = 10000, save_name: str = "",
+                                rho_min=RHO_MIN, rho_max=RHO_MAX,eps_min=EPS_MIN, eps_max=EPS_MAX,
+                                v_min=V_MIN, v_max=V_MAX,) -> list:
     """
     Generates training data of specified size, with ideal gas EOS, by sampling and performing the P2C transformation.
     :param number_of_points: The number of data points to be generated.
@@ -180,9 +182,9 @@ def generate_c2p_data_ideal_gas(number_of_points: int = 10000, save_name: str = 
     # Sample and generate a new row for the training data
     for i in range(number_of_points):
         # Generate primitive variables
-        rho = random.uniform(RHO_MIN, RHO_MAX)
-        eps = random.uniform(EPS_MIN, EPS_MAX)
-        v = random.uniform(V_MIN, V_MAX)
+        rho = random.uniform(rho_min, rho_max)
+        eps = random.uniform(eps_min, eps_max)
+        v = random.uniform(v_min, v_max)
 
         # Use above transformations to compute the pressure and conserved variables D, S, tau
         # Compute the pressure using an ideal gas law
@@ -196,10 +198,11 @@ def generate_c2p_data_ideal_gas(number_of_points: int = 10000, save_name: str = 
         # Append the row to the list
         data.append(new_row)
 
+    header = ['rho', 'eps', 'v', 'p', 'D', 'S', 'tau']
     # Done generating data, now save if wanted by the user:
     if len(save_name) > 0:
         # Save as CSV, specify the header
-        header = ['rho', 'eps', 'v', 'p', 'D', 'S', 'tau']
+
         # Get the correct filename, pointing to the "data" directory
         filename = 'D:/Coding/master-thesis-AI/data' + save_name
         if (save_name[-3:]) != ".csv":
@@ -215,7 +218,7 @@ def generate_c2p_data_ideal_gas(number_of_points: int = 10000, save_name: str = 
             writer.writerows(data)
 
     # Also return the data to the user
-    return data
+    return data,header
 
 
 #################

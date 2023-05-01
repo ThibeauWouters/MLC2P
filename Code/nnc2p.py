@@ -917,3 +917,46 @@ def evaluate_models(models: list, test_data: Dataset, csv_file: str = "performan
         write_to_csv(csv_file, [h1, h2, N, l1, l2, linfty, nb_params, compression_ratio])
 
     return pd.read_csv(csv_file)
+
+
+#################
+# EXPORT MODELS #
+#################
+
+def export_model(file_name, save_name, weights_names=["weight0", "bias0", "weight2", "bias2", "weight4", "bias4"]):
+    """
+    Exports a model located at filename. By default, just saves the "flat" versions. See export_models notebook
+    for older versions where we also exported other versions.
+    :param file_name: Location of the model, typically in the Models folder of the repo.
+    :param save_name: Location where the CSV files should be saved. This should be a directory
+    :return: None, but saves the parameter values as CSV to the desired location.
+    """
+
+    # Make directory if save_name not found
+    if not(os.path.exists(save_name) and os.path.isdir(save_name)):
+        print(f"Directory not found. Making new one at {save_name}")
+        os.mkdir(save_name)
+
+    # Load the model
+    model = torch.load(file_name)
+    # State dict contains all the variables
+    state_dict = model.state_dict().items()
+    # Names to save the files:
+    flat_save_names = [os.path.normpath(save_name + f"/{name}_flat.csv") for name in weights_names]
+
+    # Save each one:
+    counter = 0
+    for param_name, item in state_dict:
+        # Get appropriate name
+        flat_save_name = flat_save_names[counter]
+
+        # Get the matrix and flatten it as well
+        matrix_np = item.numpy()
+        flat_matrix_np = matrix_np.flatten()
+
+        # Save to txt
+        np.savetxt(flat_save_name, flat_matrix_np, delimiter=",", newline=',\n', fmt="%0.35f")
+
+        counter += 1
+
+    print(f"Succesfully exported model parameters to CSV file, at {save_name}")
