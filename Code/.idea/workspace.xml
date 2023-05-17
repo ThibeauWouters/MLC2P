@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5512add3-f98b-4c0a-876d-5dafbe9b87f2" name="Changes" comment="" />
+    <list default="true" id="5512add3-f98b-4c0a-876d-5dafbe9b87f2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/visualizations-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/visualizations-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C2P_ideal_gas.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/C2P_ideal_gas.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/neuralnet_assist.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/neuralnet_assist.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/physics.py" beforeDir="false" afterPath="$PROJECT_DIR$/physics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_log.csv" beforeDir="false" afterPath="$PROJECT_DIR$/train_log.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/train_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visualizations.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/visualizations.ipynb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

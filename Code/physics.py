@@ -180,7 +180,7 @@ def c2c(D_value: float, S_value: float, tau_value: float, model: nn.Module, nb_r
         # Repeat the chain several times
         with torch.no_grad():
             # Get the pressure using the neural network
-            press = model(torch.tensor([d, s, t]).double())
+            press = model(torch.tensor([d, s, t]).float())
             # press is a tensor, convert to a float
             press = press.item()
 
@@ -221,7 +221,7 @@ def p2p(rho: float, eps: float, v: float, model: nn.Module, nb_repetitions: int 
         d, s, t = p2c(rho, eps, v, press)
         with torch.no_grad():
             # Use cons and neural net to get pressure
-            press = model(torch.tensor([d, s, t]).double())
+            press = model(torch.tensor([d, s, t]).float())
         # Get new primitives
         v, _, eps, rho = get_prims(d, s, t, press)
 
