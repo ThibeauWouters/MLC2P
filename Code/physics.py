@@ -411,7 +411,7 @@ def convert_eos_table(eos_table, var_names=["logenergy", "logpress", "cs2"], sav
     # Save examples as HDF5 file
     with h5py.File(save_name, 'w') as f:
         # Save the examples under "my dataset"
-        dataset = f.create_dataset('var_names', data=np.array(var_names))
+        #dataset = f.create_dataset('var_names', data=np.array(var_names))
         dataset = f.create_dataset('logrho', data=rho_array)
         dataset = f.create_dataset('logtemp', data=temp_array)
         dataset = f.create_dataset('ye', data=ye_array)
