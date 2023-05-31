@@ -1,5 +1,9 @@
 This is a neural network for the GRHD assist. That is, this network takes three inputs: D, S, tau and generates a single output, mu, which is an approximation of the root that is used within Kastaun's C2P scheme. The model has two layers with each 20 neurons and uses sigmoid activation functions.
 
+
+The info below is no longer valid.
+
+
 **NOTE**: We performed a normalization on the training data. We did a minmaxscale (see sklearn MinMaxScaler for background). 
 - min values are: [1.76215788e-05 7.86319124e-06 2.95001570e-05]
 - scale values are: [14.51535662 64.16326322 61.74312749]
