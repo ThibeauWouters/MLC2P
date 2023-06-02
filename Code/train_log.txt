@@ -55333,3 +55333,7 @@ Test  loss: 3.79E-08
 
  Epoch 12 
  --------------
+Training the model for 500 epochs.
+
+ Epoch 0 
+ --------------
