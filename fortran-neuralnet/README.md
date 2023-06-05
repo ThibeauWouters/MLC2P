@@ -1,0 +1,1 @@
+The directories included here show test files for processing NN computations in Fortran. The file `mod_grhd_phys_neuralnet.t` is the module flle used in `Gmunu` to perform the C2P replaced by a neural network within GRHD simulations.
