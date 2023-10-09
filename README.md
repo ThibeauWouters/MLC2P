@@ -1,2 +1,2 @@
-# master-thesis-AI
-Files and notes for the master thesis of artificial intelligence.
+# MLC2P
+Files and notes for all things related to machine learning algorithms for the C2P conversion in relativistic hydrodynamics simulations.
